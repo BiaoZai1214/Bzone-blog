@@ -14,15 +14,15 @@
         {{/* 中间：联系方式 */}}
         <div class="info-section section-center">
           {{ with .Site.Params.homepage.social }}
-            {{ with .phone }}
-              <div class="contact-item">
-                <span>📱</span>
-                <span>{{ . }}</span>
-              </div>
-            {{ end }}
             {{ with .wechat }}
               <div class="contact-item">
                 <span>💬</span>
+                <span>{{ . }}</span>
+              </div>
+            {{ end }}
+            {{ with .phone }}
+              <div class="contact-item">
+                <span>📱</span>
                 <span>{{ . }}</span>
               </div>
             {{ end }}
