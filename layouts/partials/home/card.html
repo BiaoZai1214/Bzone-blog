@@ -4,7 +4,7 @@
       <div class="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-3 lg:gap-20" style="align-items: flex-end; justify-items: start; max-width: 1600px; margin: 0 auto;">
         {{/* 左侧：头像 + 昵称 + 个性签名 */}}
         <div class="flex items-center" style="gap: 25px;">
-          <img src="/images/avatar.jpg" style="width: 120px; height: 120px; object-fit: cover;">
+          <img src="/images/avatar.jpg" class="home-avatar" style="width: 120px; height: 120px; object-fit: cover; border-radius: 50%;">
           <div style="min-width: 0; display: flex; flex-direction: column; justify-content: flex-end; height: 120px;">
             <h1 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 20px;">{{ .Site.Params.author.name | default "标仔" }}</h1>
             <p style="color: #888; font-size: 1rem; margin: 0;">{{ .Site.Params.homepage.bio | default "这里是个性签名" }}</p>
@@ -153,6 +153,11 @@
   box-shadow: 0 2px 8px rgba(251,114,153,0.4), 0 6px 20px rgba(251,114,153,0.3);
 }
 
+/* 头像样式 */
+.home-avatar {
+  flex-shrink: 0;
+}
+
 /* 暗色模式 */
 .dark .typing,
 .dark .home-info-bar h1 { color: #f5f5f7; }
@@ -180,6 +185,7 @@
   }
   .home-info-bar .flex.items-center { gap: 8px; }
   .home-info-bar .flex.items-center > div { height: auto; justify-content: flex-end; flex: 1; min-width: 0; width: auto; }
+  .home-info-bar .home-avatar { width: 70px !important; height: 70px !important; }
   .home-info-bar p { white-space: nowrap; }
   .home-info-bar h1 { font-size: 1.2rem; font-weight: 600; margin-bottom: 4px; }
   .home-info-bar p { font-size: 0.8rem !important; color: #888 !important; margin: 0 !important; white-space: nowrap !important; overflow: visible !important; text-overflow: clip !important; width: max-content !important; max-width: none !important; }
