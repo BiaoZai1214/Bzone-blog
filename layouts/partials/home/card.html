@@ -69,14 +69,16 @@
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1400px;
   margin: 0 auto;
-  gap: 40px;
+  gap: 60px;
 }
 
 .info-section {
   display: flex;
   align-items: flex-end;
+  flex-shrink: 0;
 }
 
 .section-left {
@@ -84,7 +86,7 @@
 }
 
 .section-center {
-  gap: 20px;
+  gap: 30px;
 }
 
 .section-right {
@@ -106,6 +108,13 @@
   padding-bottom: 8px;
 }
 
+/* 头像 */
+.home-avatar {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+}
+
 /* 按钮样式 */
 .action-btn {
   border: none;
@@ -119,10 +128,48 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  white-space: nowrap;
 }
 .btn-github { background: #24292e; }
 .btn-bilibili { background: #FB7299; }
 .action-btn:hover { filter: brightness(1.1); transform: translateY(-2px); }
+
+/* 大屏幕（>1400px） */
+@media (max-width: 1400px) {
+  .info-row {
+    gap: 40px;
+  }
+  .section-center {
+    gap: 25px;
+  }
+}
+
+/* 中大屏幕（1200px-1400px） */
+@media (max-width: 1200px) {
+  .info-row {
+    gap: 30px;
+  }
+  .section-center {
+    gap: 20px;
+  }
+  .info-text h1 { font-size: 1.4rem !important; }
+  .info-text p { font-size: 0.9rem !important; }
+  .home-avatar { width: 90px !important; height: 90px !important; }
+}
+
+/* 中等屏幕（992px-1200px） */
+@media (max-width: 992px) {
+  .info-row {
+    gap: 20px;
+  }
+  .section-left { gap: 15px; }
+  .section-center { gap: 15px; }
+  .info-text h1 { font-size: 1.2rem !important; }
+  .info-text p { font-size: 0.85rem !important; }
+  .home-avatar { width: 80px !important; height: 80px !important; }
+  .contact-item { font-size: 0.9rem; padding-bottom: 5px; }
+  .action-btn { padding: 8px 16px; font-size: 13px; }
+}
 
 /* 装饰区域 */
 .home-decoration {
