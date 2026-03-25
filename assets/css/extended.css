@@ -40,13 +40,57 @@
     gap: 32px;
 }
 
-@media (max-width: 1024px) {
+/* 大屏幕 (1400px以上) */
+@media (min-width: 1400px) {
     .grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 32px;
     }
 }
 
+/* 中大屏幕 (1200px-1400px) */
+@media (max-width: 1200px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        padding: 0 30px;
+    }
+    .article-link--card h2 {
+        font-size: 1.1rem;
+    }
+}
+
+/* 中等屏幕 (992px-1200px) */
+@media (max-width: 992px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 0 24px;
+    }
+    .article-link--card h2 {
+        font-size: 1rem;
+    }
+    .article-link--card .p-4 {
+        padding: 12px 14px;
+    }
+}
+
+/* 小屏幕 (768px-992px) */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        padding: 0 20px;
+    }
+    .article-link--card {
+        border-radius: 20px;
+    }
+    .article-link--card h2 {
+        font-size: 0.95rem;
+    }
+}
+
+/* 手机屏幕 (640px以下) */
 @media (max-width: 640px) {
     .grid {
         grid-template-columns: repeat(2, 1fr);
@@ -76,6 +120,20 @@
         font-size: 0.75rem;
         line-height: 1.15;
         -webkit-line-clamp: 2;
+    }
+}
+
+/* 超小屏幕 (480px以下) */
+@media (max-width: 480px) {
+    .article-link--card h2 {
+        font-size: 0.7rem;
+    }
+    .article-link--card .article-link__summary {
+        font-size: 0.65rem;
+    }
+    .article-link--card .tag-badge {
+        font-size: 0.6rem;
+        padding: 2px 5px;
     }
 }
 
