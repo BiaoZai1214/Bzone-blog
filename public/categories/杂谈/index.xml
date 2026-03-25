@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>杂谈 on 标仔Blog</title>
-    <link>http://localhost:3000/Bzone-blog/categories/%E6%9D%82%E8%B0%88/</link>
+    <link>http://localhost:9580/Bzone-blog/categories/%E6%9D%82%E8%B0%88/</link>
     <description>Recent content in 杂谈 on 标仔Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     
-    <lastBuildDate>Tue, 24 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:3000/Bzone-blog/categories/%E6%9D%82%E8%B0%88/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 24 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:9580/Bzone-blog/categories/%E6%9D%82%E8%B0%88/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>欢迎来到 Bzone Blog</title>
-      <link>http://localhost:3000/Bzone-blog/posts/hello-world/</link>
+      <link>http://localhost:9580/Bzone-blog/posts/hello-world/</link>
       <pubDate>Tue, 24 Mar 2026 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:3000/Bzone-blog/posts/hello-world/</guid>
+      <guid>http://localhost:9580/Bzone-blog/posts/hello-world/</guid>
       <description>&lt;p&gt;这是博客的第一篇文章！&lt;/p&gt;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;为什么写博客？&#xA;    &lt;div id=&#34;为什么写博客&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e4%b8%ba%e4%bb%80%e4%b9%88%e5%86%99%e5%8d%9a%e5%ae%a2&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;沉淀知识&lt;/strong&gt; - 写下来才能真正理解&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;分享经验&lt;/strong&gt; - 帮助有需要的人&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;记录成长&lt;/strong&gt; - 回头看时的珍贵回忆&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;博客内容&#xA;    &lt;div id=&#34;博客内容&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#%e5%8d%9a%e5%ae%a2%e5%86%85%e5%ae%b9&#34; aria-label=&#34;锚点&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;未来我会在这里分享：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;技术文章&lt;/li&gt;&#xA;&lt;li&gt;学习笔记&lt;/li&gt;&#xA;&lt;li&gt;项目经验&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;blockquote&gt;&lt;p&gt;&amp;ldquo;Talk is cheap, show me the code.&amp;rdquo; — Linus Torvalds&lt;/p&gt;&#xA;&lt;/blockquote&gt;&lt;p&gt;欢迎常来！&lt;/p&gt;</description>
       
     </item>

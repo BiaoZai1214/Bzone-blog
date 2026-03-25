@@ -2,119 +2,119 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on 标仔Blog</title>
-    <link>http://localhost:3000/Bzone-blog/tags/</link>
+    <link>http://localhost:9580/Bzone-blog/tags/</link>
     <description>Recent content in Tags on 标仔Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     
-    <lastBuildDate>Tue, 24 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:3000/Bzone-blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 24 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:9580/Bzone-blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>博客</title>
-      <link>http://localhost:3000/Bzone-blog/tags/%E5%8D%9A%E5%AE%A2/</link>
+      <link>http://localhost:9580/Bzone-blog/tags/%E5%8D%9A%E5%AE%A2/</link>
       <pubDate>Tue, 24 Mar 2026 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:3000/Bzone-blog/tags/%E5%8D%9A%E5%AE%A2/</guid>
+      <guid>http://localhost:9580/Bzone-blog/tags/%E5%8D%9A%E5%AE%A2/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>随笔</title>
-      <link>http://localhost:3000/Bzone-blog/tags/%E9%9A%8F%E7%AC%94/</link>
+      <link>http://localhost:9580/Bzone-blog/tags/%E9%9A%8F%E7%AC%94/</link>
       <pubDate>Tue, 24 Mar 2026 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:3000/Bzone-blog/tags/%E9%9A%8F%E7%AC%94/</guid>
+      <guid>http://localhost:9580/Bzone-blog/tags/%E9%9A%8F%E7%AC%94/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>FreeRTOS</title>
-      <link>http://localhost:3000/Bzone-blog/tags/freertos/</link>
+      <link>http://localhost:9580/Bzone-blog/tags/freertos/</link>
       <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:3000/Bzone-blog/tags/freertos/</guid>
+      <guid>http://localhost:9580/Bzone-blog/tags/freertos/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Hugo</title>
-      <link>http://localhost:3000/Bzone-blog/tags/hugo/</link>
+      <link>http://localhost:9580/Bzone-blog/tags/hugo/</link>
       <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:3000/Bzone-blog/tags/hugo/</guid>
+      <guid>http://localhost:9580/Bzone-blog/tags/hugo/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>RTOS</title>
-      <link>http://localhost:3000/Bzone-blog/tags/rtos/</link>
+      <link>http://localhost:9580/Bzone-blog/tags/rtos/</link>
       <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:3000/Bzone-blog/tags/rtos/</guid>
+      <guid>http://localhost:9580/Bzone-blog/tags/rtos/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>教程</title>
-      <link>http://localhost:3000/Bzone-blog/tags/%E6%95%99%E7%A8%8B/</link>
+      <link>http://localhost:9580/Bzone-blog/tags/%E6%95%99%E7%A8%8B/</link>
       <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:3000/Bzone-blog/tags/%E6%95%99%E7%A8%8B/</guid>
+      <guid>http://localhost:9580/Bzone-blog/tags/%E6%95%99%E7%A8%8B/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>静态网站</title>
-      <link>http://localhost:3000/Bzone-blog/tags/%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99/</link>
+      <link>http://localhost:9580/Bzone-blog/tags/%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99/</link>
       <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:3000/Bzone-blog/tags/%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99/</guid>
+      <guid>http://localhost:9580/Bzone-blog/tags/%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>嵌入式</title>
-      <link>http://localhost:3000/Bzone-blog/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/</link>
+      <link>http://localhost:9580/Bzone-blog/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/</link>
       <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:3000/Bzone-blog/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/</guid>
+      <guid>http://localhost:9580/Bzone-blog/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>SPI</title>
-      <link>http://localhost:3000/Bzone-blog/tags/spi/</link>
+      <link>http://localhost:9580/Bzone-blog/tags/spi/</link>
       <pubDate>Thu, 19 Mar 2026 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:3000/Bzone-blog/tags/spi/</guid>
+      <guid>http://localhost:9580/Bzone-blog/tags/spi/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>通信协议</title>
-      <link>http://localhost:3000/Bzone-blog/tags/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/</link>
+      <link>http://localhost:9580/Bzone-blog/tags/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/</link>
       <pubDate>Thu, 19 Mar 2026 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:3000/Bzone-blog/tags/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/</guid>
+      <guid>http://localhost:9580/Bzone-blog/tags/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>I2C</title>
-      <link>http://localhost:3000/Bzone-blog/tags/i2c/</link>
+      <link>http://localhost:9580/Bzone-blog/tags/i2c/</link>
       <pubDate>Wed, 18 Mar 2026 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:3000/Bzone-blog/tags/i2c/</guid>
+      <guid>http://localhost:9580/Bzone-blog/tags/i2c/</guid>
       <description></description>
       
     </item>
