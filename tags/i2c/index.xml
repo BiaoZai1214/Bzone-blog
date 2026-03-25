@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>I2C on 标仔Blog</title><link>https://bzone-blog.github.io/tags/i2c/</link><description>Recent content in I2C on 标仔Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 18 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://bzone-blog.github.io/tags/i2c/index.xml" rel="self" type="application/rss+xml"/><item><title>I2C 协议从零理解</title><link>https://bzone-blog.github.io/posts/i2c%E5%8D%8F%E8%AE%AE/</link><pubDate>Wed, 18 Mar 2026 00:00:00 +0000</pubDate><guid>https://bzone-blog.github.io/posts/i2c%E5%8D%8F%E8%AE%AE/</guid><description>&lt;p&gt;I2C 是最常用的板级通信协议，只需要两根线。&lt;/p&gt;
+
+&lt;h2 class="relative group"&gt;信号线
+ &lt;div id="信号线" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e4%bf%a1%e5%8f%b7%e7%ba%bf" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;SCL&lt;/strong&gt; - 时钟线&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SDA&lt;/strong&gt; - 数据线&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 class="relative group"&gt;传输格式
+ &lt;div id="传输格式" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e4%bc%a0%e8%be%93%e6%a0%bc%e5%bc%8f" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;div class="highlight-wrapper"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;S + 从机地址(7位) + R/W(1位) + ACK + 数据 + ACK + P&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 class="relative group"&gt;关键时序
+ &lt;div id="关键时序" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%85%b3%e9%94%ae%e6%97%b6%e5%ba%8f" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;起始条件&lt;/strong&gt; - SCL 高时 SDA 拉低&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;停止条件&lt;/strong&gt; - SCL 高时 SDA 拉高&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;应答位&lt;/strong&gt; - 每字节传输后接收方拉低 SDA&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 class="relative group"&gt;常见问题
+ &lt;div id="常见问题" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%b8%b8%e8%a7%81%e9%97%ae%e9%a2%98" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;总线被拉死？检查上拉电阻是否连接&lt;/li&gt;
+&lt;li&gt;通信不稳？降低 I2C 时钟频率&lt;/li&gt;
+&lt;li&gt;从机无响应？检查地址是否正确&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>

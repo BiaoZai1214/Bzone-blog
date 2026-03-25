@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>博客 on 标仔Blog</title><link>https://bzone-blog.github.io/tags/%E5%8D%9A%E5%AE%A2/</link><description>Recent content in 博客 on 标仔Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 24 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://bzone-blog.github.io/tags/%E5%8D%9A%E5%AE%A2/index.xml" rel="self" type="application/rss+xml"/><item><title>欢迎来到 Bzone Blog</title><link>https://bzone-blog.github.io/posts/hello-world/</link><pubDate>Tue, 24 Mar 2026 00:00:00 +0000</pubDate><guid>https://bzone-blog.github.io/posts/hello-world/</guid><description>&lt;p&gt;这是博客的第一篇文章！&lt;/p&gt;
+
+&lt;h2 class="relative group"&gt;为什么写博客？
+ &lt;div id="为什么写博客" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e5%86%99%e5%8d%9a%e5%ae%a2" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;沉淀知识&lt;/strong&gt; - 写下来才能真正理解&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;分享经验&lt;/strong&gt; - 帮助有需要的人&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;记录成长&lt;/strong&gt; - 回头看时的珍贵回忆&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 class="relative group"&gt;博客内容
+ &lt;div id="博客内容" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%8d%9a%e5%ae%a2%e5%86%85%e5%ae%b9" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;p&gt;未来我会在这里分享：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;技术文章&lt;/li&gt;
+&lt;li&gt;学习笔记&lt;/li&gt;
+&lt;li&gt;项目经验&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;&lt;p&gt;&amp;ldquo;Talk is cheap, show me the code.&amp;rdquo; — Linus Torvalds&lt;/p&gt;
+&lt;/blockquote&gt;&lt;p&gt;欢迎常来！&lt;/p&gt;</description></item></channel></rss>

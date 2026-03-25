@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FreeRTOS on 标仔Blog</title><link>https://bzone-blog.github.io/tags/freertos/</link><description>Recent content in FreeRTOS on 标仔Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 23 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://bzone-blog.github.io/tags/freertos/index.xml" rel="self" type="application/rss+xml"/><item><title>FreeRTOS 任务调度：优先级与状态机解析</title><link>https://bzone-blog.github.io/posts/freertos-task-scheduling/</link><pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate><guid>https://bzone-blog.github.io/posts/freertos-task-scheduling/</guid><description>&lt;p&gt;FreeRTOS 是最流行的开源实时操作系统，广泛应用于 MCU 项目中。本文深入解析其任务调度机制。&lt;/p&gt;
+
+&lt;h2 class="relative group"&gt;任务状态机
+ &lt;div id="任务状态机" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e4%bb%bb%e5%8a%a1%e7%8a%b6%e6%80%81%e6%9c%ba" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;div class="highlight-wrapper"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ┌──────┐
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; │ 运行 │
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; └──┬───┘
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; │
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ┌─────┼─────┐
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ▼ ▼ ▼
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;┌──────┐┌──────┐┌──────┐
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│ 就绪 ││ 阻塞 ││ 挂起 │
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;└──────┘└──────┘└──────┘&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 class="relative group"&gt;创建任务
+ &lt;div id="创建任务" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%88%9b%e5%bb%ba%e4%bb%bb%e5%8a%a1" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;div class="highlight-wrapper"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-c" data-lang="c"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#include&lt;/span&gt; &lt;span style="color:#75715e"&gt;&amp;#34;FreeRTOS.h&amp;#34;&lt;/span&gt;&lt;span style="color:#75715e"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#include&lt;/span&gt; &lt;span style="color:#75715e"&gt;&amp;#34;task.h&amp;#34;&lt;/span&gt;&lt;span style="color:#75715e"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;void&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;vTaskFunction&lt;/span&gt;(&lt;span style="color:#66d9ef"&gt;void&lt;/span&gt; &lt;span style="color:#f92672"&gt;*&lt;/span&gt;pvParameters) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;while&lt;/span&gt; (&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;// 任务逻辑
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;vTaskDelay&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;pdMS_TO_TICKS&lt;/span&gt;(&lt;span style="color:#ae81ff"&gt;1000&lt;/span&gt;));
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;// 创建任务
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;TaskHandle_t xTaskHandle &lt;span style="color:#f92672"&gt;=&lt;/span&gt; NULL;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;xTaskCreate&lt;/span&gt;(
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; vTaskFunction, &lt;span style="color:#75715e"&gt;// 任务函数
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;Task1&amp;#34;&lt;/span&gt;, &lt;span style="color:#75715e"&gt;// 任务名称
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#ae81ff"&gt;1000&lt;/span&gt;, &lt;span style="color:#75715e"&gt;// 栈深度(字)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; NULL, &lt;span style="color:#75715e"&gt;// 参数
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;, &lt;span style="color:#75715e"&gt;// 优先级 (0-configMAX_PRIORITIES-1)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;amp;&lt;/span&gt;xTaskHandle &lt;span style="color:#75715e"&gt;// 句柄
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 class="relative group"&gt;调度策略
+ &lt;div id="调度策略" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e8%b0%83%e5%ba%a6%e7%ad%96%e7%95%a5" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;抢占式调度&lt;/strong&gt; - 高优先级任务可打断低优先级任务&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;时间片轮转&lt;/strong&gt; - 同优先级任务轮流执行&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;优先级继承&lt;/strong&gt; - 解决优先级反转问题&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 class="relative group"&gt;注意事项
+ &lt;div id="注意事项" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a1%b9" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;优先级数值越大优先级越高&lt;/li&gt;
+&lt;li&gt;任务栈空间要合理估算&lt;/li&gt;
+&lt;li&gt;避免在中断中调用阻塞 API&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;掌握任务调度是 RTOS 开发的核心技能！&lt;/p&gt;</description></item><item><title>FreeRTOS 任务优先级与调度</title><link>https://bzone-blog.github.io/posts/freertos-task/</link><pubDate>Sat, 21 Mar 2026 00:00:00 +0000</pubDate><guid>https://bzone-blog.github.io/posts/freertos-task/</guid><description>&lt;p&gt;FreeRTOS 是最流行的开源实时操作系统。&lt;/p&gt;
+
+&lt;h2 class="relative group"&gt;任务状态机
+ &lt;div id="任务状态机" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e4%bb%bb%e5%8a%a1%e7%8a%b6%e6%80%81%e6%9c%ba" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;div class="highlight-wrapper"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;就绪 → 运行 → 阻塞
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ↑______| ↓
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; 挂起 ←┘&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 class="relative group"&gt;创建任务
+ &lt;div id="创建任务" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%88%9b%e5%bb%ba%e4%bb%bb%e5%8a%a1" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;div class="highlight-wrapper"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-c" data-lang="c"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;TaskHandle_t xTaskHandle;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;xTaskCreate&lt;/span&gt;(
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; vTaskFunction, &lt;span style="color:#75715e"&gt;// 任务函数
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;Task1&amp;#34;&lt;/span&gt;, &lt;span style="color:#75715e"&gt;// 任务名称
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#ae81ff"&gt;1000&lt;/span&gt;, &lt;span style="color:#75715e"&gt;// 栈深度
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; NULL, &lt;span style="color:#75715e"&gt;// 参数
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;, &lt;span style="color:#75715e"&gt;// 优先级
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;amp;&lt;/span&gt;xTaskHandle &lt;span style="color:#75715e"&gt;// 句柄
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 class="relative group"&gt;调度策略
+ &lt;div id="调度策略" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e8%b0%83%e5%ba%a6%e7%ad%96%e7%95%a5" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;抢断式&lt;/strong&gt; - 高优先级任务可以打断低优先级&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;时间片轮转&lt;/strong&gt; - 同优先级任务轮流执行&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;优先级继承&lt;/strong&gt; - 解决优先级反转问题&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;合理设置任务优先级是 RTOS 开发的关键！&lt;/p&gt;</description></item></channel></rss>

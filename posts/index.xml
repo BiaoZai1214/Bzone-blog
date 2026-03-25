@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on 标仔Blog</title><link>https://bzone-blog.github.io/posts/</link><description>Recent content in Posts on 标仔Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 24 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://bzone-blog.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>欢迎来到 Bzone Blog</title><link>https://bzone-blog.github.io/posts/hello-world/</link><pubDate>Tue, 24 Mar 2026 00:00:00 +0000</pubDate><guid>https://bzone-blog.github.io/posts/hello-world/</guid><description>&lt;p&gt;这是博客的第一篇文章！&lt;/p&gt;
+
+&lt;h2 class="relative group"&gt;为什么写博客？
+ &lt;div id="为什么写博客" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e5%86%99%e5%8d%9a%e5%ae%a2" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;沉淀知识&lt;/strong&gt; - 写下来才能真正理解&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;分享经验&lt;/strong&gt; - 帮助有需要的人&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;记录成长&lt;/strong&gt; - 回头看时的珍贵回忆&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 class="relative group"&gt;博客内容
+ &lt;div id="博客内容" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%8d%9a%e5%ae%a2%e5%86%85%e5%ae%b9" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;p&gt;未来我会在这里分享：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;技术文章&lt;/li&gt;
+&lt;li&gt;学习笔记&lt;/li&gt;
+&lt;li&gt;项目经验&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;&lt;p&gt;&amp;ldquo;Talk is cheap, show me the code.&amp;rdquo; — Linus Torvalds&lt;/p&gt;
+&lt;/blockquote&gt;&lt;p&gt;欢迎常来！&lt;/p&gt;</description></item><item><title>FreeRTOS 任务调度：优先级与状态机解析</title><link>https://bzone-blog.github.io/posts/freertos-task-scheduling/</link><pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate><guid>https://bzone-blog.github.io/posts/freertos-task-scheduling/</guid><description>&lt;p&gt;FreeRTOS 是最流行的开源实时操作系统，广泛应用于 MCU 项目中。本文深入解析其任务调度机制。&lt;/p&gt;
+
+&lt;h2 class="relative group"&gt;任务状态机
+ &lt;div id="任务状态机" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e4%bb%bb%e5%8a%a1%e7%8a%b6%e6%80%81%e6%9c%ba" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;div class="highlight-wrapper"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ┌──────┐
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; │ 运行 │
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; └──┬───┘
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; │
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ┌─────┼─────┐
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ▼ ▼ ▼
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;┌──────┐┌──────┐┌──────┐
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;│ 就绪 ││ 阻塞 ││ 挂起 │
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;└──────┘└──────┘└──────┘&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 class="relative group"&gt;创建任务
+ &lt;div id="创建任务" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%88%9b%e5%bb%ba%e4%bb%bb%e5%8a%a1" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;div class="highlight-wrapper"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-c" data-lang="c"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#include&lt;/span&gt; &lt;span style="color:#75715e"&gt;&amp;#34;FreeRTOS.h&amp;#34;&lt;/span&gt;&lt;span style="color:#75715e"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#include&lt;/span&gt; &lt;span style="color:#75715e"&gt;&amp;#34;task.h&amp;#34;&lt;/span&gt;&lt;span style="color:#75715e"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;void&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;vTaskFunction&lt;/span&gt;(&lt;span style="color:#66d9ef"&gt;void&lt;/span&gt; &lt;span style="color:#f92672"&gt;*&lt;/span&gt;pvParameters) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;while&lt;/span&gt; (&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;// 任务逻辑
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;vTaskDelay&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;pdMS_TO_TICKS&lt;/span&gt;(&lt;span style="color:#ae81ff"&gt;1000&lt;/span&gt;));
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;// 创建任务
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;TaskHandle_t xTaskHandle &lt;span style="color:#f92672"&gt;=&lt;/span&gt; NULL;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;xTaskCreate&lt;/span&gt;(
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; vTaskFunction, &lt;span style="color:#75715e"&gt;// 任务函数
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;Task1&amp;#34;&lt;/span&gt;, &lt;span style="color:#75715e"&gt;// 任务名称
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#ae81ff"&gt;1000&lt;/span&gt;, &lt;span style="color:#75715e"&gt;// 栈深度(字)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; NULL, &lt;span style="color:#75715e"&gt;// 参数
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;, &lt;span style="color:#75715e"&gt;// 优先级 (0-configMAX_PRIORITIES-1)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;amp;&lt;/span&gt;xTaskHandle &lt;span style="color:#75715e"&gt;// 句柄
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 class="relative group"&gt;调度策略
+ &lt;div id="调度策略" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e8%b0%83%e5%ba%a6%e7%ad%96%e7%95%a5" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;抢占式调度&lt;/strong&gt; - 高优先级任务可打断低优先级任务&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;时间片轮转&lt;/strong&gt; - 同优先级任务轮流执行&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;优先级继承&lt;/strong&gt; - 解决优先级反转问题&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 class="relative group"&gt;注意事项
+ &lt;div id="注意事项" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a1%b9" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;优先级数值越大优先级越高&lt;/li&gt;
+&lt;li&gt;任务栈空间要合理估算&lt;/li&gt;
+&lt;li&gt;避免在中断中调用阻塞 API&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;掌握任务调度是 RTOS 开发的核心技能！&lt;/p&gt;</description></item><item><title>Hugo 博客搭建指南</title><link>https://bzone-blog.github.io/posts/hugo-guide/</link><pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate><guid>https://bzone-blog.github.io/posts/hugo-guide/</guid><description>&lt;p&gt;本文介绍如何使用 Hugo 快速搭建个人博客。&lt;/p&gt;
+
+&lt;h2 class="relative group"&gt;安装 Hugo
+ &lt;div id="安装-hugo" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%ae%89%e8%a3%85-hugo" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;p&gt;访问 &lt;a href="https://github.com/gohugoio/hugo/releases" target="_blank" rel="noreferrer"&gt;Hugo Releases&lt;/a&gt; 下载对应系统的二进制文件。&lt;/p&gt;
+&lt;div class="highlight-wrapper"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 验证安装&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;hugo version&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 class="relative group"&gt;创建新站点
+ &lt;div id="创建新站点" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%88%9b%e5%bb%ba%e6%96%b0%e7%ab%99%e7%82%b9" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;div class="highlight-wrapper"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;hugo new site my-blog
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cd my-blog&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 class="relative group"&gt;启动本地服务器
+ &lt;div id="启动本地服务器" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%90%af%e5%8a%a8%e6%9c%ac%e5%9c%b0%e6%9c%8d%e5%8a%a1%e5%99%a8" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;div class="highlight-wrapper"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;hugo server -D&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;访问 &lt;code&gt;http://localhost:1313&lt;/code&gt; 即可预览。&lt;/p&gt;</description></item><item><title>FreeRTOS 任务优先级与调度</title><link>https://bzone-blog.github.io/posts/freertos-task/</link><pubDate>Sat, 21 Mar 2026 00:00:00 +0000</pubDate><guid>https://bzone-blog.github.io/posts/freertos-task/</guid><description>&lt;p&gt;FreeRTOS 是最流行的开源实时操作系统。&lt;/p&gt;
+
+&lt;h2 class="relative group"&gt;任务状态机
+ &lt;div id="任务状态机" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e4%bb%bb%e5%8a%a1%e7%8a%b6%e6%80%81%e6%9c%ba" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;div class="highlight-wrapper"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;就绪 → 运行 → 阻塞
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ↑______| ↓
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; 挂起 ←┘&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 class="relative group"&gt;创建任务
+ &lt;div id="创建任务" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%88%9b%e5%bb%ba%e4%bb%bb%e5%8a%a1" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;div class="highlight-wrapper"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-c" data-lang="c"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;TaskHandle_t xTaskHandle;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;xTaskCreate&lt;/span&gt;(
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; vTaskFunction, &lt;span style="color:#75715e"&gt;// 任务函数
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;Task1&amp;#34;&lt;/span&gt;, &lt;span style="color:#75715e"&gt;// 任务名称
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#ae81ff"&gt;1000&lt;/span&gt;, &lt;span style="color:#75715e"&gt;// 栈深度
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; NULL, &lt;span style="color:#75715e"&gt;// 参数
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;, &lt;span style="color:#75715e"&gt;// 优先级
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;amp;&lt;/span&gt;xTaskHandle &lt;span style="color:#75715e"&gt;// 句柄
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 class="relative group"&gt;调度策略
+ &lt;div id="调度策略" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e8%b0%83%e5%ba%a6%e7%ad%96%e7%95%a5" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;抢断式&lt;/strong&gt; - 高优先级任务可以打断低优先级&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;时间片轮转&lt;/strong&gt; - 同优先级任务轮流执行&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;优先级继承&lt;/strong&gt; - 解决优先级反转问题&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;合理设置任务优先级是 RTOS 开发的关键！&lt;/p&gt;</description></item><item><title>SPI 协议深度剖析</title><link>https://bzone-blog.github.io/posts/spi%E5%8D%8F%E8%AE%AE/</link><pubDate>Thu, 19 Mar 2026 00:00:00 +0000</pubDate><guid>https://bzone-blog.github.io/posts/spi%E5%8D%8F%E8%AE%AE/</guid><description>&lt;p&gt;SPI 是嵌入式最常用的高速通信协议之一。&lt;/p&gt;
+
+&lt;h2 class="relative group"&gt;硬件连接
+ &lt;div id="硬件连接" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e7%a1%ac%e4%bb%b6%e8%bf%9e%e6%8e%a5" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;引脚&lt;/th&gt;
+ &lt;th&gt;说明&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;MOSI&lt;/td&gt;
+ &lt;td&gt;主出从入&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;MISO&lt;/td&gt;
+ &lt;td&gt;主入从出&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;SCK&lt;/td&gt;
+ &lt;td&gt;时钟信号&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;CS/SS&lt;/td&gt;
+ &lt;td&gt;片选信号&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 class="relative group"&gt;四种模式
+ &lt;div id="四种模式" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%9b%9b%e7%a7%8d%e6%a8%a1%e5%bc%8f" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;模式&lt;/th&gt;
+ &lt;th&gt;CPOL&lt;/th&gt;
+ &lt;th&gt;CPHA&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;0&lt;/td&gt;
+ &lt;td&gt;0&lt;/td&gt;
+ &lt;td&gt;0&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;1&lt;/td&gt;
+ &lt;td&gt;0&lt;/td&gt;
+ &lt;td&gt;1&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;2&lt;/td&gt;
+ &lt;td&gt;1&lt;/td&gt;
+ &lt;td&gt;0&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;3&lt;/td&gt;
+ &lt;td&gt;1&lt;/td&gt;
+ &lt;td&gt;1&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 class="relative group"&gt;驱动开发要点
+ &lt;div id="驱动开发要点" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e9%a9%b1%e5%8a%a8%e5%bc%80%e5%8f%91%e8%a6%81%e7%82%b9" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;配置正确的时钟极性和相位&lt;/li&gt;
+&lt;li&gt;片选信号要手动控制还是硬件自动&lt;/li&gt;
+&lt;li&gt;考虑 DMA 提升传输效率&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>I2C 协议从零理解</title><link>https://bzone-blog.github.io/posts/i2c%E5%8D%8F%E8%AE%AE/</link><pubDate>Wed, 18 Mar 2026 00:00:00 +0000</pubDate><guid>https://bzone-blog.github.io/posts/i2c%E5%8D%8F%E8%AE%AE/</guid><description>&lt;p&gt;I2C 是最常用的板级通信协议，只需要两根线。&lt;/p&gt;
+
+&lt;h2 class="relative group"&gt;信号线
+ &lt;div id="信号线" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e4%bf%a1%e5%8f%b7%e7%ba%bf" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;SCL&lt;/strong&gt; - 时钟线&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SDA&lt;/strong&gt; - 数据线&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 class="relative group"&gt;传输格式
+ &lt;div id="传输格式" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e4%bc%a0%e8%be%93%e6%a0%bc%e5%bc%8f" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;div class="highlight-wrapper"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;S + 从机地址(7位) + R/W(1位) + ACK + 数据 + ACK + P&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 class="relative group"&gt;关键时序
+ &lt;div id="关键时序" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%85%b3%e9%94%ae%e6%97%b6%e5%ba%8f" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;起始条件&lt;/strong&gt; - SCL 高时 SDA 拉低&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;停止条件&lt;/strong&gt; - SCL 高时 SDA 拉高&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;应答位&lt;/strong&gt; - 每字节传输后接收方拉低 SDA&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 class="relative group"&gt;常见问题
+ &lt;div id="常见问题" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%b8%b8%e8%a7%81%e9%97%ae%e9%a2%98" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;总线被拉死？检查上拉电阻是否连接&lt;/li&gt;
+&lt;li&gt;通信不稳？降低 I2C 时钟频率&lt;/li&gt;
+&lt;li&gt;从机无响应？检查地址是否正确&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>

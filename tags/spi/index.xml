@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SPI on 标仔Blog</title><link>https://bzone-blog.github.io/tags/spi/</link><description>Recent content in SPI on 标仔Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 19 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://bzone-blog.github.io/tags/spi/index.xml" rel="self" type="application/rss+xml"/><item><title>SPI 协议深度剖析</title><link>https://bzone-blog.github.io/posts/spi%E5%8D%8F%E8%AE%AE/</link><pubDate>Thu, 19 Mar 2026 00:00:00 +0000</pubDate><guid>https://bzone-blog.github.io/posts/spi%E5%8D%8F%E8%AE%AE/</guid><description>&lt;p&gt;SPI 是嵌入式最常用的高速通信协议之一。&lt;/p&gt;
+
+&lt;h2 class="relative group"&gt;硬件连接
+ &lt;div id="硬件连接" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e7%a1%ac%e4%bb%b6%e8%bf%9e%e6%8e%a5" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;引脚&lt;/th&gt;
+ &lt;th&gt;说明&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;MOSI&lt;/td&gt;
+ &lt;td&gt;主出从入&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;MISO&lt;/td&gt;
+ &lt;td&gt;主入从出&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;SCK&lt;/td&gt;
+ &lt;td&gt;时钟信号&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;CS/SS&lt;/td&gt;
+ &lt;td&gt;片选信号&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 class="relative group"&gt;四种模式
+ &lt;div id="四种模式" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%9b%9b%e7%a7%8d%e6%a8%a1%e5%bc%8f" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;模式&lt;/th&gt;
+ &lt;th&gt;CPOL&lt;/th&gt;
+ &lt;th&gt;CPHA&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;0&lt;/td&gt;
+ &lt;td&gt;0&lt;/td&gt;
+ &lt;td&gt;0&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;1&lt;/td&gt;
+ &lt;td&gt;0&lt;/td&gt;
+ &lt;td&gt;1&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;2&lt;/td&gt;
+ &lt;td&gt;1&lt;/td&gt;
+ &lt;td&gt;0&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;3&lt;/td&gt;
+ &lt;td&gt;1&lt;/td&gt;
+ &lt;td&gt;1&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 class="relative group"&gt;驱动开发要点
+ &lt;div id="驱动开发要点" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e9%a9%b1%e5%8a%a8%e5%bc%80%e5%8f%91%e8%a6%81%e7%82%b9" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;配置正确的时钟极性和相位&lt;/li&gt;
+&lt;li&gt;片选信号要手动控制还是硬件自动&lt;/li&gt;
+&lt;li&gt;考虑 DMA 提升传输效率&lt;/li&gt;
+&lt;/ol&gt;</description></item></channel></rss>
