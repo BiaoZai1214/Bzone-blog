@@ -46,6 +46,12 @@
         grid-template-columns: repeat(4, 1fr);
         gap: 32px;
     }
+    .article-link--card {
+        aspect-ratio: 3/4;
+    }
+    .article-link--card h2 {
+        font-size: 1.2rem;
+    }
 }
 
 /* 中大屏幕 (1200px-1400px) */
