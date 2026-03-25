@@ -28,7 +28,7 @@ hotlinkFeatureImage = true
   showMoreLink = false
   showMoreLinkDest = "/posts/"
   cardView = true
-  cardViewScreenWidth = true
+  cardViewScreenWidth = false
   bio = "记录生活，分享技术"
   homepageImage = "/images/avatar.jpg"
 
