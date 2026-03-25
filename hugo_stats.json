@@ -157,6 +157,7 @@
       "home-avatar",
       "home-decoration",
       "home-info-bar",
+      "home-info-content",
       "hover:text-primary-600",
       "hover:underline",
       "hover:underline-offset-2",
