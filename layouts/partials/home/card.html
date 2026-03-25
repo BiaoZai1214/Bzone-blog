@@ -4,7 +4,7 @@
       <div class="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-3 lg:gap-20" style="align-items: flex-end; justify-items: start; max-width: 1600px; margin: 0 auto;">
         {{/* 左侧：头像 + 昵称 + 个性签名 */}}
         <div class="flex items-center" style="gap: 25px;">
-          <img src="/images/bz.png" class="home-avatar" style="width: 120px; height: 120px; object-fit: cover; border-radius: 50%;">
+          <img src="{{ "images/bz.png" | relLangURL }}" class="home-avatar" style="width: 120px; height: 120px; object-fit: cover; border-radius: 50%;">
           <div style="min-width: 0; display: flex; flex-direction: column; justify-content: flex-end; height: 120px;">
             <h1 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 20px;">{{ .Site.Params.author.name | default "标仔" }}</h1>
             <p style="color: #888; font-size: 1rem; margin: 0;">{{ .Site.Params.homepage.bio | default "这里是个性签名" }}</p>
