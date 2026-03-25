@@ -14,11 +14,37 @@
 /* 信息栏内容布局 */
 .home-info-content {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-between;
     gap: 40px;
     max-width: 1400px;
     margin: 0 auto;
+}
+
+/* 左侧：头像 + 昵称 + 名字 */
+.home-info-content > div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0;
+}
+
+/* 中间：联系方式 */
+.home-info-content > div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+/* 右侧：按钮 */
+.home-info-content > div:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    flex-shrink: 0;
 }
 
 .dark .home-info-bar {
@@ -38,6 +64,10 @@
     .home-info-content {
         gap: 60px;
     }
+    .home-info-content > div:first-child .home-avatar {
+        width: 120px;
+        height: 120px;
+    }
 }
 
 /* 平板适配 */
@@ -50,8 +80,8 @@
         gap: 30px;
     }
     .home-info-content > div:first-child .home-avatar {
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
     }
 }
 
@@ -62,6 +92,24 @@
         padding: 24px 20px;
         border-radius: 20px;
         width: auto;
+    }
+    .home-info-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+    .home-info-content > div:first-child {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .home-info-content > div:first-child .home-avatar {
+        width: 80px;
+        height: 80px;
+    }
+    .home-info-content > div:nth-child(2),
+    .home-info-content > div:last-child {
+        align-items: center;
     }
     .home-info-bar img {
         width: 70px;
