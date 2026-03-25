@@ -4,10 +4,9 @@ locale = 'zh-CN'
 title = '标仔Blog'
 theme = "blowfish"
 
-# 关键修复：让图片、CSS 路径正确
-# relativeURLs = true
-# canonifyURLs = false
-
+# 🔥 关键修复：让主题资源正确加载
+relativeURLs = false
+canonifyURLs = true
 # 作者信息
 [author]
   name = "Bz"
