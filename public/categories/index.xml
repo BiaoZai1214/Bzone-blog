@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on 标仔Blog</title>
-    <link>http://localhost:1314/Bzone-blog/categories/</link>
+    <link>http://localhost:4000/Bzone-blog/categories/</link>
     <description>Recent content in Categories on 标仔Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     
-    <lastBuildDate>Tue, 24 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1314/Bzone-blog/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 24 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:4000/Bzone-blog/categories/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>杂谈</title>
-      <link>http://localhost:1314/Bzone-blog/categories/%E6%9D%82%E8%B0%88/</link>
+      <link>http://localhost:4000/Bzone-blog/categories/%E6%9D%82%E8%B0%88/</link>
       <pubDate>Tue, 24 Mar 2026 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1314/Bzone-blog/categories/%E6%9D%82%E8%B0%88/</guid>
+      <guid>http://localhost:4000/Bzone-blog/categories/%E6%9D%82%E8%B0%88/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>技术</title>
-      <link>http://localhost:1314/Bzone-blog/categories/%E6%8A%80%E6%9C%AF/</link>
+      <link>http://localhost:4000/Bzone-blog/categories/%E6%8A%80%E6%9C%AF/</link>
       <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1314/Bzone-blog/categories/%E6%8A%80%E6%9C%AF/</guid>
+      <guid>http://localhost:4000/Bzone-blog/categories/%E6%8A%80%E6%9C%AF/</guid>
       <description></description>
       
     </item>
