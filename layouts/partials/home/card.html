@@ -1,0 +1,244 @@
+<div class="relative -pt-8 pb-12">
+  <div class="relative">
+    <div class="home-info-bar">
+      <div class="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-3 lg:gap-20" style="align-items: flex-end; justify-items: start; max-width: 1600px; margin: 0 auto;">
+        {{/* 左侧：头像 + 昵称 + 个性签名 */}}
+        <div class="flex items-center" style="gap: 25px;">
+          {{ with .Site.Params.homepage.homepageImage }}
+            <img
+              src="{{ . }}"
+              class="rounded-full shadow-lg"
+              style="width: 120px; height: 120px; object-fit: cover; border: 3px solid transparent; background: linear-gradient(#1a1a2e, #1a1a2e) padding-box, linear-gradient(135deg, #00d4ff, #0a8fdc, #667eea) border-box; flex-shrink: 0;">
+          {{ else }}
+            <div class="rounded-full bg-gray-200 flex items-center justify-center" style="width: 120px; height: 120px; border: 3px solid transparent; background: linear-gradient(#1a1a2e, #1a1a2e) padding-box, linear-gradient(135deg, #00d4ff, #0a8fdc, #667eea) border-box; flex-shrink: 0;">
+              <span style="font-size: 2.5rem;">👤</span>
+            </div>
+          {{ end }}
+          <div style="min-width: 0; display: flex; flex-direction: column; justify-content: flex-end; height: 120px;">
+            <h1 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 20px;">{{ .Site.Params.author.name | default "标仔" }}</h1>
+            <p style="color: #888; font-size: 1rem; margin: 0;">{{ .Site.Params.homepage.bio | default "这里是个性签名" }}</p>
+          </div>
+        </div>
+
+        {{/* 中间：联系方式 */}}
+        <div class="flex flex-col gap-2" style="flex-shrink: 0;">
+          {{ with .Site.Params.homepage.social }}
+            {{ with .wechat }}
+              <div class="flex items-center gap-2" style="font-size: 1.2rem;">
+                <span>💬</span>
+                <span>{{ . }}</span>
+              </div>
+            {{ end }}
+            {{ with .phone }}
+              <div class="flex items-center gap-2" style="font-size: 1.2rem;">
+                <span>📱</span>
+                <span>{{ . }}</span>
+              </div>
+            {{ end }}
+          {{ end }}
+        </div>
+
+        {{/* 右侧：快捷按钮 */}}
+        <div class="flex flex-col gap-2" style="flex-shrink: 0; align-items: flex-end; width: 100%;">
+          {{ with .Site.Params.homepage.actionbuttons }}
+            {{ range . }}
+              {{ if eq .icon "github" }}
+              <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="action-btn btn-github"
+                 style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 140px; padding: 10px 0;">
+                <svg height="18" width="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                <span>{{ .label }}</span>
+              </a>
+              {{ else if eq .icon "bilibili" }}
+              <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="action-btn btn-bilibili"
+                 style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 140px; padding: 10px 0;">
+                <svg height="18" width="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.813 4.653h.854c1.51.054 2.769.578 3.773 1.574 1.004.995 1.524 2.249 1.56 3.76v7.36c-.036 1.51-.556 2.769-1.56 3.773s-2.262 1.524-3.773 1.56H5.333c-1.51-.036-2.769-.556-3.773-1.56S.036 18.858 0 17.347v-7.36c.036-1.511.556-2.765 1.56-3.76 1.004-.996 2.262-1.52 3.773-1.574h.774l-1.174-1.12a1.234 1.234 0 0 1-.373-.906c0-.356.124-.658.373-.907l.027-.027c.267-.249.573-.373.92-.373.347 0 .653.124.92.373L9.653 4.44c.071.071.134.142.187.213h4.267a.836.836 0 0 1 .16-.213l2.853-2.747c.267-.249.573-.373.92-.373.347 0 .662.151.929.4.267.249.391.551.391.907 0 .355-.124.657-.373.906zM5.333 7.24c-.746.018-1.373.276-1.88.773-.506.498-.769 1.13-.786 1.894v7.52c.017.764.28 1.396.786 1.894.507.498 1.134.756 1.88.773h13.334c.746-.017 1.373-.275 1.88-.773.506-.498.769-1.13.786-1.894v-7.52c-.017-.765-.28-1.396-.786-1.894-.507-.497-1.134-.756-1.88-.773zM8 11.107c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c0-.373.129-.689.386-.947.258-.257.574-.386.947-.386zm8 0c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c.017-.391.15-.711.4-.96.249-.249.56-.373.933-.373z"/>
+                </svg>
+                <span>{{ .label }}</span>
+              </a>
+              {{ end }}
+            {{ end }}
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{/* 装饰性背景 */}}
+<div class="home-decoration">
+  <div class="deco-circle deco-circle-1"></div>
+  <div class="deco-circle deco-circle-2"></div>
+  <div class="deco-circle deco-circle-3"></div>
+  <div class="typing-text">
+    <span class="typing"></span>
+    <span class="typing-cursor"></span>
+  </div>
+</div>
+
+<style>
+/* 装饰区域 */
+.home-decoration {
+  position: relative;
+  height: 120px;
+  overflow: hidden;
+  margin: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.deco-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(0,120,212,0.25), rgba(0,120,212,0.12));
+  animation: float 6s ease-in-out infinite;
+}
+.deco-circle-1 { width: 140px; height: 140px; top: -30px; left: 10%; animation-delay: 0s; }
+.deco-circle-2 { width: 100px; height: 100px; top: 20px; left: 50%; animation-delay: 2s; }
+.deco-circle-3 { width: 120px; height: 120px; top: -20px; right: 15%; animation-delay: 4s; }
+@keyframes float {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.6; }
+  50% { transform: translateY(-20px) scale(1.05); opacity: 1; }
+}
+
+/* 打字动画 */
+.typing-text {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+.typing {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #1d1d1f;
+  letter-spacing: 0.02em;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+}
+.typing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.2em;
+  background: #0078D4;
+  margin-left: 2px;
+  animation: blink 0.8s infinite;
+  vertical-align: middle;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* 按钮基础样式 */
+.action-btn {
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.btn-github {
+  background: #1d1d1f;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15), 0 4px 12px rgba(0,0,0,0.1);
+}
+.btn-bilibili {
+  background: #FB7299;
+  box-shadow: 0 1px 3px rgba(251,114,153,0.3), 0 4px 12px rgba(251,114,153,0.2);
+}
+.action-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+.btn-github:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25), 0 6px 20px rgba(0,0,0,0.15);
+}
+.btn-bilibili:hover {
+  box-shadow: 0 2px 8px rgba(251,114,153,0.4), 0 6px 20px rgba(251,114,153,0.3);
+}
+
+/* 暗色模式 */
+.dark .typing,
+.dark .home-info-bar h1 { color: #f5f5f7; }
+.dark .home-info-bar p,
+.dark .home-info-bar .flex.flex-col > div { color: #a1a1a6; }
+.dark .deco-circle { background: linear-gradient(135deg, rgba(0,212,255,0.15), rgba(0,212,255,0.08)); }
+.dark .btn-github { background: #fff; color: #1d1d1f; box-shadow: 0 1px 3px rgba(255,255,255,0.15), 0 4px 12px rgba(255,255,255,0.1); }
+.dark .btn-github:hover { box-shadow: 0 2px 8px rgba(255,255,255,0.25), 0 6px 20px rgba(255,255,255,0.15); }
+
+/* 手机端适配 */
+@media (max-width: 768px) {
+  .action-btn:hover { transform: none; filter: none; }
+
+  .home-decoration { height: 60px; margin: 0; }
+  .typing { font-size: 1rem; }
+  .deco-circle-1, .deco-circle-2, .deco-circle-3 { display: block; opacity: 0.6; }
+  .deco-circle-1 { width: 50px; height: 50px; top: -10px; left: -10px; }
+  .deco-circle-2 { width: 30px; height: 30px; top: 10px; left: auto; right: -5px; }
+  .deco-circle-3 { width: 40px; height: 40px; top: auto; bottom: 5px; right: 20%; }
+
+  .home-info-bar .lg\:grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 0 0 8px;
+  }
+  .home-info-bar img,
+  .home-info-bar .flex.items-center > div:first-child {
+    width: 70px;
+    height: 70px;
+    font-size: 1.6rem;
+    border: 2px solid transparent;
+    background: linear-gradient(#1a1a2e, #1a1a2e) padding-box, linear-gradient(135deg, #00d4ff, #0a8fdc, #667eea) border-box;
+  }
+  .home-info-bar > div > div:first-child { width: 100%; justify-content: flex-start; }
+  .home-info-bar .flex.items-center { gap: 8px; }
+  .home-info-bar .flex.items-center > div:last-child { height: auto; justify-content: flex-end; flex: 1; min-width: 0; width: auto; }
+  .home-info-bar p { white-space: nowrap; }
+  .home-info-bar h1 { font-size: 1.2rem; font-weight: 600; margin-bottom: 4px; }
+  .home-info-bar p { font-size: 0.8rem !important; color: #888 !important; margin: 0 !important; white-space: nowrap !important; overflow: visible !important; text-overflow: clip !important; width: max-content !important; max-width: none !important; }
+  .home-info-bar .flex.flex-col { gap: 6px; }
+  .home-info-bar .flex.flex-col > div { font-size: 0.9rem; }
+
+  .dark .home-info-bar h1 { color: #f5f5f7; }
+  .dark .home-info-bar p { color: #a1a1a6; }
+  .dark .home-info-bar .flex.flex-col > div { color: #a1a1a6; }
+
+  .home-info-bar .flex.flex-col.gap-2 {
+    width: 100%;
+    flex-direction: row;
+    gap: 12px;
+    margin-top: 20px;
+  }
+  .home-info-bar .action-btn {
+    flex: 1;
+    justify-content: center;
+    padding: 8px 0;
+    font-size: 13px;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const text = '欢迎访问标仔的个人主页';
+  const typing = document.querySelector('.typing');
+  let i = 0;
+  function typeWriter() {
+    if (i < text.length) {
+      typing.textContent += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, 150);
+    }
+  }
+  typeWriter();
+});
+</script>
+
+<section>
+  {{ partial "recent-articles/main.html" . }}
+</section>

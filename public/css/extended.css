@@ -1,0 +1,534 @@
+/* ===== 苹果风格 · 毛玻璃卡片 ===== */
+
+/* 首页信息栏 */
+.home-info-bar {
+    background: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(20px) saturate(200%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(200%) !important;
+    border-radius: 24px !important;
+    padding: 48px 50px !important;
+    margin: 0 40px !important;
+}
+
+.home-info-bar h1 {
+    font-size: 2.5rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 12px !important;
+    letter-spacing: -0.02em !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+}
+
+.home-info-bar p {
+    font-size: 1.2rem !important;
+    color: #666 !important;
+    margin: 0 !important;
+    font-weight: 400 !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+}
+
+.dark .home-info-bar {
+    background: rgba(28, 28, 30, 0.6) !important;
+}
+
+/* 手机端信息栏 */
+@media (max-width: 768px) {
+    .home-info-bar {
+        margin: 0 16px !important;
+        padding: 24px 20px !important;
+        border-radius: 20px !important;
+    }
+    .home-info-bar > div {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+        padding: 0 !important;
+    }
+    .home-info-bar > div > div {
+        justify-content: center;
+        text-align: center;
+    }
+    .home-info-bar .flex.items-center.gap-8 {
+        flex-direction: column;
+        gap: 12px !important;
+    }
+    .home-info-bar .flex.items-center.gap-8 > div:last-child {
+        margin-left: 0 !important;
+    }
+    .home-info-bar h1 {
+        font-size: 1.6rem !important;
+        margin-bottom: 8px !important;
+    }
+    .home-info-bar p {
+        font-size: 0.95rem !important;
+    }
+    .home-info-bar .flex.flex-col.gap-2 {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px !important;
+        flex-wrap: wrap;
+    }
+    .home-info-bar img {
+        width: 90px !important;
+        height: 90px !important;
+    }
+}
+
+/* 网格：最大4列，自适应，完美居中 */
+.w-full.grid,
+.grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr)) !important;
+    max-width: 1600px !important;
+    margin: 0 auto !important;
+    padding: 0 40px !important;
+    gap: 40px !important;
+}
+
+/* 强制最多 4 列 */
+@media (min-width: 1280px) {
+    .w-full.grid,
+    .grid {
+        grid-template-columns: repeat(4, 1fr) !important;
+    }
+}
+
+/* 响应式：小屏幕自动适配 */
+@media (max-width: 1024px) {
+    .w-full.grid,
+    .grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+    }
+}
+@media (max-width: 640px) {
+    .w-full.grid,
+    .grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+        padding: 0 16px !important;
+    }
+}
+
+/* 手机端卡片优化 */
+@media (max-width: 640px) {
+    .article-link--card {
+        border-radius: 16px !important;
+        aspect-ratio: 3/5 !important;
+        box-shadow: 0 3px 16px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04) !important;
+        overflow: hidden !important;
+    }
+    .article-link--card .thumbnail_card {
+        height: 65% !important;
+        flex: 0 0 65% !important;
+    }
+    .article-link--card .p-4 {
+        padding: 5px 7px !important;
+        height: 35% !important;
+        flex: 0 0 35% !important;
+        gap: 2px !important;
+    }
+    .article-link--card header {
+        margin-bottom: 0 !important;
+        padding: 0 !important;
+    }
+    .article-link--card header h2 {
+        font-size: 0.75rem !important;
+        line-height: 1.15 !important;
+        max-height: 2.3em !important;
+        -webkit-line-clamp: 2 !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        word-break: break-word !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .article-link--card .card-date {
+        font-size: 0.55rem !important;
+        white-space: nowrap !important;
+        margin: 1px 0 !important;
+    }
+    .article-link--card .card-tags {
+        gap: 2px !important;
+        margin-top: auto !important;
+    }
+    .article-link--card .tag-badge {
+        font-size: 0.5rem !important;
+        padding: 1px 4px !important;
+        white-space: nowrap !important;
+    }
+    .article-link--card:hover {
+        transform: translateY(-4px) scale(1.02) !important;
+    }
+}
+
+/* 卡片本体 - 苹果风格 */
+.article-link--card {
+    border-radius: 20px !important;
+    border: none !important;
+    background: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(30px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(30px) saturate(180%) !important;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04) !important;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    aspect-ratio: 5/8 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+}
+
+/* 悬浮效果 */
+.article-link--card:hover {
+    transform: translateY(-8px) scale(1.03) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12), 0 8px 16px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* 图片容器 - 占高度 65% */
+.article-link--card .thumbnail_card {
+    height: 65% !important;
+    flex: 0 0 65% !important;
+}
+
+/* 封面图片 */
+.article-link--card .thumbnail_card img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+/* 内容区域 - Flex 纵向布局，让标签始终在底部 */
+.article-link--card .p-4 {
+    padding: 10px 12px !important;
+    height: 35% !important;
+    flex: 0 0 35% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    box-sizing: border-box !important;
+    gap: 4px !important;
+}
+
+/* 确保 header 标题紧凑 */
+.article-link--card .p-4 header {
+    flex-shrink: 0 !important;
+}
+
+/* 标题 */
+.article-link--card h2 {
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    color: #1d1d1f !important;
+    line-height: 1.3 !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    letter-spacing: -0.01em !important;
+    flex-shrink: 0 !important;
+    min-height: 2.6em !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif !important;
+}
+
+/* 时间戳 */
+.article-link--card .card-date {
+    font-size: 0.65rem !important;
+    margin: 2px 0 !important;
+}
+
+/* 隐藏摘要 */
+.article-link--card .article-link__summary {
+    display: none !important;
+}
+
+/* 隐藏时间戳 */
+.article-link--card .text-sm {
+    display: none !important;
+}
+
+/* 标签容器 - 始终在底部 */
+.article-link--card .card-tags {
+    margin-top: auto !important;
+    padding-top: 4px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 3px !important;
+}
+
+/* 标签样式 */
+.article-link--card .tag-badge {
+    display: inline-block !important;
+    font-size: 0.55rem !important;
+    padding: 0px 9px !important;
+    border-radius: 8px !important;
+    background: rgba(0, 120, 212, 0.08) !important;
+    color: #0078D4 !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+    letter-spacing: 0 !important;
+    border: 1px solid rgba(0, 120, 212, 0.15) !important;
+}
+
+/* ==================== 暗色模式 ==================== */
+.dark .article-link--card {
+    background: rgba(30, 30, 35, 0.7) !important;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+.dark .article-link--card h2 {
+    color: #f5f5f7 !important;
+}
+.dark .article-link--card .article-link__summary {
+    color: #86868b !important;
+}
+.dark .article-link--card a[href*="/tags/"],
+.dark .article-link--card .tag-badge {
+    background: rgba(44, 44, 46, 0.6) !important;
+    color: #64d2ff !important;
+    border-color: rgba(100, 210, 255, 0.2) !important;
+}
+
+/* ==================== 文章正文布局优化 ==================== */
+
+/* 正文字号与行高 */
+.prose {
+    font-size: 1.0625rem !important;
+    line-height: 1.85 !important;
+    letter-spacing: 0.01em !important;
+}
+
+/* 段落间距 */
+.prose p {
+    margin-top: 1.25em !important;
+    margin-bottom: 1.25em !important;
+}
+
+/* 标题层级优化 */
+.prose h1 {
+    font-size: 1.875rem !important;
+    line-height: 1.3 !important;
+    margin-top: 2em !important;
+    margin-bottom: 0.75em !important;
+    letter-spacing: -0.02em !important;
+    font-weight: 700 !important;
+}
+.prose h2 {
+    font-size: 1.5rem !important;
+    line-height: 1.35 !important;
+    margin-top: 1.75em !important;
+    margin-bottom: 0.6em !important;
+    letter-spacing: -0.015em !important;
+    font-weight: 650 !important;
+    padding-bottom: 0.3em !important;
+    border-bottom: 1px solid rgba(128,128,128,0.15) !important;
+}
+.prose h3 {
+    font-size: 1.25rem !important;
+    line-height: 1.4 !important;
+    margin-top: 1.5em !important;
+    margin-bottom: 0.5em !important;
+    font-weight: 600 !important;
+}
+.prose h4 {
+    font-size: 1.1rem !important;
+    line-height: 1.45 !important;
+    margin-top: 1.25em !important;
+    margin-bottom: 0.4em !important;
+    font-weight: 600 !important;
+}
+
+/* 引用块样式 */
+.prose blockquote {
+    border-left: 3px solid #0078D4 !important;
+    padding-left: 1.25em !important;
+    margin-left: 0 !important;
+    font-style: normal !important;
+    color: #555 !important;
+    background: rgba(0,120,212,0.04) !important;
+    padding: 1em 1.25em !important;
+    border-radius: 0 8px 8px 0 !important;
+}
+.dark .prose blockquote {
+    background: rgba(10,132,255,0.08) !important;
+    color: #a1a1a6 !important;
+    border-left-color: #0a84ff !important;
+}
+
+/* 列表样式优化 */
+.prose ul, .prose ol {
+    margin-top: 0.75em !important;
+    margin-bottom: 0.75em !important;
+    padding-left: 1.5em !important;
+}
+.prose li {
+    margin-top: 0.4em !important;
+    margin-bottom: 0.4em !important;
+    line-height: 1.7 !important;
+}
+.prose ul > li {
+    list-style-type: disc !important;
+}
+.prose ul > li::marker {
+    color: #0078D4 !important;
+}
+.dark .prose ul > li::marker {
+    color: #0a84ff !important;
+}
+
+/* 代码样式 */
+.prose code {
+    font-size: 0.9em !important;
+    padding: 0.15em 0.4em !important;
+    border-radius: 4px !important;
+    font-weight: 450 !important;
+}
+.prose pre {
+    border-radius: 12px !important;
+    padding: 1.25em !important;
+    margin: 1.5em 0 !important;
+    font-size: 0.875rem !important;
+    line-height: 1.6 !important;
+}
+.prose pre code {
+    padding: 0 !important;
+    background: none !important;
+    font-size: inherit !important;
+}
+
+/* 表格样式 */
+.prose table {
+    font-size: 0.95rem !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    margin: 1.5em 0 !important;
+}
+.prose th {
+    background: rgba(0,120,212,0.08) !important;
+    font-weight: 600 !important;
+    padding: 0.75em 1em !important;
+}
+.prose td {
+    padding: 0.65em 1em !important;
+}
+
+/* 分割线 */
+.prose hr {
+    margin: 2em 0 !important;
+    border-color: rgba(128,128,128,0.2) !important;
+}
+
+/* 链接样式 */
+.prose a {
+    text-decoration: underline !important;
+    text-underline-offset: 2px !important;
+    transition: color 0.2s !important;
+}
+
+/* 图片圆角与阴影 */
+.prose img {
+    border-radius: 12px !important;
+    margin: 1.5em auto !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08) !important;
+}
+
+/* 暗色模式正文适配 */
+.dark .prose {
+    color: #e5e5e7 !important;
+}
+.dark .prose h1,
+.dark .prose h2,
+.dark .prose h3,
+.dark .prose h4 {
+    color: #f5f5f7 !important;
+}
+.dark .prose code {
+    background: rgba(255,255,255,0.1) !important;
+}
+.dark .prose pre {
+    background: rgba(28,28,30,0.8) !important;
+}
+.dark .prose th {
+    background: rgba(10,132,255,0.1) !important;
+}
+.dark .prose table {
+    border: 1px solid rgba(255,255,255,0.1) !important;
+}
+.dark .prose img {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3) !important;
+}
+
+/* 移动端适配 */
+@media (max-width: 640px) {
+    .prose {
+        font-size: 1rem !important;
+        line-height: 1.8 !important;
+    }
+    .prose h1 { font-size: 1.6rem !important; }
+    .prose h2 { font-size: 1.3rem !important; }
+    .prose h3 { font-size: 1.15rem !important; }
+    .prose pre {
+        border-radius: 8px !important;
+        padding: 1em !important;
+        font-size: 0.8rem !important;
+        margin: 1em 0 !important;
+    }
+}
+
+/* 标签/列表页优化 - 让文章卡片显示更多 */
+@media (max-width: 768px) {
+    .list-article-header h1 {
+        font-size: 1.5rem !important;
+        margin-top: 1rem !important;
+    }
+    .grid article {
+        aspect-ratio: 3/4 !important;
+    }
+}
+
+/* 标签页整体优化 */
+.taxonomy-section {
+    padding-top: 1rem !important;
+}
+.taxonomy-section h1 {
+    font-size: 1.8rem !important;
+    margin-bottom: 1rem !important;
+}
+
+/* 文章详情页全宽布局 */
+#single_header {
+    max-width: 100% !important;
+    padding: 0 40px !important;
+}
+#single_header h1 {
+    text-align: left !important;
+}
+.article-content {
+    max-width: 100% !important;
+    padding: 0 40px !important;
+}
+.article-content .prose {
+    max-width: 100% !important;
+}
+section.flex.flex-col.max-w-full {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+section.flex.flex-col.max-w-full > div {
+    max-width: 100% !important;
+    width: 100% !important;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    #single_header {
+        padding: 0 16px !important;
+    }
+    #single_header h1 {
+        font-size: 1.6rem !important;
+    }
+    .article-content {
+        padding: 0 16px !important;
+    }
+}

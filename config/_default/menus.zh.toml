@@ -1,0 +1,21 @@
+# -- Main Menu --
+
+[[main]]
+  name = "首页"
+  pageRef = "/"
+  weight = 1
+
+[[main]]
+  name = "文章"
+  pageRef = "posts"
+  weight = 2
+
+[[main]]
+  name = "标签"
+  pageRef = "tags"
+  weight = 3
+
+[[main]]
+  name = "简历"
+  pageRef = "about"
+  weight = 4
