@@ -1,0 +1,94 @@
+# -- Theme Configuration --
+
+# 主题色彩
+colorScheme = "ocean"
+defaultAppearance = "light"
+autoSwitchAppearance = false
+
+# 自定义 CSS
+customCSS = ["css/extended.css"]
+
+# 无障碍和搜索
+enableA11y = false
+enableSearch = true
+enableCodeCopy = true
+
+# 允许热链接远程图片
+hotlinkFeatureImage = true
+
+# 导航栏 - 固定顶部
+[header]
+  layout = "fixed"
+
+# 首页布局 - 使用卡片视图
+[homepage]
+  layout = "card"
+  showRecent = true
+  showRecentItems = 8
+  showMoreLink = false
+  showMoreLinkDest = "/posts/"
+  cardView = true
+  cardViewScreenWidth = true
+  bio = "记录生活，分享技术"
+  homepageImage = "/images/avatar.jpg"
+
+# 联系方式
+[homepage.social]
+  wechat = "htlb1214"
+  phone = "134-2224-3119"
+
+# 首页右侧快捷按钮
+[[homepage.actionButtons]]
+  label = "GitHub"
+  url = "https://github.com/BiaoZai1214"
+  icon = "github"
+
+[[homepage.actionButtons]]
+  label = "bilibili"
+  url = "https://space.bilibili.com/1850228834"
+  icon = "bilibili"
+
+# 文章页面
+[article]
+  showDate = true
+  showDateUpdated = false
+  showAuthor = true
+  showBreadcrumbs = true
+  showDraftLabel = true
+  showEdit = false
+  showReadingTime = true
+  showTableOfContents = false
+  showTaxonomies = true
+  showWordCount = true
+
+# 列表页面 - 卡片视图
+[list]
+  showHero = false
+  showBreadcrumbs = false
+  showSummary = true
+  showTableOfContents = false
+  showCards = true
+  cardView = true
+  cardViewScreenWidth = false
+  groupByYear = false
+
+# 分类页面
+[taxonomy]
+  showTermCount = true
+  showHero = false
+  showBreadcrumbs = false
+  cardView = true
+
+# 标签页面
+[term]
+  showHero = false
+  showBreadcrumbs = false
+  cardView = true
+
+# 页脚
+[footer]
+  showMenu = true
+  showCopyright = false
+  showThemeAttribution = false
+  showAppearanceSwitcher = true
+  showScrollToTop = true

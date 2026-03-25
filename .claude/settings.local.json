@@ -1,0 +1,39 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(hugo)",
+      "Bash(hugo server:*)",
+      "Bash(find E:标仔Bzone-blog -type f \\\\\\(-name *.html -o -name *.toml -o -name *.css -o -name *.js \\\\\\) ! -path */themes/blowfish/* ! -path */public/* ! -path */resources/*)",
+      "Bash(ipconfig)",
+      "Bash(hugo --buildStats)",
+      "Bash(hugo config:*)",
+      "Bash(taskkill /F /IM hugo.exe)",
+      "Bash(hugo --ignoreCache)",
+      "Bash(du -sh public/*)",
+      "Bash(tasklist)",
+      "Bash(taskkill:*)",
+      "Bash(pkill -f \"hugo server\")",
+      "Bash(curl -s http://localhost:1313)",
+      "Bash(curl -s http://localhost:3634)",
+      "Bash(curl -s \"http://localhost:1313/css/extended.css\")",
+      "Bash(ls -la E:/标仔/Bzone-blog/.hugo*)",
+      "Bash(rm -f E:/标仔/Bzone-blog/public/css/extended.css)",
+      "Bash(hugo --verbose)",
+      "Bash(curl -s \"http://localhost:4000/css/extended.css\")",
+      "Bash(curl -s \"http://localhost:4000\")",
+      "Bash(netstat -ano)",
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(curl:*)",
+      "Bash(tasklist /FI \"PID eq 31652\")",
+      "Bash(ps -p 31652 -o comm=)",
+      "Bash(git config:*)",
+      "Bash(git credential-manager:*)",
+      "Bash(cmdkey /delete:gitee.com)",
+      "Bash(cmdkey /delete:https://gitee.com)",
+      "Bash(git init:*)",
+      "Bash(git remote:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ]
+  }
+}
