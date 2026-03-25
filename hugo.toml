@@ -5,8 +5,8 @@ title = '标仔Blog'
 theme = "blowfish"
 
 # 关键修复：让图片、CSS 路径正确
-relativeURLs = true
-canonifyURLs = false
+# relativeURLs = true
+# canonifyURLs = false
 
 # 作者信息
 [author]
