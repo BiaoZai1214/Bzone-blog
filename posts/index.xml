@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on 标仔Blog</title><link>https://bzone-blog.github.io/posts/</link><description>Recent content in Posts on 标仔Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 24 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://bzone-blog.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>欢迎来到 Bzone Blog</title><link>https://bzone-blog.github.io/posts/hello-world/</link><pubDate>Tue, 24 Mar 2026 00:00:00 +0000</pubDate><guid>https://bzone-blog.github.io/posts/hello-world/</guid><description>&lt;p&gt;这是博客的第一篇文章！&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on 标仔Blog</title><link>https://BiaoZai1214.github.io/Bzone-blog/posts/</link><description>Recent content in Posts on 标仔Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 24 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://BiaoZai1214.github.io/Bzone-blog/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>欢迎来到 Bzone Blog</title><link>https://BiaoZai1214.github.io/Bzone-blog/posts/hello-world/</link><pubDate>Tue, 24 Mar 2026 00:00:00 +0000</pubDate><guid>https://BiaoZai1214.github.io/Bzone-blog/posts/hello-world/</guid><description>&lt;p&gt;这是博客的第一篇文章！&lt;/p&gt;
 
 &lt;h2 class="relative group"&gt;为什么写博客？
  &lt;div id="为什么写博客" class="anchor"&gt;&lt;/div&gt;
@@ -31,7 +31,7 @@
 &lt;li&gt;项目经验&lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;&lt;p&gt;&amp;ldquo;Talk is cheap, show me the code.&amp;rdquo; — Linus Torvalds&lt;/p&gt;
-&lt;/blockquote&gt;&lt;p&gt;欢迎常来！&lt;/p&gt;</description></item><item><title>FreeRTOS 任务调度：优先级与状态机解析</title><link>https://bzone-blog.github.io/posts/freertos-task-scheduling/</link><pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate><guid>https://bzone-blog.github.io/posts/freertos-task-scheduling/</guid><description>&lt;p&gt;FreeRTOS 是最流行的开源实时操作系统，广泛应用于 MCU 项目中。本文深入解析其任务调度机制。&lt;/p&gt;
+&lt;/blockquote&gt;&lt;p&gt;欢迎常来！&lt;/p&gt;</description></item><item><title>FreeRTOS 任务调度：优先级与状态机解析</title><link>https://BiaoZai1214.github.io/Bzone-blog/posts/freertos-task-scheduling/</link><pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate><guid>https://BiaoZai1214.github.io/Bzone-blog/posts/freertos-task-scheduling/</guid><description>&lt;p&gt;FreeRTOS 是最流行的开源实时操作系统，广泛应用于 MCU 项目中。本文深入解析其任务调度机制。&lt;/p&gt;
 
 &lt;h2 class="relative group"&gt;任务状态机
  &lt;div id="任务状态机" class="anchor"&gt;&lt;/div&gt;
@@ -111,7 +111,7 @@
 &lt;li&gt;任务栈空间要合理估算&lt;/li&gt;
 &lt;li&gt;避免在中断中调用阻塞 API&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;掌握任务调度是 RTOS 开发的核心技能！&lt;/p&gt;</description></item><item><title>Hugo 博客搭建指南</title><link>https://bzone-blog.github.io/posts/hugo-guide/</link><pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate><guid>https://bzone-blog.github.io/posts/hugo-guide/</guid><description>&lt;p&gt;本文介绍如何使用 Hugo 快速搭建个人博客。&lt;/p&gt;
+&lt;p&gt;掌握任务调度是 RTOS 开发的核心技能！&lt;/p&gt;</description></item><item><title>Hugo 博客搭建指南</title><link>https://BiaoZai1214.github.io/Bzone-blog/posts/hugo-guide/</link><pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate><guid>https://BiaoZai1214.github.io/Bzone-blog/posts/hugo-guide/</guid><description>&lt;p&gt;本文介绍如何使用 Hugo 快速搭建个人博客。&lt;/p&gt;
 
 &lt;h2 class="relative group"&gt;安装 Hugo
  &lt;div id="安装-hugo" class="anchor"&gt;&lt;/div&gt;
@@ -148,7 +148,7 @@
  
 &lt;/h2&gt;
 &lt;div class="highlight-wrapper"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;hugo server -D&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;访问 &lt;code&gt;http://localhost:1313&lt;/code&gt; 即可预览。&lt;/p&gt;</description></item><item><title>FreeRTOS 任务优先级与调度</title><link>https://bzone-blog.github.io/posts/freertos-task/</link><pubDate>Sat, 21 Mar 2026 00:00:00 +0000</pubDate><guid>https://bzone-blog.github.io/posts/freertos-task/</guid><description>&lt;p&gt;FreeRTOS 是最流行的开源实时操作系统。&lt;/p&gt;
+&lt;p&gt;访问 &lt;code&gt;http://localhost:1313&lt;/code&gt; 即可预览。&lt;/p&gt;</description></item><item><title>FreeRTOS 任务优先级与调度</title><link>https://BiaoZai1214.github.io/Bzone-blog/posts/freertos-task/</link><pubDate>Sat, 21 Mar 2026 00:00:00 +0000</pubDate><guid>https://BiaoZai1214.github.io/Bzone-blog/posts/freertos-task/</guid><description>&lt;p&gt;FreeRTOS 是最流行的开源实时操作系统。&lt;/p&gt;
 
 &lt;h2 class="relative group"&gt;任务状态机
  &lt;div id="任务状态机" class="anchor"&gt;&lt;/div&gt;
@@ -196,7 +196,7 @@
 &lt;li&gt;&lt;strong&gt;时间片轮转&lt;/strong&gt; - 同优先级任务轮流执行&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;优先级继承&lt;/strong&gt; - 解决优先级反转问题&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;合理设置任务优先级是 RTOS 开发的关键！&lt;/p&gt;</description></item><item><title>SPI 协议深度剖析</title><link>https://bzone-blog.github.io/posts/spi%E5%8D%8F%E8%AE%AE/</link><pubDate>Thu, 19 Mar 2026 00:00:00 +0000</pubDate><guid>https://bzone-blog.github.io/posts/spi%E5%8D%8F%E8%AE%AE/</guid><description>&lt;p&gt;SPI 是嵌入式最常用的高速通信协议之一。&lt;/p&gt;
+&lt;p&gt;合理设置任务优先级是 RTOS 开发的关键！&lt;/p&gt;</description></item><item><title>SPI 协议深度剖析</title><link>https://BiaoZai1214.github.io/Bzone-blog/posts/spi%E5%8D%8F%E8%AE%AE/</link><pubDate>Thu, 19 Mar 2026 00:00:00 +0000</pubDate><guid>https://BiaoZai1214.github.io/Bzone-blog/posts/spi%E5%8D%8F%E8%AE%AE/</guid><description>&lt;p&gt;SPI 是嵌入式最常用的高速通信协议之一。&lt;/p&gt;
 
 &lt;h2 class="relative group"&gt;硬件连接
  &lt;div id="硬件连接" class="anchor"&gt;&lt;/div&gt;
@@ -288,7 +288,7 @@
 &lt;li&gt;配置正确的时钟极性和相位&lt;/li&gt;
 &lt;li&gt;片选信号要手动控制还是硬件自动&lt;/li&gt;
 &lt;li&gt;考虑 DMA 提升传输效率&lt;/li&gt;
-&lt;/ol&gt;</description></item><item><title>I2C 协议从零理解</title><link>https://bzone-blog.github.io/posts/i2c%E5%8D%8F%E8%AE%AE/</link><pubDate>Wed, 18 Mar 2026 00:00:00 +0000</pubDate><guid>https://bzone-blog.github.io/posts/i2c%E5%8D%8F%E8%AE%AE/</guid><description>&lt;p&gt;I2C 是最常用的板级通信协议，只需要两根线。&lt;/p&gt;
+&lt;/ol&gt;</description></item><item><title>I2C 协议从零理解</title><link>https://BiaoZai1214.github.io/Bzone-blog/posts/i2c%E5%8D%8F%E8%AE%AE/</link><pubDate>Wed, 18 Mar 2026 00:00:00 +0000</pubDate><guid>https://BiaoZai1214.github.io/Bzone-blog/posts/i2c%E5%8D%8F%E8%AE%AE/</guid><description>&lt;p&gt;I2C 是最常用的板级通信协议，只需要两根线。&lt;/p&gt;
 
 &lt;h2 class="relative group"&gt;信号线
  &lt;div id="信号线" class="anchor"&gt;&lt;/div&gt;

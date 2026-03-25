@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FreeRTOS on 标仔Blog</title><link>https://bzone-blog.github.io/tags/freertos/</link><description>Recent content in FreeRTOS on 标仔Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 23 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://bzone-blog.github.io/tags/freertos/index.xml" rel="self" type="application/rss+xml"/><item><title>FreeRTOS 任务调度：优先级与状态机解析</title><link>https://bzone-blog.github.io/posts/freertos-task-scheduling/</link><pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate><guid>https://bzone-blog.github.io/posts/freertos-task-scheduling/</guid><description>&lt;p&gt;FreeRTOS 是最流行的开源实时操作系统，广泛应用于 MCU 项目中。本文深入解析其任务调度机制。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FreeRTOS on 标仔Blog</title><link>https://BiaoZai1214.github.io/Bzone-blog/tags/freertos/</link><description>Recent content in FreeRTOS on 标仔Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 23 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://BiaoZai1214.github.io/Bzone-blog/tags/freertos/index.xml" rel="self" type="application/rss+xml"/><item><title>FreeRTOS 任务调度：优先级与状态机解析</title><link>https://BiaoZai1214.github.io/Bzone-blog/posts/freertos-task-scheduling/</link><pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate><guid>https://BiaoZai1214.github.io/Bzone-blog/posts/freertos-task-scheduling/</guid><description>&lt;p&gt;FreeRTOS 是最流行的开源实时操作系统，广泛应用于 MCU 项目中。本文深入解析其任务调度机制。&lt;/p&gt;
 
 &lt;h2 class="relative group"&gt;任务状态机
  &lt;div id="任务状态机" class="anchor"&gt;&lt;/div&gt;
@@ -78,7 +78,7 @@
 &lt;li&gt;任务栈空间要合理估算&lt;/li&gt;
 &lt;li&gt;避免在中断中调用阻塞 API&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;掌握任务调度是 RTOS 开发的核心技能！&lt;/p&gt;</description></item><item><title>FreeRTOS 任务优先级与调度</title><link>https://bzone-blog.github.io/posts/freertos-task/</link><pubDate>Sat, 21 Mar 2026 00:00:00 +0000</pubDate><guid>https://bzone-blog.github.io/posts/freertos-task/</guid><description>&lt;p&gt;FreeRTOS 是最流行的开源实时操作系统。&lt;/p&gt;
+&lt;p&gt;掌握任务调度是 RTOS 开发的核心技能！&lt;/p&gt;</description></item><item><title>FreeRTOS 任务优先级与调度</title><link>https://BiaoZai1214.github.io/Bzone-blog/posts/freertos-task/</link><pubDate>Sat, 21 Mar 2026 00:00:00 +0000</pubDate><guid>https://BiaoZai1214.github.io/Bzone-blog/posts/freertos-task/</guid><description>&lt;p&gt;FreeRTOS 是最流行的开源实时操作系统。&lt;/p&gt;
 
 &lt;h2 class="relative group"&gt;任务状态机
  &lt;div id="任务状态机" class="anchor"&gt;&lt;/div&gt;
