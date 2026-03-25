@@ -3,39 +3,39 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>http://localhost:3000/Bzone-blog/posts/</loc>
+    <loc>http://localhost:9580/Bzone-blog/posts/</loc>
     <lastmod>2026-03-24T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>http://localhost:3000/Bzone-blog/</loc>
+    <loc>http://localhost:9580/Bzone-blog/</loc>
     <lastmod>2026-03-24T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>http://localhost:3000/Bzone-blog/about/</loc>
+    <loc>http://localhost:9580/Bzone-blog/about/</loc>
     <lastmod>2026-03-24T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>http://localhost:3000/Bzone-blog/posts/hello-world/</loc>
+    <loc>http://localhost:9580/Bzone-blog/posts/hello-world/</loc>
     <lastmod>2026-03-24T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>http://localhost:3000/Bzone-blog/posts/freertos-task-scheduling/</loc>
+    <loc>http://localhost:9580/Bzone-blog/posts/freertos-task-scheduling/</loc>
     <lastmod>2026-03-23T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>http://localhost:3000/Bzone-blog/posts/hugo-guide/</loc>
+    <loc>http://localhost:9580/Bzone-blog/posts/hugo-guide/</loc>
     <lastmod>2026-03-23T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>http://localhost:3000/Bzone-blog/posts/freertos-task/</loc>
+    <loc>http://localhost:9580/Bzone-blog/posts/freertos-task/</loc>
     <lastmod>2026-03-21T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>http://localhost:3000/Bzone-blog/posts/spi%E5%8D%8F%E8%AE%AE/</loc>
+    <loc>http://localhost:9580/Bzone-blog/posts/spi%E5%8D%8F%E8%AE%AE/</loc>
     <lastmod>2026-03-19T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>http://localhost:3000/Bzone-blog/posts/i2c%E5%8D%8F%E8%AE%AE/</loc>
+    <loc>http://localhost:9580/Bzone-blog/posts/i2c%E5%8D%8F%E8%AE%AE/</loc>
     <lastmod>2026-03-18T00:00:00+00:00</lastmod>
   </url>
 </urlset>
