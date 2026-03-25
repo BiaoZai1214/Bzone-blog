@@ -16,7 +16,7 @@
           {{ with .Site.Params.homepage.social }}
             {{ with .wechat }}
               <div class="contact-item">
-                <span>💬</span>
+                <span class="wechat-icon"></span>
                 <span>{{ . }}</span>
               </div>
             {{ end }}
@@ -232,6 +232,37 @@
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
+}
+
+/* 微信绿色气泡图标 */
+.wechat-icon {
+  width: 20px;
+  height: 20px;
+  background: #07c160;
+  border-radius: 4px;
+  position: relative;
+  flex-shrink: 0;
+}
+.wechat-icon::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 14px;
+  border: 2px solid #fff;
+  border-radius: 2px;
+}
+.wechat-icon::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 50%;
 }
 
 /* 头像样式 */
