@@ -4,6 +4,10 @@ locale = 'zh-CN'
 title = '标仔Blog'
 theme = "blowfish"
 
+# 关键修复：让图片、CSS 路径正确
+relativeURLs = true
+canonifyURLs = false
+
 # 作者信息
 [author]
   name = "Bz"
@@ -21,7 +25,7 @@ paginate = 10
 # 启用 emoji
 enableEmoji = true
 
-# 启用 RSSe
+# 启用 Robots
 enableRobotsTXT = true
 
 # 静态文件输出目录
@@ -30,7 +34,7 @@ publishDir = "public"
 # 时区
 timeZone = "Asia/Shanghai"
 
-# 菜单设置
+# 菜单
 [[menu.main]]
   identifier = "home"
   name = "首页"
@@ -39,7 +43,7 @@ timeZone = "Asia/Shanghai"
 
 [[menu.main]]
   identifier = "posts"
-  name = ""
+  name = "文章"
   url = "/posts/"
   weight = 2
 
@@ -55,39 +59,37 @@ timeZone = "Asia/Shanghai"
   url = "/about/"
   weight = 4
 
+# ==============================
+# Blowfish 主题正确配置
+# ==============================
 [params]
-  homeInfoParams = {Title = "欢迎", Content = "这里分享技术与生活"}
-
-  # 主题色彩
-  themeColor = "#0078D4"
-
-  # 展示模式 (false = 浅色模式)
+  # 博主名称
+  name = "标仔"
+  
+  # 🎯 头像配置（关键！）
+  avatar = "images/avatar.png"
+  
+  # 首页简介
+  bio = "这里分享技术与生活"
+  
+  # 主题模式
   defaultTheme = "dark"
-
-  # 许可证
+  themeColor = "blue"
+  
+  # 网站信息
   showCopyright = true
   copyright = "CC BY-NC-SA 4.0"
-
-  # 文章阅读时间
-  ShowReadingTime = true
-
-  # 代码块复制按钮
-  codeCopyButton = true
-
-  # 评论系统 (预留)
+  
+  # 功能开关
+  showReadingTime = true
+  codeCopy = true
   comments = false
 
-  # 社交链接
-  [[params.socialIcons]]
-    icon = "twitter"
-    title = "Twitter"
-    url = "https://twitter.com"
+# 社交账号
+[params.social]
+  github = "BiaoZai1214"
+  twitter = "your-twitter"
 
-  [[params.socialIcons]]
-    icon = "github"
-    title = "GitHub"
-    url = "https://github.com"
-
-# 高级配置
+# 构建优化
 [build]
   writeStats = true
