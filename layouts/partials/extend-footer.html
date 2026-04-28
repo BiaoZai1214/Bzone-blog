@@ -1,0 +1,30 @@
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const typingContainer = document.querySelector(".typing-text");
+  const typing = document.querySelector(".typing");
+
+  if (!typingContainer || !typing) {
+    return;
+  }
+
+  const text = typingContainer.dataset.text || "";
+
+  if (!text) {
+    return;
+  }
+
+  let index = 0;
+
+  function typeWriter() {
+    if (index >= text.length) {
+      return;
+    }
+
+    typing.textContent += text.charAt(index);
+    index += 1;
+    window.setTimeout(typeWriter, 150);
+  }
+
+  typeWriter();
+});
+</script>

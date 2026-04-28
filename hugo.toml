@@ -1,94 +1,24 @@
-baseURL = 'https://BiaoZai1214.github.io/Bzone-blog/'
-languageCode = 'zh-cn'
-locale = 'zh-CN'
-title = '标仔Blog'
+baseURL = "https://BiaoZai1214.github.io/Bzone-blog/"
+title = "标仔 Blog"
 theme = "blowfish"
 
-# 🔥 关键修复：让主题资源正确加载
-relativeURLs = false
-canonifyURLs = true
-# 作者信息
-[author]
-  name = "Bz"
-  email = "bzone@example.com"
-
-# 网站描述
-description = "标仔的小空间"
-
-# 启用中文搜索
+languageCode = "zh-CN"
 defaultContentLanguage = "zh-cn"
+hasCJKLanguage = true
+disableLanguages = ["en"]
 
-# 分页设置
-paginate = 10
-
-# 启用 emoji
 enableEmoji = true
-
-# 启用 Robots
 enableRobotsTXT = true
-
-# 静态文件输出目录
+canonifyURLs = true
 publishDir = "public"
-
-# 时区
 timeZone = "Asia/Shanghai"
 
-# 菜单
-[[menu.main]]
-  identifier = "home"
-  name = "首页"
-  url = "/"
-  weight = 1
+[pagination]
+  pagerSize = 10
 
-[[menu.main]]
-  identifier = "posts"
-  name = "文章"
-  url = "/posts/"
-  weight = 2
+[taxonomies]
+  tag = "tags"
+  category = "categories"
 
-[[menu.main]]
-  identifier = "tags"
-  name = "标签"
-  url = "/tags/"
-  weight = 3
-
-[[menu.main]]
-  identifier = "about"
-  name = "关于"
-  url = "/about/"
-  weight = 4
-
-# ==============================
-# Blowfish 主题正确配置
-# ==============================
-[params]
-  # 博主名称
-  name = "标仔"
-  
-  # 🎯 头像配置（关键！）
-  avatar = "images/bz.png"
-  
-  # 首页简介
-  bio = "这里分享技术与生活"
-  
-  # 主题模式
-  defaultTheme = "dark"
-  themeColor = "blue"
-  
-  # 网站信息
-  showCopyright = true
-  copyright = "CC BY-NC-SA 4.0"
-  
-  # 功能开关
-  showReadingTime = true
-  codeCopy = true
-  comments = false
-
-# 社交账号
-[params.social]
-  github = "BiaoZai1214"
-  twitter = "your-twitter"
-
-# 构建优化
 [build]
   writeStats = true
