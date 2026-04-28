@@ -11,6 +11,19 @@
   --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.06);
 }
 
+html[data-theme="dark"] {
+  --bg: #0f1115;
+  --surface: rgba(24, 26, 31, 0.78);
+  --surface-strong: rgba(25, 27, 33, 0.92);
+  --text: #f5f7fa;
+  --muted: #a1a1aa;
+  --line: rgba(255, 255, 255, 0.08);
+  --accent: #ffffff;
+  --accent-soft: rgba(255, 255, 255, 0.08);
+  --shadow: 0 22px 60px rgba(0, 0, 0, 0.32);
+  --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.22);
+}
+
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -24,6 +37,13 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+}
+
+html[data-theme="dark"] body {
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.08), transparent 20%),
+    radial-gradient(circle at 88% 12%, rgba(255, 255, 255, 0.06), transparent 18%),
+    linear-gradient(180deg, #101319 0%, #0b0d11 100%);
 }
 
 body::before,
@@ -56,6 +76,14 @@ body::after {
   animation-duration: 20s;
 }
 
+html[data-theme="dark"] body::before {
+  background: radial-gradient(circle, rgba(255,255,255,0.12), transparent 70%);
+}
+
+html[data-theme="dark"] body::after {
+  background: radial-gradient(circle, rgba(255,255,255,0.08), transparent 72%);
+}
+
 .site-ambient {
   position: fixed;
   z-index: 0;
@@ -83,6 +111,11 @@ body::after {
   animation-duration: 24s;
 }
 
+html[data-theme="dark"] .site-ambient--one,
+html[data-theme="dark"] .site-ambient--two {
+  opacity: 0.14;
+}
+
 a { color: inherit; text-decoration: none; }
 
 .site-shell {
@@ -102,6 +135,11 @@ a { color: inherit; text-decoration: none; }
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 
+html[data-theme="dark"] .site-header {
+  background: rgba(15, 17, 21, 0.72);
+  border-bottom-color: rgba(255, 255, 255, 0.06);
+}
+
 .site-header__inner,
 .site-main,
 .site-footer {
@@ -115,6 +153,13 @@ a { color: inherit; text-decoration: none; }
   align-items: center;
   gap: 20px;
   padding: 14px 0;
+}
+
+.site-header__navwrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .site-brand {
@@ -157,6 +202,45 @@ a { color: inherit; text-decoration: none; }
   transform: translateY(-1px);
 }
 
+html[data-theme="dark"] .site-nav a:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.theme-toggle {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 999px;
+  background: linear-gradient(135deg, #fff 0 50%, #111 50% 100%);
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.08);
+}
+
+.theme-toggle__icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #111 0 50%, #fff 50% 100%);
+  border: 1px solid rgba(0, 0, 0, 0.16);
+}
+
+html[data-theme="dark"] .theme-toggle {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: linear-gradient(135deg, #111 0 50%, #fff 50% 100%);
+}
+
+html[data-theme="dark"] .theme-toggle__icon {
+  background: linear-gradient(90deg, #fff 0 50%, #111 50% 100%);
+}
+
 .site-main {
   flex: 1;
   padding: 30px 0 68px;
@@ -180,6 +264,15 @@ a { color: inherit; text-decoration: none; }
   background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.74));
   border: 1px solid rgba(255,255,255,0.72);
   box-shadow: var(--shadow);
+}
+
+html[data-theme="dark"] .profile-panel,
+html[data-theme="dark"] .intro-card,
+html[data-theme="dark"] .article-shell,
+html[data-theme="dark"] .post-card,
+html[data-theme="dark"] .social-button {
+  background: rgba(24, 26, 31, 0.78);
+  border-color: rgba(255, 255, 255, 0.08);
 }
 
 .profile-panel__identity {
@@ -269,6 +362,14 @@ a { color: inherit; text-decoration: none; }
   background: rgba(255, 255, 255, 0.74);
   border: 1px solid rgba(0, 0, 0, 0.06);
   color: #3a3a3c;
+}
+
+html[data-theme="dark"] .profile-panel__chips span,
+html[data-theme="dark"] .post-card__tags span,
+html[data-theme="dark"] .tag-cloud a {
+  background: rgba(255,255,255,0.04);
+  color: #e5e7eb;
+  border-color: rgba(255,255,255,0.08);
 }
 
 .profile-panel__aside {
@@ -633,6 +734,10 @@ a { color: inherit; text-decoration: none; }
   .site-header__inner {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .site-header__navwrap {
+    justify-content: space-between;
   }
 
   .site-nav { justify-content: space-between; }

@@ -7,6 +7,16 @@
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}">
   {{ $css := resources.Get "css/site.css" | resources.Minify | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+  <script>
+    (() => {
+      try {
+        const stored = localStorage.getItem('bz-theme');
+        if (stored === 'dark' || stored === 'light') {
+          document.documentElement.dataset.theme = stored;
+        }
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
   <div class="site-ambient site-ambient--one" aria-hidden="true"></div>
@@ -18,11 +28,16 @@
           <span class="site-brand__mark">{{ site.Params.avatarInitials }}</span>
           <span class="site-brand__text">{{ site.Title }}</span>
         </a>
-        <nav class="site-nav">
-          {{ range site.Menus.main }}
-            <a href="{{ .URL }}">{{ .Name }}</a>
-          {{ end }}
-        </nav>
+        <div class="site-header__navwrap">
+          <nav class="site-nav">
+            {{ range site.Menus.main }}
+              <a href="{{ .URL }}">{{ .Name }}</a>
+            {{ end }}
+          </nav>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="切换黑白主题" title="切换黑白主题">
+            <span class="theme-toggle__icon" aria-hidden="true"></span>
+          </button>
+        </div>
       </div>
     </header>
 
@@ -34,5 +49,28 @@
       <p>&copy; {{ now.Year }} {{ site.Params.author }}</p>
     </footer>
   </div>
+
+  <script>
+    (() => {
+      const button = document.querySelector('[data-theme-toggle]');
+      if (!button) return;
+
+      const sync = () => {
+        const theme = document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
+        button.setAttribute('aria-pressed', String(theme === 'dark'));
+      };
+
+      button.addEventListener('click', () => {
+        const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+        document.documentElement.dataset.theme = next;
+        try {
+          localStorage.setItem('bz-theme', next);
+        } catch (e) {}
+        sync();
+      });
+
+      sync();
+    })();
+  </script>
 </body>
 </html>
