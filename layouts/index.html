@@ -2,12 +2,14 @@
   {{ $posts := first 6 (where site.RegularPages.ByDate.Reverse "Section" "posts") }}
   <section class="profile-panel">
     <div class="profile-panel__identity">
-      <div class="profile-avatar" aria-hidden="true">{{ site.Params.avatarInitials }}</div>
+      <div class="profile-avatar-wrap">
+        <img class="profile-avatar" src="{{ "/images/bz.jpg" | relURL }}" alt="{{ site.Params.author }} 头像">
+      </div>
       <div class="profile-panel__copy">
         <p class="eyebrow">个人信息栏</p>
         <h1>{{ site.Params.author }}</h1>
         <p class="profile-panel__role">{{ site.Params.role }}</p>
-        <p class="profile-panel__summary">{{ site.Params.subtitle }}</p>
+        <p class="profile-panel__summary typing-line" data-typing data-texts='["记录嵌入式开发、驱动调试和技术笔记。","关注 STM32、外设通信和实战排错。","把折腾过的问题整理成能复用的经验。"]'></p>
         <div class="profile-panel__chips">
           <span>嵌入式开发</span>
           <span>STM32</span>
@@ -22,14 +24,26 @@
         <span>坐标</span>
         <strong>{{ site.Params.location }}</strong>
       </div>
-      <div class="profile-info-row">
-        <span>GitHub</span>
-        <a href="{{ site.Params.github }}" target="_blank" rel="noreferrer">BiaoZai1214</a>
-      </div>
-      <div class="profile-info-row">
-        <span>Bilibili</span>
-        <a href="{{ site.Params.bilibili }}" target="_blank" rel="noreferrer">主页</a>
-      </div>
+      <a class="social-button" href="{{ site.Params.github }}" target="_blank" rel="noreferrer">
+        <span class="social-button__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" role="img" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.52 2.87 8.35 6.84 9.7.5.1.68-.22.68-.5v-1.7c-2.78.62-3.37-1.22-3.37-1.22-.45-1.17-1.1-1.48-1.1-1.48-.9-.64.07-.62.07-.62 1 .07 1.53 1.04 1.53 1.04.88 1.54 2.3 1.09 2.86.83.09-.65.35-1.1.63-1.35-2.22-.26-4.56-1.13-4.56-5.04 0-1.11.38-2.02 1.02-2.73-.1-.26-.44-1.31.1-2.73 0 0 .84-.27 2.75 1.04A9.3 9.3 0 0 1 12 6.84c.85 0 1.7.12 2.5.35 1.9-1.31 2.74-1.04 2.74-1.04.54 1.42.2 2.47.1 2.73.64.71 1.02 1.62 1.02 2.73 0 3.92-2.35 4.77-4.59 5.02.36.32.68.95.68 1.92v2.85c0 .28.18.61.69.5A10.25 10.25 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z" fill="currentColor"/></svg>
+        </span>
+        <span class="social-button__text">
+          <strong>GitHub</strong>
+          <small>BiaoZai1214</small>
+        </span>
+        <span class="social-button__arrow" aria-hidden="true">↗</span>
+      </a>
+      <a class="social-button" href="{{ site.Params.bilibili }}" target="_blank" rel="noreferrer">
+        <span class="social-button__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" role="img" aria-hidden="true"><path d="M4.5 6.5h15A2.5 2.5 0 0 1 22 9v7a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 16V9a2.5 2.5 0 0 1 2.5-2.5Zm4 1.5-2.2-2.2a1 1 0 1 1 1.4-1.4L10 6.6l2.3-2.3a1 1 0 1 1 1.4 1.4L11.4 8H14a1 1 0 0 1 0 2H8.5a1 1 0 0 1 0-2Zm10.5 2a1 1 0 0 0-1 1v3.5a1 1 0 1 0 2 0V11a1 1 0 0 0-1-1Zm-3 0a1 1 0 0 0-1 1v3.5a1 1 0 1 0 2 0V11a1 1 0 0 0-1-1Z" fill="currentColor"/></svg>
+        </span>
+        <span class="social-button__text">
+          <strong>Bilibili</strong>
+          <small>视频主页</small>
+        </span>
+        <span class="social-button__arrow" aria-hidden="true">↗</span>
+      </a>
       <div class="profile-panel__actions">
         <a href="{{ "/posts/" | relURL }}" class="button button--primary">查看文章</a>
         <a href="{{ "/about/" | relURL }}" class="button button--secondary">关于我</a>
@@ -54,8 +68,8 @@
 
   <section class="card-grid">
     {{ range $index, $page := $posts }}
-      {{ $accent := index (slice "linear-gradient(135deg, rgba(255,255,255,0.92), rgba(255,255,255,0.72))" "linear-gradient(135deg, rgba(232,244,255,0.96), rgba(255,255,255,0.74))" "linear-gradient(135deg, rgba(242,240,255,0.96), rgba(255,255,255,0.74))" "linear-gradient(135deg, rgba(236,248,245,0.96), rgba(255,255,255,0.74))") (mod $index 4) }}
-      {{ $summary := $page.Description | default ($page.Summary | plainify | truncate 120) }}
+      {{ $accent := index (slice "linear-gradient(180deg, rgba(255,255,255,0.96), rgba(245,246,250,0.92))" "linear-gradient(180deg, rgba(239,246,255,0.96), rgba(248,250,255,0.92))" "linear-gradient(180deg, rgba(245,240,255,0.96), rgba(250,248,255,0.92))" "linear-gradient(180deg, rgba(240,248,245,0.96), rgba(248,251,249,0.92))") (mod $index 4) }}
+      {{ $summary := $page.Description | default ($page.Summary | plainify | truncate 110) }}
       <article class="post-card" style="--card-accent: {{ $accent }};">
         <a class="post-card__link" href="{{ $page.RelPermalink }}">
           <div class="post-card__top">
@@ -78,4 +92,46 @@
       </article>
     {{ end }}
   </section>
+
+  <script>
+    (() => {
+      const node = document.querySelector('[data-typing]');
+      if (!node) return;
+      let phrases;
+      try {
+        phrases = JSON.parse(node.dataset.texts || '[]');
+      } catch (error) {
+        return;
+      }
+      if (!phrases.length) return;
+
+      const fullText = phrases[0];
+      let index = 0;
+      let deleting = false;
+      let phraseIndex = 0;
+      const speed = 65;
+      const pause = 1200;
+
+      const tick = () => {
+        const phrase = phrases[phraseIndex];
+        index += deleting ? -1 : 1;
+        node.textContent = phrase.slice(0, index) + (deleting ? '' : '｜');
+
+        if (!deleting && index === phrase.length) {
+          deleting = true;
+          return setTimeout(tick, pause);
+        }
+
+        if (deleting && index === 0) {
+          deleting = false;
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+        }
+
+        window.setTimeout(tick, deleting ? 28 : speed);
+      };
+
+      node.textContent = '';
+      tick();
+    })();
+  </script>
 {{ end }}
