@@ -2,8 +2,11 @@
   {{ $posts := first 6 (where site.RegularPages.ByDate.Reverse "Section" "posts") }}
   <section class="profile-panel">
     <div class="profile-panel__identity">
-      <div class="profile-avatar-wrap">
-        <img class="profile-avatar" src="{{ "/images/bz.jpg" | relURL }}" alt="{{ site.Params.author }} 头像">
+      <div class="profile-visual" aria-hidden="true">
+        <div class="profile-avatar-wrap profile-avatar-wrap--mono">
+          <div class="profile-avatar profile-avatar--mono">{{ site.Params.avatarInitials }}</div>
+        </div>
+        <div class="profile-photo-orb" style="background-image: url('{{ "/images/bz.jpg" | relURL }}');"></div>
       </div>
       <div class="profile-panel__copy">
         <p class="eyebrow">个人信息栏</p>
@@ -105,7 +108,6 @@
       }
       if (!phrases.length) return;
 
-      const fullText = phrases[0];
       let index = 0;
       let deleting = false;
       let phraseIndex = 0;
