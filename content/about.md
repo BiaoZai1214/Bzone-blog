@@ -5,9 +5,9 @@ draft: false
 description: "关于标仔"
 ---
 
-# 关于 Bzone
+# 关于标仔
 
-你好！我是 Bzone，一个热爱技术的人。
+你好，我是标仔，主要写嵌入式、驱动和学习记录。
 
 ## 技术栈
 
@@ -23,7 +23,7 @@ description: "关于标仔"
 
 ## 联系方式
 
-- GitHub: github.com/bzone
+- GitHub: github.com/BiaoZai1214
 - Email: bzone@example.com
 
-感谢访问！
+感谢访问。

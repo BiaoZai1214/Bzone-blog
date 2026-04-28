@@ -1,0 +1,8 @@
+{{ $recentArticles := 4 }}
+{{ $recentArticles = .Site.Params.homepage.showRecentItems }}
+
+<section class="bz-card-grid bz-card-grid-home">
+  {{ range first $recentArticles (.Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections)).Pages }}
+    {{ partial "article-link/card.html" . }}
+  {{ end }}
+</section>

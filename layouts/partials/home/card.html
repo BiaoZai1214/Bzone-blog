@@ -1,53 +1,47 @@
-<div class="relative -pt-8 pb-12">
+{{ $author := .Site.Params.author }}
+{{ $contact := .Site.Params.homepage.contact }}
+{{ $buttons := or .Site.Params.homepage.actionButtons .Site.Params.homepage.actionbuttons }}
+{{ $avatar := or $author.image .Site.Params.homepage.homepageImage }}
+{{ $headline := or $author.headline $author.bio }}
+{{ $intro := .Site.Params.homepage.intro | default "欢迎访问标仔的个人主页" }}
+
+<div class="relative pb-12">
   <div class="relative">
     <div class="home-info-bar">
-      <div class="info-row">
-        {{/* 左侧：头像 + 昵称 + 个性签名 */}}
-        <div class="info-section section-left">
-          <img src="{{ "images/bz.png" | relLangURL }}" class="home-avatar" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%;">
-          <div class="info-text">
-            <h1 style="font-size: 1.6rem; font-weight: 700; margin: 0 0 8px 0;">{{ .Site.Params.author.name | default "标仔" }}</h1>
-            <p style="color: #888; font-size: 0.95rem; margin: 0;">{{ .Site.Params.homepage.bio | default "这里是个性签名" }}</p>
+      <div class="home-info-row">
+        <div class="home-info-section home-info-section-left">
+          {{ with $avatar }}
+            <img src="{{ . | relLangURL }}" alt="{{ $author.name }}" class="home-avatar">
+          {{ end }}
+          <div class="home-info-text">
+            <h1>{{ $author.name | default "标仔" }}</h1>
+            <p>{{ $headline | default "记录生活，分享技术" }}</p>
           </div>
         </div>
 
-        {{/* 中间：联系方式 */}}
-        <div class="info-section section-center">
-          {{ with .Site.Params.homepage.social }}
+        <div class="home-info-section home-info-section-center">
+          {{ with $contact }}
             {{ with .wechat }}
-              <div class="contact-item">
-                <svg class="wechat-icon" viewBox="0 0 24 24" width="20" height="20">
-                  <path fill="#07c160" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 0 1 .598.082l1.584.926a.272.272 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.95 18.54 25 16.832 25 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89a5.718 5.718 0 0 0-.407-.032zm-1.834 2.994c.536 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.433-.982.97-.982zm4.857 0c.536 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.433-.982.969-.982z"/>
-                </svg>
+              <div class="home-contact-item">
+                <span>微信</span>
                 <span>{{ . }}</span>
               </div>
             {{ end }}
             {{ with .phone }}
-              <div class="contact-item">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
-                  <path d="M15.5 1h-8C6.12 1 5 2.12 5 3.5v17C5 21.88 6.12 23 7.5 23h8c1.38 0 2.5-1.12 2.5-2.5v-17C18 2.12 16.88 1 15.5 1zm-4 21c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4.5-4H7V4h9v14z"/>
-                </svg>
+              <div class="home-contact-item">
+                <span>电话</span>
                 <span>{{ . }}</span>
               </div>
             {{ end }}
           {{ end }}
         </div>
 
-        {{/* 右侧：快捷按钮 */}}
-        <div class="info-section section-right">
-          {{ with .Site.Params.homepage.actionbuttons }}
+        <div class="home-info-section home-info-section-right">
+          {{ with $buttons }}
             {{ range . }}
-              {{ if eq .icon "bilibili" }}
-              <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="action-btn btn-bilibili">
-                <svg height="16" width="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.813 4.653h.854c1.51.054 2.769.578 3.773 1.574 1.004.995 1.524 2.249 1.56 3.76v7.36c-.036 1.51-.556 2.769-1.56 3.773s-2.262 1.524-3.773 1.56H5.333c-1.51-.036-2.769-.556-3.773-1.56S.036 18.858 0 17.347v-7.36c.036-1.511.556-2.765 1.56-3.76 1.004-.996 2.262-1.52 3.773-1.574h.774l-1.174-1.12a1.234 1.234 0 0 1-.373-.906c0-.356.124-.658.373-.907l.027-.027c.267-.249.573-.373.92-.373.347 0 .653.124.92.373L9.653 4.44c.071.071.134.142.187.213h4.267a.836.836 0 0 1 .16-.213l2.853-2.747c.267-.249.573-.373.92-.373.347 0 .662.151.929.4.267.249.391.551.391.907 0 .355-.124.657-.373.906zM5.333 7.24c-.746.018-1.373.276-1.88.773-.506.498-.769 1.13-.786 1.894v7.52c.017.764.28 1.396.786 1.894.507.498 1.134.756 1.88.773h13.334c.746-.017 1.373-.275 1.88-.773.506-.498.769-1.13.786-1.894v-7.52c-.017-.765-.28-1.396-.786-1.894-.507-.497-1.134-.756-1.88-.773zM8 11.107c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c0-.373.129-.689.386-.947.258-.257.574-.386.947-.386zm8 0c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c.017-.391.15-.711.4-.96.249-.249.56-.373.933-.373z"/></svg>
-                <span>Bilibili</span>
+              <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="home-action-btn {{ if eq .icon "bilibili" }}home-action-btn-bilibili{{ else }}home-action-btn-github{{ end }}">
+                <span>{{ .label }}</span>
               </a>
-              {{ else if eq .icon "github" }}
-              <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="action-btn btn-github">
-                <svg height="16" width="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                <span>GitHub</span>
-              </a>
-              {{ end }}
             {{ end }}
           {{ end }}
         </div>
@@ -56,274 +50,16 @@
   </div>
 </div>
 
-{{/* 装饰性背景 */}}
 <div class="home-decoration">
   <div class="deco-circle deco-circle-1"></div>
   <div class="deco-circle deco-circle-2"></div>
   <div class="deco-circle deco-circle-3"></div>
-  <div class="typing-text">
+  <div class="typing-text" data-text="{{ $intro }}">
     <span class="typing"></span>
     <span class="typing-cursor"></span>
   </div>
 </div>
 
-<style>
-/* 信息栏布局 */
-.info-row {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  gap: 60px;
-}
-
-.info-section {
-  display: flex;
-  align-items: flex-end;
-  flex-shrink: 0;
-}
-
-.section-left {
-  gap: 20px;
-}
-
-.section-center {
-  gap: 6px;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.section-right {
-  gap: 12px;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.action-btn {
-  width: 120px;
-  justify-content: center;
-}
-
-.info-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding-bottom: 5px;
-}
-
-.contact-item {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 10px;
-  font-size: 1rem;
-  padding-bottom: 8px;
-}
-
-/* 头像 */
-.home-avatar {
-  width: 100px;
-  height: 100px;
-  flex-shrink: 0;
-}
-
-/* 按钮样式 */
-.action-btn {
-  border: none;
-  border-radius: 10px;
-  color: #fff;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  padding: 10px 20px;
-  transition: all 0.2s;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  white-space: nowrap;
-}
-.btn-github { background: #24292e; }
-.btn-bilibili { background: #FB7299; }
-.action-btn:hover { filter: brightness(1.1); transform: translateY(-2px); }
-
-/* 大屏幕（>1400px） */
-@media (max-width: 1400px) {
-  .info-row {
-    gap: 40px;
-  }
-  .section-center {
-    gap: 25px;
-  }
-}
-
-/* 中大屏幕（1200px-1400px） */
-@media (max-width: 1200px) {
-  .info-row {
-    gap: 30px;
-  }
-  .section-center {
-    gap: 20px;
-  }
-  .info-text h1 { font-size: 1.4rem !important; }
-  .info-text p { font-size: 0.9rem !important; }
-  .home-avatar { width: 90px !important; height: 90px !important; }
-}
-
-/* 中等屏幕（992px-1200px） */
-@media (max-width: 992px) {
-  .info-row {
-    gap: 20px;
-  }
-  .section-left { gap: 15px; }
-  .section-center { gap: 15px; }
-  .info-text h1 { font-size: 1.2rem !important; }
-  .info-text p { font-size: 0.85rem !important; }
-  .home-avatar { width: 80px !important; height: 80px !important; }
-  .contact-item { font-size: 0.9rem; padding-bottom: 5px; }
-  .action-btn { padding: 8px 16px; font-size: 13px; }
-}
-
-/* 装饰区域 */
-.home-decoration {
-  position: relative;
-  height: 120px;
-  overflow: hidden;
-  margin: 0 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.deco-circle {
-  position: absolute;
-  border-radius: 50%;
-  background: linear-gradient(135deg, rgba(0,120,212,0.25), rgba(0,120,212,0.12));
-  animation: float 6s ease-in-out infinite;
-}
-.deco-circle-1 { width: 140px; height: 140px; top: -30px; left: 10%; animation-delay: 0s; }
-.deco-circle-2 { width: 100px; height: 100px; top: 20px; left: 50%; animation-delay: 2s; }
-.deco-circle-3 { width: 120px; height: 120px; top: -20px; right: 15%; animation-delay: 4s; }
-@keyframes float {
-  0%, 100% { transform: translateY(0) scale(1); opacity: 0.6; }
-  50% { transform: translateY(-20px) scale(1.05); opacity: 1; }
-}
-
-/* 打字动画 */
-.typing-text {
-  position: relative;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2px;
-}
-.typing {
-  font-size: 2.2rem;
-  font-weight: 600;
-  color: #1d1d1f;
-  letter-spacing: 0.02em;
-  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
-}
-.typing-cursor {
-  display: inline-block;
-  width: 2px;
-  height: 1.2em;
-  background: #0078D4;
-  margin-left: 2px;
-  animation: blink 0.8s infinite;
-  vertical-align: middle;
-}
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-
-/* 头像样式 */
-.home-avatar {
-  flex-shrink: 0;
-}
-
-/* 暗色模式 */
-.dark .typing,
-.dark .home-info-bar h1 { color: #f5f5f7; }
-.dark .home-info-bar p { color: #a1a1a6; }
-.dark .deco-circle { background: linear-gradient(135deg, rgba(0,212,255,0.15), rgba(0,212,255,0.08)); }
-.dark .btn-github { background: #fff; color: #1d1d1f; }
-.dark .contact-item { color: #a1a1a6; }
-
-/* 手机端适配 */
-@media (max-width: 768px) {
-  .home-info-bar {
-    margin-top: 20px;
-  }
-  .info-row {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-  .typing {
-    font-size: 1rem !important;
-    white-space: nowrap;
-  }
-  .typing-cursor {
-    height: 1em;
-  }
-  .home-decoration {
-    height: 60px;
-    margin: 0 20px;
-  }
-  .deco-circle-1 { width: 50px !important; height: 50px !important; top: -10px !important; left: 5% !important; }
-  .deco-circle-2 { width: 35px !important; height: 35px !important; top: 10px !important; left: 45% !important; }
-  .deco-circle-3 { width: 45px !important; height: 45px !important; top: auto !important; bottom: 5px !important; right: 10% !important; }
-  .info-section {
-    justify-content: center;
-  }
-  .section-left {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .section-center {
-    flex-direction: column;
-    gap: 8px;
-    align-items: center;
-  }
-  .section-right {
-    flex-direction: row;
-    gap: 12px;
-    align-items: center;
-  }
-  .contact-item {
-    padding-bottom: 0;
-  }
-  .home-avatar {
-    width: 80px !important;
-    height: 80px !important;
-  }
-  .info-text h1 { font-size: 1.3rem !important; margin-bottom: 5px !important; }
-  .info-text p { font-size: 0.85rem !important; }
-  .action-btn { padding: 8px 16px; font-size: 13px; }
-}
-</style>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const text = '欢迎访问标仔的个人主页';
-  const typing = document.querySelector('.typing');
-  let i = 0;
-  function typeWriter() {
-    if (i < text.length) {
-      typing.textContent += text.charAt(i);
-      i++;
-      setTimeout(typeWriter, 150);
-    }
-  }
-  typeWriter();
-});
-</script>
-
-<section>
+<section class="bz-recent-articles">
   {{ partial "recent-articles/main.html" . }}
 </section>
