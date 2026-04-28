@@ -25,10 +25,32 @@
 }
 
 .home-info-bar__main {
-    display: flex;
-    justify-content: space-between;
-    gap: 28px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(220px, 0.8fr) minmax(220px, 0.8fr);
+    gap: 22px;
     padding: 34px 36px 24px;
+}
+
+.home-info-panel {
+    min-width: 0;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.42);
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    padding: 20px 20px 18px;
+}
+
+.home-info-panel--profile {
+    display: flex;
+    align-items: center;
+}
+
+.home-info-panel__title {
+    margin: 0 0 14px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #64748b;
 }
 
 .home-profile {
@@ -76,14 +98,6 @@
     font-size: 1rem;
     line-height: 1.72;
     color: #475569;
-}
-
-.home-info-bar__side {
-    width: 260px;
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
 }
 
 .home-contact-list,
@@ -180,7 +194,7 @@
 
 .bz-card-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 22px;
 }
 
@@ -335,25 +349,18 @@
 }
 
 @media (min-width: 1200px) {
-    .bz-card-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+    .article-link--card h2 {
+        font-size: 1.14rem;
     }
 }
 
 @media (max-width: 980px) {
     .home-info-bar__main {
-        flex-direction: column;
+        grid-template-columns: 1fr;
     }
 
-    .home-info-bar__side {
-        width: 100%;
-        flex-direction: row;
-        align-items: stretch;
-    }
-
-    .home-contact-list,
-    .home-action-list {
-        flex: 1;
+    .bz-card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
@@ -372,6 +379,10 @@
         gap: 20px;
     }
 
+    .home-info-panel {
+        padding: 18px 16px 16px;
+    }
+
     .home-profile {
         align-items: flex-start;
     }
@@ -383,10 +394,6 @@
 
     .home-profile__text h1 {
         font-size: 1.7rem;
-    }
-
-    .home-info-bar__side {
-        flex-direction: column;
     }
 
     .home-info-bar__note {
@@ -403,6 +410,10 @@
     .bz-card-grid {
         grid-template-columns: 1fr;
         gap: 16px;
+    }
+
+    .article-link--card .thumbnail_card {
+        aspect-ratio: 16 / 10;
     }
 }
 
