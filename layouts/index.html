@@ -1,0 +1,43 @@
+{{ define "main" }}
+  {{ $posts := first 6 (where site.RegularPages "Section" "posts") }}
+  <section class="hero">
+    <div class="hero__content">
+      <p class="hero__eyebrow">个人博客</p>
+      <h1>{{ site.Title }}</h1>
+      <p class="hero__summary">{{ site.Params.subtitle }}</p>
+      <div class="hero__actions">
+        <a href="{{ "/posts/" | relURL }}" class="button button--primary">查看文章</a>
+        <a href="{{ site.Params.github }}" class="button button--ghost">GitHub</a>
+        <a href="{{ site.Params.bilibili }}" class="button button--ghost">Bilibili</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-head">
+    <div>
+      <p class="section-head__eyebrow">Recent Posts</p>
+      <h2>最近的文章</h2>
+    </div>
+  </section>
+
+  <section class="card-grid">
+    {{ range $posts }}
+      <article class="post-card">
+        <a class="post-card__link" href="{{ .RelPermalink }}">
+          <div class="post-card__body">
+            <p class="post-card__meta">{{ .Date.Format "2006-01-02" }}</p>
+            <h3>{{ .Title }}</h3>
+            <p class="post-card__summary">{{ .Description }}</p>
+            {{ with .Params.tags }}
+              <div class="post-card__tags">
+                {{ range first 3 . }}
+                  <span>{{ . }}</span>
+                {{ end }}
+              </div>
+            {{ end }}
+          </div>
+        </a>
+      </article>
+    {{ end }}
+  </section>
+{{ end }}

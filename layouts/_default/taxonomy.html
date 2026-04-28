@@ -1,8 +1,7 @@
 {{ define "main" }}
   <section class="page-head">
-    <p class="section-head__eyebrow">Archive</p>
+    <p class="section-head__eyebrow">Tag</p>
     <h1>{{ .Title }}</h1>
-    {{ with .Description }}<p class="page-head__summary">{{ . }}</p>{{ end }}
   </section>
 
   <section class="card-grid">
@@ -13,13 +12,6 @@
             <p class="post-card__meta">{{ .Date.Format "2006-01-02" }}</p>
             <h3>{{ .Title }}</h3>
             <p class="post-card__summary">{{ .Description }}</p>
-            {{ with .Params.tags }}
-              <div class="post-card__tags">
-                {{ range first 3 . }}
-                  <span>{{ . }}</span>
-                {{ end }}
-              </div>
-            {{ end }}
           </div>
         </a>
       </article>

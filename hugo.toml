@@ -1,24 +1,25 @@
-baseURL = "https://BiaoZai1214.github.io/Bzone-blog/"
+baseURL = "https://biaozai1214.github.io/Bzone-blog/"
 title = "标仔 Blog"
-theme = "blowfish"
-
 languageCode = "zh-CN"
 defaultContentLanguage = "zh-cn"
 hasCJKLanguage = true
-disableLanguages = ["en"]
-
-enableEmoji = true
 enableRobotsTXT = true
-canonifyURLs = true
-publishDir = "public"
+enableEmoji = true
 timeZone = "Asia/Shanghai"
 
 [pagination]
-  pagerSize = 10
+  pagerSize = 6
 
 [taxonomies]
   tag = "tags"
   category = "categories"
 
-[build]
-  writeStats = true
+[params]
+  description = "记录嵌入式、驱动开发和技术学习。"
+  author = "标仔"
+  subtitle = "记录嵌入式、驱动开发和技术学习。"
+  github = "https://github.com/BiaoZai1214"
+  bilibili = "https://space.bilibili.com/1850228834"
+
+[menus]
+

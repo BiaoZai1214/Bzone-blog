@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}">
+  {{ $css := resources.Get "css/site.css" | resources.Minify | resources.Fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="site-brand" href="{{ "/" | relURL }}">{{ site.Title }}</a>
+        <nav class="site-nav">
+          {{ range site.Menus.main }}
+            <a href="{{ .URL }}">{{ .Name }}</a>
+          {{ end }}
+        </nav>
+      </div>
+    </header>
+
+    <main class="site-main">
+      {{ block "main" . }}{{ end }}
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; {{ now.Year }} {{ site.Params.author }}</p>
+    </footer>
+  </div>
+</body>
+</html>
