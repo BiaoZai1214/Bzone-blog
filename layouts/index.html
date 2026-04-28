@@ -1,21 +1,30 @@
 {{ define "main" }}
   {{ $posts := first 6 (where site.RegularPages.ByDate.Reverse "Section" "posts") }}
+
   <section class="profile-panel">
-    <div class="profile-panel__identity">
-      <div class="profile-avatar-wrap">
-        <img class="profile-avatar" src="{{ "/images/bz.jpg" | relURL }}" alt="{{ site.Params.author }} 头像">
+    <div class="profile-avatar-card">
+      <div class="profile-avatar-card__frame">
+        <img class="profile-avatar-card__image" src="{{ "/images/bz.jpg" | relURL }}" alt="{{ site.Params.author }} 头像" loading="eager" decoding="async">
       </div>
-      <div class="profile-panel__copy">
+      <div class="profile-avatar-card__meta">
         <p class="eyebrow">个人信息栏</p>
         <h1>{{ site.Params.author }}</h1>
         <p class="profile-panel__role">{{ site.Params.role }}</p>
-        <p class="profile-panel__summary typing-line" data-typing data-texts='["记录嵌入式开发、驱动调试和技术笔记。","关注 STM32、外设通信和实战排错。","把折腾过的问题整理成能复用的经验。"]'></p>
-        <div class="profile-panel__chips">
-          <span>嵌入式开发</span>
-          <span>STM32</span>
-          <span>驱动调试</span>
-          <span>学习笔记</span>
-        </div>
+      </div>
+    </div>
+
+    <div class="profile-copy-card">
+      <p class="eyebrow">About</p>
+      <p class="profile-panel__summary typing-line" data-typing data-texts='["记录嵌入式开发、驱动调试和技术笔记。","关注 STM32、外设通信和实战排错。","把折腾过的问题整理成能复用的经验。"]'></p>
+      <div class="profile-panel__chips">
+        <span>嵌入式开发</span>
+        <span>STM32</span>
+        <span>驱动调试</span>
+        <span>学习笔记</span>
+      </div>
+      <div class="profile-panel__actions profile-panel__actions--compact">
+        <a href="{{ "/posts/" | relURL }}" class="button button--primary">查看文章</a>
+        <a href="{{ "/about/" | relURL }}" class="button button--secondary">关于我</a>
       </div>
     </div>
 
@@ -44,10 +53,6 @@
         </span>
         <span class="social-button__arrow" aria-hidden="true">↗</span>
       </a>
-      <div class="profile-panel__actions">
-        <a href="{{ "/posts/" | relURL }}" class="button button--primary">查看文章</a>
-        <a href="{{ "/about/" | relURL }}" class="button button--secondary">关于我</a>
-      </div>
     </aside>
   </section>
 
@@ -105,7 +110,6 @@
       }
       if (!phrases.length) return;
 
-      const fullText = phrases[0];
       let index = 0;
       let deleting = false;
       let phraseIndex = 0;
