@@ -5,26 +5,22 @@
 {{ $headline := or $author.headline $author.bio }}
 {{ $intro := .Site.Params.homepage.intro | default "欢迎访问标仔的个人主页" }}
 
-<section class="home-shell">
-  <div class="home-info-bar">
-    <div class="home-info-bar__main">
-      <div class="home-info-panel home-info-panel--profile">
-        <div class="home-profile">
+<div class="relative pb-12">
+  <div class="relative">
+    <div class="home-info-bar">
+      <div class="home-info-row">
+        <div class="home-info-section home-info-section-left">
           {{ with $avatar }}
             <img src="{{ . | relLangURL }}" alt="{{ $author.name }}" class="home-avatar">
           {{ end }}
-          <div class="home-profile__text">
-            <p class="home-profile__eyebrow">Bzone Blog</p>
+          <div class="home-info-text">
             <h1>{{ $author.name | default "标仔" }}</h1>
-            <p class="home-profile__summary">{{ $headline | default "记录生活，分享技术" }}</p>
+            <p>{{ $headline | default "记录生活，分享技术" }}</p>
           </div>
         </div>
-      </div>
 
-      <div class="home-info-panel home-info-panel--contact">
-        {{ with $contact }}
-          <p class="home-info-panel__title">联系方式</p>
-          <div class="home-contact-list">
+        <div class="home-info-section home-info-section-center">
+          {{ with $contact }}
             {{ with .wechat }}
               <div class="home-contact-item">
                 <span>微信</span>
@@ -37,37 +33,33 @@
                 <span>{{ . }}</span>
               </div>
             {{ end }}
-          </div>
-        {{ end }}
-      </div>
+          {{ end }}
+        </div>
 
-      <div class="home-info-panel home-info-panel--actions">
-        {{ with $buttons }}
-          <p class="home-info-panel__title">快捷入口</p>
-          <div class="home-action-list">
+        <div class="home-info-section home-info-section-right">
+          {{ with $buttons }}
             {{ range . }}
               <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="home-action-btn {{ if eq .icon "bilibili" }}home-action-btn-bilibili{{ else }}home-action-btn-github{{ end }}">
-                {{ .label }}
+                <span>{{ .label }}</span>
               </a>
             {{ end }}
-          </div>
-        {{ end }}
+          {{ end }}
+        </div>
       </div>
     </div>
-
-    <div class="home-info-bar__note">
-      <span class="home-info-bar__note-label">简介</span>
-      <p>{{ $intro }}</p>
-    </div>
   </div>
-</section>
+</div>
+
+<div class="home-decoration">
+  <div class="deco-circle deco-circle-1"></div>
+  <div class="deco-circle deco-circle-2"></div>
+  <div class="deco-circle deco-circle-3"></div>
+  <div class="typing-text" data-text="{{ $intro }}">
+    <span class="typing"></span>
+    <span class="typing-cursor"></span>
+  </div>
+</div>
 
 <section class="bz-recent-articles">
-  <div class="bz-section-head">
-    <div>
-      <p class="bz-section-head__eyebrow">Recent Posts</p>
-      <h2>最近的文章</h2>
-    </div>
-  </div>
-  {{ partial "recent-articles/cardview.html" . }}
+  {{ partial "recent-articles/main.html" . }}
 </section>
