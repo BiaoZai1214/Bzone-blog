@@ -282,7 +282,17 @@ html[data-theme="dark"] .social-button {
   align-items: center;
 }
 
+.profile-visual {
+  position: relative;
+  width: 132px;
+  height: 132px;
+  flex: 0 0 auto;
+}
+
 .profile-avatar-wrap {
+  position: absolute;
+  left: 0;
+  top: 0;
   width: 106px;
   height: 106px;
   padding: 4px;
@@ -291,13 +301,37 @@ html[data-theme="dark"] .social-button {
   box-shadow: 0 16px 30px rgba(17, 24, 39, 0.14);
 }
 
+.profile-avatar-wrap--mono { z-index: 2; }
+
+.profile-photo-orb {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.16);
+  border: 3px solid rgba(255, 255, 255, 0.9);
+}
+
 .profile-avatar {
   width: 100%;
   height: 100%;
-  display: block;
+  display: grid;
+  place-items: center;
   border-radius: 50%;
   object-fit: cover;
   object-position: center;
+}
+
+.profile-avatar--mono {
+  background: linear-gradient(135deg, #111827 0%, #4b5563 55%, #9ca3af 100%);
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
 }
 
 .profile-panel__copy h1,
@@ -347,18 +381,12 @@ html[data-theme="dark"] .social-button {
 
 .profile-panel__chips span,
 .post-card__tags span,
-.tag-cloud a,
-.article-meta-row span {
+.tag-cloud a {
   display: inline-flex;
   align-items: center;
   padding: 7px 12px;
   border-radius: 999px;
   font-size: 0.82rem;
-}
-
-.profile-panel__chips span,
-.post-card__tags span,
-.tag-cloud a {
   background: rgba(255, 255, 255, 0.74);
   border: 1px solid rgba(0, 0, 0, 0.06);
   color: #3a3a3c;
@@ -531,15 +559,16 @@ html[data-theme="dark"] .tag-cloud a {
 
 .post-card {
   position: relative;
+  width: 100%;
   max-width: 320px;
   justify-self: center;
-  width: 100%;
   overflow: hidden;
   border-radius: 30px;
   background: var(--card-accent, var(--surface));
   border: 1px solid rgba(255, 255, 255, 0.78);
   box-shadow: var(--shadow-soft);
   transition: transform .22s ease, box-shadow .22s ease;
+  aspect-ratio: 0.72;
 }
 
 .post-card::before {
@@ -563,7 +592,8 @@ html[data-theme="dark"] .tag-cloud a {
 
 .post-card__top {
   position: relative;
-  min-height: 126px;
+  flex: 7 1 0;
+  min-height: 0;
   padding: 16px;
   display: flex;
   justify-content: space-between;
@@ -608,11 +638,12 @@ html[data-theme="dark"] .tag-cloud a {
 .post-card__body {
   position: relative;
   z-index: 1;
+  flex: 3 1 0;
+  min-height: 0;
   display: flex;
   flex-direction: column;
-  gap: 9px;
-  padding: 18px 18px 20px;
-  min-height: 214px;
+  gap: 7px;
+  padding: 16px 18px 18px;
   background: rgba(255,255,255,0.82);
   backdrop-filter: blur(14px);
 }
@@ -625,16 +656,16 @@ html[data-theme="dark"] .tag-cloud a {
 
 .post-card h3 {
   margin: 0;
-  font-size: 1.08rem;
-  line-height: 1.45;
+  font-size: 1.05rem;
+  line-height: 1.4;
   letter-spacing: -0.02em;
 }
 
 .post-card__summary {
   margin: 0;
   color: var(--muted);
-  line-height: 1.72;
-  font-size: 0.95rem;
+  line-height: 1.6;
+  font-size: 0.92rem;
 }
 
 .post-card__tags {
@@ -754,9 +785,19 @@ html[data-theme="dark"] .tag-cloud a {
     justify-items: start;
   }
 
+  .profile-visual {
+    width: 120px;
+    height: 120px;
+  }
+
   .profile-avatar-wrap {
     width: 92px;
     height: 92px;
+  }
+
+  .profile-photo-orb {
+    width: 78px;
+    height: 78px;
   }
 
   .section-head,
