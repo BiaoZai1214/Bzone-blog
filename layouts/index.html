@@ -6,13 +6,12 @@
       <img class="profile-avatar-card__image" src="{{ "/images/bz.jpg" | relURL }}" alt="{{ site.Params.author }} 头像" loading="eager" decoding="async">
       <div class="profile-avatar-card__copy">
         <h1>{{ site.Params.author }}</h1>
-        <p class="profile-panel__role typing-line" data-typing data-texts='["记录嵌入式开发、驱动调试和技术笔记。","关注 STM32、外设通信和实战排错。","把折腾过的问题整理成能复用的经验。"]'></p>
+        <p class="profile-panel__role">{{ site.Params.role }}</p>
       </div>
     </div>
 
     <div class="profile-contact-card">
       <div class="profile-contact-card__header">
-        <p class="eyebrow">Contact</p>
         <h2>联系方式</h2>
       </div>
       <div class="profile-contact-list">
@@ -24,12 +23,6 @@
           <span>微信号</span>
           <strong>htlb1214</strong>
         </div>
-      </div>
-      <div class="profile-panel__chips profile-panel__chips--compact">
-        <span>嵌入式开发</span>
-        <span>STM32</span>
-        <span>驱动调试</span>
-        <span>学习笔记</span>
       </div>
     </div>
 
@@ -96,45 +89,4 @@
       </article>
     {{ end }}
   </section>
-
-  <script>
-    (() => {
-      const node = document.querySelector('[data-typing]');
-      if (!node) return;
-      let phrases;
-      try {
-        phrases = JSON.parse(node.dataset.texts || '[]');
-      } catch (error) {
-        return;
-      }
-      if (!phrases.length) return;
-
-      let index = 0;
-      let deleting = false;
-      let phraseIndex = 0;
-      const speed = 65;
-      const pause = 1200;
-
-      const tick = () => {
-        const phrase = phrases[phraseIndex];
-        index += deleting ? -1 : 1;
-        node.textContent = phrase.slice(0, index) + (deleting ? '' : '｜');
-
-        if (!deleting && index === phrase.length) {
-          deleting = true;
-          return setTimeout(tick, pause);
-        }
-
-        if (deleting && index === 0) {
-          deleting = false;
-          phraseIndex = (phraseIndex + 1) % phrases.length;
-        }
-
-        window.setTimeout(tick, deleting ? 28 : speed);
-      };
-
-      node.textContent = '';
-      tick();
-    })();
-  </script>
 {{ end }}

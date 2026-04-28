@@ -299,7 +299,7 @@ html[data-theme="dark"] .social-button {
 .profile-avatar-card {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 18px;
   padding: 0;
   overflow: hidden;
 }
@@ -336,7 +336,7 @@ html[data-theme="dark"] .social-button {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .profile-panel__summary,
@@ -364,15 +364,7 @@ html[data-theme="dark"] .social-button {
   animation: blink 1s steps(1, end) infinite;
 }
 
-.profile-panel__chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-}
 
-.profile-panel__chips--compact {
-  margin-top: 2px;
-}
 
 .profile-panel__chips span,
 .post-card__tags span,
@@ -410,41 +402,46 @@ html[data-theme="dark"] .tag-cloud a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 14px;
+  gap: 12px;
 }
 
 .profile-contact-card__header h2 {
   margin: 0;
-  font-size: 1.35rem;
+  font-size: 1.22rem;
   letter-spacing: -0.03em;
+  color: var(--text);
 }
 
 .profile-contact-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .profile-contact-item {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 14px 16px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.74);
-  border: 1px solid rgba(0,0,0,0.06);
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.profile-contact-item:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
 }
 
 .profile-contact-item span {
   color: var(--muted);
-  font-size: 0.78rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-size: 0.8rem;
+  white-space: nowrap;
 }
 
 .profile-contact-item strong {
-  font-size: 1rem;
+  font-size: 0.96rem;
   font-weight: 600;
+  text-align: right;
   word-break: break-word;
 }
 
@@ -472,7 +469,6 @@ html[data-theme="dark"] .tag-cloud a {
   width: 100%;
   padding: 12px 14px;
   border-radius: 16px;
-  background: #111827;
   color: #ffffff;
   border: 1px solid transparent;
   box-shadow: none;
@@ -509,7 +505,7 @@ html[data-theme="dark"] .tag-cloud a {
 }
 
 .social-button__text strong { font-size: 0.96rem; }
-.social-button__text small { color: rgba(255,255,255,0.8); }
+.social-button__text small { color: rgba(255,255,255,0.82); }
 .social-button__arrow { display: none; }
 .social-button--github {
   background: #111827;
@@ -853,6 +849,7 @@ html[data-theme="dark"] .tag-cloud a {
     justify-self: stretch;
   }
 }
+
 
 
 
