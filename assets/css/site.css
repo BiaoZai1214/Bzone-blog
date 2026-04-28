@@ -185,7 +185,7 @@ html[data-theme="dark"] .site-header {
 
 .site-nav {
   display: flex;
-  gap: 8px;
+  gap: 7px;
   flex-wrap: wrap;
 }
 
@@ -295,7 +295,7 @@ html[data-theme="dark"] .social-button {
 }
 
 .profile-avatar-card {
-  flex: 0 0 190px;
+  flex: 0 0 172px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -303,24 +303,15 @@ html[data-theme="dark"] .social-button {
   overflow: hidden;
 }
 
-.profile-avatar-card__frame {
-  width: min(100%, 168px);
-  aspect-ratio: 1;
-  padding: 10px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, rgba(255,255,255,0.94), rgba(245,246,250,0.72));
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.75), 0 18px 32px rgba(17, 24, 39, 0.12);
-  flex: 0 0 auto;
-}
-
 .profile-avatar-card__image {
-  width: 100%;
-  height: 100%;
+  width: 156px;
+  height: 156px;
   display: block;
   border-radius: 50%;
   object-fit: cover;
   object-position: center center;
-  background: rgba(255,255,255,0.8);
+  background: transparent;
+  box-shadow: none;
 }
 
 .profile-panel__role {
@@ -376,7 +367,7 @@ html[data-theme="dark"] .social-button {
 .profile-panel__chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 7px;
 }
 
 .profile-panel__chips span,
@@ -422,7 +413,7 @@ html[data-theme="dark"] .tag-cloud a {
 .social-button {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
   width: fit-content;
   padding: 11px 14px;
   border-radius: 18px;
@@ -652,8 +643,8 @@ html[data-theme="dark"] .tag-cloud a {
   min-height: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding: 18px 16px 20px;
+  gap: 7px;
+  padding: 18px 16px 18px;
   background: rgba(255,255,255,0.84);
   backdrop-filter: blur(14px);
 }
@@ -679,11 +670,11 @@ html[data-theme="dark"] .tag-cloud a {
 }
 
 .post-card__tags {
-  margin-top: auto;
+  margin-top: 6px;
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  padding-top: 10px;
+  gap: 7px;
+  padding-top: 8px;
 }
 
 .article-shell {
@@ -698,7 +689,7 @@ html[data-theme="dark"] .tag-cloud a {
 
 .article-meta-row {
   display: flex;
-  gap: 8px;
+  gap: 7px;
   flex-wrap: wrap;
   margin-top: 18px;
 }
@@ -778,6 +769,11 @@ html[data-theme="dark"] .tag-cloud a {
     flex-basis: auto;
     justify-content: flex-start;
   }
+
+  .profile-avatar-card__image {
+    width: 132px;
+    height: 132px;
+  }
 }
 
 @media (max-width: 720px) {
@@ -825,6 +821,8 @@ html[data-theme="dark"] .tag-cloud a {
     justify-self: stretch;
   }
 }
+
+
 
 
 
