@@ -8,19 +8,22 @@
 <section class="home-shell">
   <div class="home-info-bar">
     <div class="home-info-bar__main">
-      <div class="home-profile">
-        {{ with $avatar }}
-          <img src="{{ . | relLangURL }}" alt="{{ $author.name }}" class="home-avatar">
-        {{ end }}
-        <div class="home-profile__text">
-          <p class="home-profile__eyebrow">Bzone Blog</p>
-          <h1>{{ $author.name | default "标仔" }}</h1>
-          <p class="home-profile__summary">{{ $headline | default "记录生活，分享技术" }}</p>
+      <div class="home-info-panel home-info-panel--profile">
+        <div class="home-profile">
+          {{ with $avatar }}
+            <img src="{{ . | relLangURL }}" alt="{{ $author.name }}" class="home-avatar">
+          {{ end }}
+          <div class="home-profile__text">
+            <p class="home-profile__eyebrow">Bzone Blog</p>
+            <h1>{{ $author.name | default "标仔" }}</h1>
+            <p class="home-profile__summary">{{ $headline | default "记录生活，分享技术" }}</p>
+          </div>
         </div>
       </div>
 
-      <div class="home-info-bar__side">
+      <div class="home-info-panel home-info-panel--contact">
         {{ with $contact }}
+          <p class="home-info-panel__title">联系方式</p>
           <div class="home-contact-list">
             {{ with .wechat }}
               <div class="home-contact-item">
@@ -36,8 +39,11 @@
             {{ end }}
           </div>
         {{ end }}
+      </div>
 
+      <div class="home-info-panel home-info-panel--actions">
         {{ with $buttons }}
+          <p class="home-info-panel__title">快捷入口</p>
           <div class="home-action-list">
             {{ range . }}
               <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="home-action-btn {{ if eq .icon "bilibili" }}home-action-btn-bilibili{{ else }}home-action-btn-github{{ end }}">
