@@ -34,8 +34,18 @@
               <a href="{{ .URL }}">{{ .Name }}</a>
             {{ end }}
           </nav>
-          <button class="theme-toggle" type="button" data-theme-toggle aria-label="切换黑白主题" title="切换黑白主题">
-            <span class="theme-toggle__icon" aria-hidden="true"></span>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="切换明暗主题" title="切换明暗主题">
+            <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M12 2.8v2.2M12 19v2.2M4.9 4.9l1.55 1.55M17.55 17.55l1.55 1.55M2.8 12h2.2M19 12h2.2M4.9 19.1l1.55-1.55M17.55 6.45l1.55-1.55" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M15.5 3.7a8.7 8.7 0 1 0 4.8 15.9 7.9 7.9 0 0 1-4.8-15.9Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              </svg>
+            </span>
           </button>
         </div>
       </div>
