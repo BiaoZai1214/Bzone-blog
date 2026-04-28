@@ -1,34 +1,72 @@
 {{ define "main" }}
-  {{ $posts := first 6 (where site.RegularPages "Section" "posts") }}
-  <section class="hero">
-    <div class="hero__content">
-      <p class="hero__eyebrow">个人博客</p>
-      <h1>{{ site.Title }}</h1>
-      <p class="hero__summary">{{ site.Params.subtitle }}</p>
-      <div class="hero__actions">
-        <a href="{{ "/posts/" | relURL }}" class="button button--primary">查看文章</a>
-        <a href="{{ site.Params.github }}" class="button button--ghost">GitHub</a>
-        <a href="{{ site.Params.bilibili }}" class="button button--ghost">Bilibili</a>
+  {{ $posts := first 6 (where site.RegularPages.ByDate.Reverse "Section" "posts") }}
+  <section class="profile-panel">
+    <div class="profile-panel__identity">
+      <div class="profile-avatar" aria-hidden="true">{{ site.Params.avatarInitials }}</div>
+      <div class="profile-panel__copy">
+        <p class="eyebrow">个人信息栏</p>
+        <h1>{{ site.Params.author }}</h1>
+        <p class="profile-panel__role">{{ site.Params.role }}</p>
+        <p class="profile-panel__summary">{{ site.Params.subtitle }}</p>
+        <div class="profile-panel__chips">
+          <span>嵌入式开发</span>
+          <span>STM32</span>
+          <span>驱动调试</span>
+          <span>学习笔记</span>
+        </div>
       </div>
     </div>
+
+    <aside class="profile-panel__aside">
+      <div class="profile-info-row">
+        <span>坐标</span>
+        <strong>{{ site.Params.location }}</strong>
+      </div>
+      <div class="profile-info-row">
+        <span>GitHub</span>
+        <a href="{{ site.Params.github }}" target="_blank" rel="noreferrer">BiaoZai1214</a>
+      </div>
+      <div class="profile-info-row">
+        <span>Bilibili</span>
+        <a href="{{ site.Params.bilibili }}" target="_blank" rel="noreferrer">主页</a>
+      </div>
+      <div class="profile-panel__actions">
+        <a href="{{ "/posts/" | relURL }}" class="button button--primary">查看文章</a>
+        <a href="{{ "/about/" | relURL }}" class="button button--secondary">关于我</a>
+      </div>
+    </aside>
   </section>
+
+  {{ with .Content }}
+    <section class="intro-card">
+      <div class="intro-card__label">Welcome</div>
+      <div class="intro-card__content">{{ . }}</div>
+    </section>
+  {{ end }}
 
   <section class="section-head">
     <div>
-      <p class="section-head__eyebrow">Recent Posts</p>
+      <p class="eyebrow">Recent Posts</p>
       <h2>最近的文章</h2>
     </div>
+    <a class="text-link" href="{{ "/posts/" | relURL }}">查看全部</a>
   </section>
 
   <section class="card-grid">
-    {{ range $posts }}
-      <article class="post-card">
-        <a class="post-card__link" href="{{ .RelPermalink }}">
+    {{ range $index, $page := $posts }}
+      {{ $accent := index (slice "linear-gradient(135deg, rgba(255,255,255,0.92), rgba(255,255,255,0.72))" "linear-gradient(135deg, rgba(232,244,255,0.96), rgba(255,255,255,0.74))" "linear-gradient(135deg, rgba(242,240,255,0.96), rgba(255,255,255,0.74))" "linear-gradient(135deg, rgba(236,248,245,0.96), rgba(255,255,255,0.74))") (mod $index 4) }}
+      {{ $summary := $page.Description | default ($page.Summary | plainify | truncate 120) }}
+      <article class="post-card" style="--card-accent: {{ $accent }};">
+        <a class="post-card__link" href="{{ $page.RelPermalink }}">
+          <div class="post-card__top">
+            <div class="post-card__orb"></div>
+            <div class="post-card__badge">{{ with index $page.Params.categories 0 }}{{ . }}{{ else }}文章{{ end }}</div>
+          </div>
           <div class="post-card__body">
-            <p class="post-card__meta">{{ .Date.Format "2006-01-02" }}</p>
-            <h3>{{ .Title }}</h3>
-            <p class="post-card__summary">{{ .Description }}</p>
-            {{ with .Params.tags }}
+            <p class="post-card__meta">{{ $page.Date.Format "2006-01-02" }}</p>
+            <h3>{{ $page.Title }}</h3>
+            <p class="post-card__summary">{{ $summary }}</p>
+            {{ with $page.Params.tags }}
               <div class="post-card__tags">
                 {{ range first 3 . }}
                   <span>{{ . }}</span>
