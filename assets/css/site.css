@@ -560,22 +560,24 @@ html[data-theme="dark"] .tag-cloud a {
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 260px));
+  justify-content: start;
+  justify-items: start;
   gap: 18px;
 }
 
 .post-card {
   position: relative;
   width: 100%;
-  max-width: 300px;
-  justify-self: center;
+  max-width: 260px;
+  justify-self: start;
   overflow: hidden;
   border-radius: 30px;
   background: var(--card-accent, var(--surface));
   border: 1px solid rgba(255, 255, 255, 0.78);
   box-shadow: var(--shadow-soft);
   transition: transform .22s ease, box-shadow .22s ease;
-  aspect-ratio: 0.72;
+  aspect-ratio: 0.84;
 }
 
 .post-card::before {
@@ -599,7 +601,7 @@ html[data-theme="dark"] .tag-cloud a {
 
 .post-card__top {
   position: relative;
-  flex: 7 1 0;
+  flex: 62 1 0;
   min-height: 0;
   padding: 16px;
   display: flex;
@@ -645,12 +647,12 @@ html[data-theme="dark"] .tag-cloud a {
 .post-card__body {
   position: relative;
   z-index: 1;
-  flex: 3 1 0;
+  flex: 38 1 0;
   min-height: 0;
   display: flex;
   flex-direction: column;
-  gap: 7px;
-  padding: 16px 18px 18px;
+  gap: 8px;
+  padding: 14px 16px 16px;
   background: rgba(255,255,255,0.84);
   backdrop-filter: blur(14px);
 }
@@ -671,8 +673,8 @@ html[data-theme="dark"] .tag-cloud a {
 .post-card__summary {
   margin: 0;
   color: var(--muted);
-  line-height: 1.58;
-  font-size: 0.91rem;
+  line-height: 1.52;
+  font-size: 0.88rem;
 }
 
 .post-card__tags {
@@ -680,6 +682,7 @@ html[data-theme="dark"] .tag-cloud a {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  padding-top: 2px;
 }
 
 .article-shell {
@@ -805,10 +808,14 @@ html[data-theme="dark"] .tag-cloud a {
 
   .card-grid {
     grid-template-columns: 1fr;
+    justify-content: stretch;
+    justify-items: stretch;
   }
 
   .post-card {
     max-width: none;
+    justify-self: stretch;
   }
 }
+
 
