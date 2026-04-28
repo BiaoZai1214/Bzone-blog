@@ -17,9 +17,11 @@ timeZone = "Asia/Shanghai"
 [params]
   description = "记录嵌入式、驱动开发和技术学习。"
   author = "标仔"
+  role = "嵌入式开发 / STM32 / 驱动调试"
   subtitle = "记录嵌入式、驱动开发和技术学习。"
+  location = "中国"
+  avatarInitials = "BZ"
   github = "https://github.com/BiaoZai1214"
   bilibili = "https://space.bilibili.com/1850228834"
 
 [menus]
-

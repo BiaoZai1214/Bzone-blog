@@ -1,19 +1,27 @@
 {{ define "main" }}
   <section class="page-head">
-    <p class="section-head__eyebrow">Archive</p>
-    <h1>{{ .Title }}</h1>
-    {{ with .Description }}<p class="page-head__summary">{{ . }}</p>{{ end }}
+    <div>
+      <p class="eyebrow">Archive</p>
+      <h1>{{ .Title }}</h1>
+      {{ with .Description }}<p class="page-head__summary">{{ . }}</p>{{ end }}
+    </div>
   </section>
 
   <section class="card-grid">
-    {{ range .Pages }}
-      <article class="post-card">
-        <a class="post-card__link" href="{{ .RelPermalink }}">
+    {{ range $index, $page := .Pages.ByDate.Reverse }}
+      {{ $accent := index (slice "linear-gradient(135deg, rgba(255,255,255,0.92), rgba(255,255,255,0.72))" "linear-gradient(135deg, rgba(232,244,255,0.96), rgba(255,255,255,0.74))" "linear-gradient(135deg, rgba(242,240,255,0.96), rgba(255,255,255,0.74))" "linear-gradient(135deg, rgba(236,248,245,0.96), rgba(255,255,255,0.74))") (mod $index 4) }}
+      {{ $summary := $page.Description | default ($page.Summary | plainify | truncate 120) }}
+      <article class="post-card" style="--card-accent: {{ $accent }};">
+        <a class="post-card__link" href="{{ $page.RelPermalink }}">
+          <div class="post-card__top">
+            <div class="post-card__orb"></div>
+            <div class="post-card__badge">{{ with index $page.Params.categories 0 }}{{ . }}{{ else }}文章{{ end }}</div>
+          </div>
           <div class="post-card__body">
-            <p class="post-card__meta">{{ .Date.Format "2006-01-02" }}</p>
-            <h3>{{ .Title }}</h3>
-            <p class="post-card__summary">{{ .Description }}</p>
-            {{ with .Params.tags }}
+            <p class="post-card__meta">{{ $page.Date.Format "2006-01-02" }}</p>
+            <h3>{{ $page.Title }}</h3>
+            <p class="post-card__summary">{{ $summary }}</p>
+            {{ with $page.Params.tags }}
               <div class="post-card__tags">
                 {{ range first 3 . }}
                   <span>{{ . }}</span>

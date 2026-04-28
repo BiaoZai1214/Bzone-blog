@@ -12,7 +12,10 @@
   <div class="site-shell">
     <header class="site-header">
       <div class="site-header__inner">
-        <a class="site-brand" href="{{ "/" | relURL }}">{{ site.Title }}</a>
+        <a class="site-brand" href="{{ "/" | relURL }}">
+          <span class="site-brand__mark">{{ site.Params.avatarInitials }}</span>
+          <span class="site-brand__text">{{ site.Title }}</span>
+        </a>
         <nav class="site-nav">
           {{ range site.Menus.main }}
             <a href="{{ .URL }}">{{ .Name }}</a>
