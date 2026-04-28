@@ -269,7 +269,7 @@ html[data-theme="dark"] .theme-toggle__icon {
 
 .profile-panel {
   display: grid;
-  grid-template-columns: minmax(240px, 300px) minmax(0, 1fr) minmax(260px, 320px);
+  grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
   gap: 18px;
   align-items: stretch;
   padding: 24px;
@@ -290,8 +290,7 @@ html[data-theme="dark"] .social-button {
 }
 
 .profile-avatar-card,
-.profile-copy-card,
-.profile-panel__aside {
+.profile-copy-card {
   min-width: 0;
   border-radius: 26px;
   background: rgba(255, 255, 255, 0.64);
@@ -301,12 +300,9 @@ html[data-theme="dark"] .social-button {
 
 .profile-avatar-card {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  gap: 18px;
+  justify-content: center;
   padding: 20px;
-  text-align: center;
   overflow: hidden;
 }
 
@@ -329,23 +325,19 @@ html[data-theme="dark"] .social-button {
   background: rgba(255,255,255,0.8);
 }
 
-.profile-avatar-card__meta {
-  text-align: center;
+.profile-panel__role {
+  margin: 0;
+  font-size: 1.02rem;
+  color: var(--muted);
+  line-height: 1.8;
 }
 
-.profile-avatar-card__meta h1 {
+.profile-copy-card h1 {
   margin: 0;
   font-size: clamp(1.8rem, 2.8vw, 2.35rem);
   line-height: 1.05;
   letter-spacing: -0.04em;
   overflow-wrap: anywhere;
-}
-
-.profile-panel__role {
-  margin: 10px 0 0;
-  font-size: 1rem;
-  color: var(--text);
-  font-weight: 600;
 }
 
 .profile-copy-card {
@@ -419,31 +411,13 @@ html[data-theme="dark"] .tag-cloud a {
   margin-top: 2px;
 }
 
-.profile-panel__aside {
-  padding: 18px;
+.profile-panel__socials {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  flex-wrap: wrap;
   gap: 12px;
 }
 
-.profile-panel__aside .social-button {
-  width: 100%;
-}
 
-.profile-info-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 14px 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-}
-
-.profile-info-row:last-of-type { border-bottom: 0; }
-.profile-info-row span { color: var(--muted); }
-.profile-info-row strong,
-.profile-info-row a { font-weight: 600; }
 
 .social-button {
   display: inline-flex;
@@ -837,3 +811,4 @@ html[data-theme="dark"] .tag-cloud a {
     max-width: none;
   }
 }
+
