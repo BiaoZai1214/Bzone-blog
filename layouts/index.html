@@ -6,16 +6,11 @@
       <div class="profile-avatar-card__frame">
         <img class="profile-avatar-card__image" src="{{ "/images/bz.jpg" | relURL }}" alt="{{ site.Params.author }} 头像" loading="eager" decoding="async">
       </div>
-      <div class="profile-avatar-card__meta">
-        <p class="eyebrow">个人信息栏</p>
-        <h1>{{ site.Params.author }}</h1>
-        <p class="profile-panel__role">{{ site.Params.role }}</p>
-      </div>
     </div>
 
     <div class="profile-copy-card">
-      <p class="eyebrow">About</p>
-      <p class="profile-panel__summary typing-line" data-typing data-texts='["记录嵌入式开发、驱动调试和技术笔记。","关注 STM32、外设通信和实战排错。","把折腾过的问题整理成能复用的经验。"]'></p>
+      <h1>{{ site.Params.author }}</h1>
+      <p class="profile-panel__role typing-line" data-typing data-texts='["记录嵌入式开发、驱动调试和技术笔记。","关注 STM32、外设通信和实战排错。","把折腾过的问题整理成能复用的经验。"]'></p>
       <div class="profile-panel__chips">
         <span>嵌入式开发</span>
         <span>STM32</span>
@@ -26,34 +21,29 @@
         <a href="{{ "/posts/" | relURL }}" class="button button--primary">查看文章</a>
         <a href="{{ "/about/" | relURL }}" class="button button--secondary">关于我</a>
       </div>
-    </div>
-
-    <aside class="profile-panel__aside">
-      <div class="profile-info-row">
-        <span>坐标</span>
-        <strong>{{ site.Params.location }}</strong>
+      <div class="profile-panel__socials">
+        <a class="social-button social-button--github" href="{{ site.Params.github }}" target="_blank" rel="noreferrer">
+          <span class="social-button__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" role="img" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.52 2.87 8.35 6.84 9.7.5.1.68-.22.68-.5v-1.7c-2.78.62-3.37-1.22-3.37-1.22-.45-1.17-1.1-1.48-1.1-1.48-.9-.64.07-.62.07-.62 1 .07 1.53 1.04 1.53 1.04.88 1.54 2.3 1.09 2.86.83.09-.65.35-1.1.63-1.35-2.22-.26-4.56-1.13-4.56-5.04 0-1.11.38-2.02 1.02-2.73-.1-.26-.44-1.31.1-2.73 0 0 .84-.27 2.75 1.04A9.3 9.3 0 0 1 12 6.84c.85 0 1.7.12 2.5.35 1.9-1.31 2.74-1.04 2.74-1.04.54 1.42.2 2.47.1 2.73.64.71 1.02 1.62 1.02 2.73 0 3.92-2.35 4.77-4.59 5.02.36.32.68.95.68 1.92v2.85c0 .28.18.61.69.5A10.25 10.25 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z" fill="currentColor"/></svg>
+          </span>
+          <span class="social-button__text">
+            <strong>GitHub</strong>
+            <small>BiaoZai1214</small>
+          </span>
+          <span class="social-button__arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="social-button social-button--bilibili" href="{{ site.Params.bilibili }}" target="_blank" rel="noreferrer">
+          <span class="social-button__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" role="img" aria-hidden="true"><path d="M4.5 6.5h15A2.5 2.5 0 0 1 22 9v7a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 16V9a2.5 2.5 0 0 1 2.5-2.5Zm4 1.5-2.2-2.2a1 1 0 1 1 1.4-1.4L10 6.6l2.3-2.3a1 1 0 1 1 1.4 1.4L11.4 8H14a1 1 0 0 1 0 2H8.5a1 1 0 0 1 0-2Zm10.5 2a1 1 0 0 0-1 1v3.5a1 1 0 1 0 2 0V11a1 1 0 0 0-1-1Zm-3 0a1 1 0 0 0-1 1v3.5a1 1 0 1 0 2 0V11a1 1 0 0 0-1-1Z" fill="currentColor"/></svg>
+          </span>
+          <span class="social-button__text">
+            <strong>Bilibili</strong>
+            <small>视频主页</small>
+          </span>
+          <span class="social-button__arrow" aria-hidden="true">↗</span>
+        </a>
       </div>
-      <a class="social-button social-button--github" href="{{ site.Params.github }}" target="_blank" rel="noreferrer">
-        <span class="social-button__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" role="img" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.52 2.87 8.35 6.84 9.7.5.1.68-.22.68-.5v-1.7c-2.78.62-3.37-1.22-3.37-1.22-.45-1.17-1.1-1.48-1.1-1.48-.9-.64.07-.62.07-.62 1 .07 1.53 1.04 1.53 1.04.88 1.54 2.3 1.09 2.86.83.09-.65.35-1.1.63-1.35-2.22-.26-4.56-1.13-4.56-5.04 0-1.11.38-2.02 1.02-2.73-.1-.26-.44-1.31.1-2.73 0 0 .84-.27 2.75 1.04A9.3 9.3 0 0 1 12 6.84c.85 0 1.7.12 2.5.35 1.9-1.31 2.74-1.04 2.74-1.04.54 1.42.2 2.47.1 2.73.64.71 1.02 1.62 1.02 2.73 0 3.92-2.35 4.77-4.59 5.02.36.32.68.95.68 1.92v2.85c0 .28.18.61.69.5A10.25 10.25 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z" fill="currentColor"/></svg>
-        </span>
-        <span class="social-button__text">
-          <strong>GitHub</strong>
-          <small>BiaoZai1214</small>
-        </span>
-        <span class="social-button__arrow" aria-hidden="true">↗</span>
-      </a>
-      <a class="social-button social-button--bilibili" href="{{ site.Params.bilibili }}" target="_blank" rel="noreferrer">
-        <span class="social-button__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" role="img" aria-hidden="true"><path d="M4.5 6.5h15A2.5 2.5 0 0 1 22 9v7a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 16V9a2.5 2.5 0 0 1 2.5-2.5Zm4 1.5-2.2-2.2a1 1 0 1 1 1.4-1.4L10 6.6l2.3-2.3a1 1 0 1 1 1.4 1.4L11.4 8H14a1 1 0 0 1 0 2H8.5a1 1 0 0 1 0-2Zm10.5 2a1 1 0 0 0-1 1v3.5a1 1 0 1 0 2 0V11a1 1 0 0 0-1-1Zm-3 0a1 1 0 0 0-1 1v3.5a1 1 0 1 0 2 0V11a1 1 0 0 0-1-1Z" fill="currentColor"/></svg>
-        </span>
-        <span class="social-button__text">
-          <strong>Bilibili</strong>
-          <small>视频主页</small>
-        </span>
-        <span class="social-button__arrow" aria-hidden="true">↗</span>
-      </a>
-    </aside>
+    </div>
   </section>
 
   {{ with .Content }}
