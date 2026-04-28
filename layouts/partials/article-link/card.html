@@ -8,6 +8,7 @@
 {{ $page := .Page }}
 {{ $featured := "" }}
 {{ $featuredURL := "" }}
+{{ $summary := .Params.description | default (.Summary | plainify) }}
 {{ if not .Params.hideFeatureImage }}
   {{/* frontmatter */}}
   {{ with $page }}
@@ -65,6 +66,10 @@
         decoding="async"
         class="not-prose absolute inset-0 w-full h-full object-cover">
     </div>
+  {{ else }}
+    <div class="thumbnail_card thumbnail_card--fallback" {{ with .Params.coverColor }}style="--card-accent: {{ . }};"{{ end }}>
+      <span class="thumbnail_card__emoji">{{ .Params.coverEmoji | default "✦" }}</span>
+    </div>
   {{ end }}
   {{ if and .Draft .Site.Params.article.showDraftLabel }}
     <span class="absolute top-0 right-0 m-2">
@@ -95,6 +100,9 @@
     <div class="card-date text-xs text-neutral-400 dark:text-neutral-500">
       {{ partial "meta/date.html" .Date }}
     </div>
+    {{ with $summary }}
+      <p class="article-link__summary">{{ . | truncate 72 }}</p>
+    {{ end }}
     {{/* 输出标签 - 显示所有 tags */}}
     {{ if .Params.showTaxonomies | default (.Site.Params.article.showTaxonomies | default true) }}
       <div class="card-tags flex flex-row flex-wrap items-center gap-2">
@@ -112,5 +120,4 @@
       </div>
     {{ end }}
   </div>
-  <div class="px-6 pt-4 pb-2"></div>
 </article>

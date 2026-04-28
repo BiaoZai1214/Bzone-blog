@@ -3,22 +3,44 @@
 {{ $buttons := or .Site.Params.homepage.actionButtons .Site.Params.homepage.actionbuttons }}
 {{ $avatar := or $author.image .Site.Params.homepage.homepageImage }}
 {{ $headline := or $author.headline $author.bio }}
+{{ $intro := .Site.Params.homepage.intro | default "欢迎访问标仔的个人主页" }}
 
-<section class="home-hero">
-  <div class="home-hero__inner">
-    <div class="home-hero__main">
-      {{ with $avatar }}
-        <img src="{{ . | relLangURL }}" alt="{{ $author.name }}" class="home-avatar">
-      {{ end }}
-      <div class="home-hero__content">
-        <p class="home-hero__eyebrow">个人博客</p>
-        <h1>{{ $author.name | default "标仔" }}</h1>
-        <p class="home-hero__summary">{{ $headline | default "记录生活，分享技术" }}</p>
+<section class="home-shell">
+  <div class="home-info-bar">
+    <div class="home-info-bar__main">
+      <div class="home-profile">
+        {{ with $avatar }}
+          <img src="{{ . | relLangURL }}" alt="{{ $author.name }}" class="home-avatar">
+        {{ end }}
+        <div class="home-profile__text">
+          <p class="home-profile__eyebrow">Bzone Blog</p>
+          <h1>{{ $author.name | default "标仔" }}</h1>
+          <p class="home-profile__summary">{{ $headline | default "记录生活，分享技术" }}</p>
+        </div>
+      </div>
+
+      <div class="home-info-bar__side">
+        {{ with $contact }}
+          <div class="home-contact-list">
+            {{ with .wechat }}
+              <div class="home-contact-item">
+                <span>微信</span>
+                <span>{{ . }}</span>
+              </div>
+            {{ end }}
+            {{ with .phone }}
+              <div class="home-contact-item">
+                <span>电话</span>
+                <span>{{ . }}</span>
+              </div>
+            {{ end }}
+          </div>
+        {{ end }}
 
         {{ with $buttons }}
-          <div class="home-hero__actions">
+          <div class="home-action-list">
             {{ range . }}
-              <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="home-action-btn home-action-btn-muted">
+              <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="home-action-btn {{ if eq .icon "bilibili" }}home-action-btn-bilibili{{ else }}home-action-btn-github{{ end }}">
                 {{ .label }}
               </a>
             {{ end }}
@@ -27,22 +49,10 @@
       </div>
     </div>
 
-    {{ with $contact }}
-      <div class="home-hero__meta">
-        {{ with .wechat }}
-          <div class="home-contact-item">
-            <span>微信</span>
-            <span>{{ . }}</span>
-          </div>
-        {{ end }}
-        {{ with .phone }}
-          <div class="home-contact-item">
-            <span>电话</span>
-            <span>{{ . }}</span>
-          </div>
-        {{ end }}
-      </div>
-    {{ end }}
+    <div class="home-info-bar__note">
+      <span class="home-info-bar__note-label">简介</span>
+      <p>{{ $intro }}</p>
+    </div>
   </div>
 </section>
 
