@@ -424,6 +424,7 @@ html[data-theme="dark"] .tag-cloud a {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
   gap: 12px;
 }
 
@@ -445,11 +446,12 @@ html[data-theme="dark"] .tag-cloud a {
 .profile-info-row a { font-weight: 600; }
 
 .social-button {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 12px;
-  padding: 14px 16px;
-  border-radius: 22px;
+  gap: 10px;
+  width: fit-content;
+  padding: 11px 14px;
+  border-radius: 18px;
   background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(247,248,252,0.92));
   border: 1px solid rgba(255,255,255,0.86);
   box-shadow: var(--shadow-soft);
@@ -463,19 +465,19 @@ html[data-theme="dark"] .tag-cloud a {
 }
 
 .social-button__icon {
-  width: 38px;
-  height: 38px;
+  width: 34px;
+  height: 34px;
   display: grid;
   place-items: center;
-  border-radius: 50%;
+  border-radius: 12px;
   background: rgba(0, 113, 227, 0.08);
   color: var(--accent);
   flex: 0 0 auto;
 }
 
 .social-button__icon svg {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
 }
 
 .social-button__text {
@@ -489,6 +491,23 @@ html[data-theme="dark"] .tag-cloud a {
 .social-button__text strong { font-size: 0.96rem; }
 .social-button__text small { color: var(--muted); }
 .social-button__arrow { color: var(--muted); font-size: 1.1rem; }
+.social-button--github {
+  color: #111827;
+}
+
+.social-button--github .social-button__icon {
+  background: rgba(17, 24, 39, 0.06);
+  color: #111827;
+}
+
+.social-button--bilibili {
+  color: #d81b60;
+}
+
+.social-button--bilibili .social-button__icon {
+  background: rgba(216, 27, 96, 0.09);
+  color: #d81b60;
+}
 
 .button,
 .text-link {
