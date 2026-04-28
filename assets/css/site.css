@@ -185,7 +185,7 @@ html[data-theme="dark"] .site-header {
 
 .site-nav {
   display: flex;
-  gap: 10px;
+  gap: 8px;
   flex-wrap: wrap;
 }
 
@@ -376,7 +376,7 @@ html[data-theme="dark"] .social-button {
 .profile-panel__chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
 }
 
 .profile-panel__chips span,
@@ -384,9 +384,9 @@ html[data-theme="dark"] .social-button {
 .tag-cloud a {
   display: inline-flex;
   align-items: center;
-  padding: 7px 12px;
+  padding: 6px 11px;
   border-radius: 999px;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   background: rgba(255, 255, 255, 0.86);
   border: 1px solid rgba(0, 0, 0, 0.08);
   color: #1f2937;
@@ -422,7 +422,7 @@ html[data-theme="dark"] .tag-cloud a {
 .social-button {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   width: fit-content;
   padding: 11px 14px;
   border-radius: 18px;
@@ -563,13 +563,14 @@ html[data-theme="dark"] .tag-cloud a {
   grid-template-columns: repeat(auto-fit, minmax(240px, 286px));
   justify-content: start;
   justify-items: start;
-  gap: 26px;
+  gap: 30px;
 }
 
 .post-card {
   position: relative;
   width: 100%;
   max-width: 286px;
+  min-height: 400px;
   justify-self: start;
   overflow: hidden;
   border-radius: 30px;
@@ -577,7 +578,7 @@ html[data-theme="dark"] .tag-cloud a {
   border: 1px solid rgba(255, 255, 255, 0.78);
   box-shadow: var(--shadow-soft);
   transition: transform .22s ease, box-shadow .22s ease;
-  aspect-ratio: 0.84;
+  aspect-ratio: 0.72;
 }
 
 .post-card::before {
@@ -635,11 +636,11 @@ html[data-theme="dark"] .tag-cloud a {
 .post-card__badge {
   position: relative;
   z-index: 1;
-  padding: 7px 12px;
+  padding: 6px 11px;
   border-radius: 999px;
   background: rgba(255,255,255,0.72);
   color: #2c2c2e;
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   font-weight: 600;
   border: 1px solid rgba(255,255,255,0.7);
 }
@@ -651,8 +652,8 @@ html[data-theme="dark"] .tag-cloud a {
   min-height: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 16px 16px 18px;
+  gap: 8px;
+  padding: 18px 16px 20px;
   background: rgba(255,255,255,0.84);
   backdrop-filter: blur(14px);
 }
@@ -682,7 +683,7 @@ html[data-theme="dark"] .tag-cloud a {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  padding-top: 6px;
+  padding-top: 10px;
 }
 
 .article-shell {
@@ -697,7 +698,7 @@ html[data-theme="dark"] .tag-cloud a {
 
 .article-meta-row {
   display: flex;
-  gap: 10px;
+  gap: 8px;
   flex-wrap: wrap;
   margin-top: 18px;
 }
@@ -824,6 +825,8 @@ html[data-theme="dark"] .tag-cloud a {
     justify-self: stretch;
   }
 }
+
+
 
 
 
