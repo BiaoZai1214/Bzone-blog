@@ -293,10 +293,10 @@ html[data-theme="dark"] .theme-toggle__icon {
 
 .hero-panel {
   display: grid;
-  grid-template-columns: minmax(0, 1.12fr) minmax(220px, 0.68fr) minmax(180px, 0.48fr);
-  gap: 12px;
+  grid-template-columns: minmax(0, 1.12fr) minmax(210px, 0.64fr) minmax(168px, 0.42fr);
+  gap: 10px;
   align-items: center;
-  padding: 16px;
+  padding: 16px 18px;
   border-radius: 30px;
   background: linear-gradient(135deg, rgba(255,255,255,0.42), rgba(255,255,255,0.18));
   border: 1px solid rgba(255,255,255,0.18);
@@ -314,9 +314,9 @@ html[data-theme="dark"] .theme-toggle__icon {
 
 .hero-profile {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   align-items: center;
-  padding-right: 12px;
+  padding-right: 10px;
   border-right: 1px solid rgba(15, 23, 42, 0.08);
 }
 
@@ -344,7 +344,7 @@ html[data-theme="dark"] .theme-toggle__icon {
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
 }
 
 .hero-profile__copy h1 {
@@ -395,15 +395,16 @@ html[data-theme="dark"] .hero-meta__icon {
 .hero-meta {
   display: flex;
   flex-direction: column;
-  gap: 7px;
-  padding: 0 12px 0 0;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 10px 0 0;
   border-right: 1px solid rgba(15, 23, 42, 0.08);
 }
 
 .hero-meta__item {
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: 6px;
 }
 
 .hero-meta__icon {
@@ -426,7 +427,7 @@ html[data-theme="dark"] .hero-meta__icon {
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 1px;
+  gap: 0;
 }
 
 .hero-meta__label {
@@ -445,46 +446,49 @@ html[data-theme="dark"] .hero-meta__icon {
 .hero-actions {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 8px;
   align-items: flex-start;
-  padding-left: 2px;
+  padding-left: 0;
+  width: fit-content;
+  justify-self: start;
 }
 
 .social-button {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   width: 100%;
-  min-height: 50px;
-  padding: 11px 14px;
-  border-radius: 13px;
+  min-height: 46px;
+  padding: 10px 13px;
+  border-radius: 12px;
   color: #ffffff;
   border: 1px solid transparent;
   background: rgba(255,255,255,0.58);
-  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.06);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
   transition: transform .2s ease, opacity .2s ease, box-shadow .2s ease;
 }
 
 .social-button:hover {
   transform: translateY(-1px);
   opacity: 0.94;
-  box-shadow: 0 14px 24px rgba(15, 23, 42, 0.10);
+  box-shadow: 0 12px 20px rgba(15, 23, 42, 0.10);
 }
 
 .social-button__icon {
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   display: grid;
   place-items: center;
-  border-radius: 999px;
+  border-radius: 8px;
   background: transparent;
   color: currentColor;
   flex: 0 0 auto;
 }
 
 .social-button__icon svg {
-  width: 15px;
-  height: 15px;
+  width: 14px;
+  height: 14px;
 }
 
 .social-button__text {
@@ -495,11 +499,11 @@ html[data-theme="dark"] .hero-meta__icon {
   flex: 1;
 }
 
-.social-button__text strong { font-size: 0.95rem; }
-.social-button__text small { color: rgba(255,255,255,0.78); font-size: 0.72rem; }
+.social-button__text strong { font-size: 0.92rem; }
+.social-button__text small { color: rgba(255,255,255,0.78); font-size: 0.7rem; }
 .social-button__arrow { display: none; }
 .social-button--github {
-  background: linear-gradient(135deg, #111111, #1f1f1f);
+  background: #111111;
 }
 
 .social-button--github .social-button__icon {
@@ -507,7 +511,7 @@ html[data-theme="dark"] .hero-meta__icon {
 }
 
 .social-button--bilibili {
-  background: linear-gradient(135deg, #ff4f9a, #ff79b4);
+  background: #ff5b9f;
 }
 
 .social-button--bilibili .social-button__icon {
@@ -517,8 +521,8 @@ html[data-theme="dark"] .hero-meta__icon {
 html[data-theme="dark"] .social-button {
   color: #e5e7eb;
   border-color: rgba(255,255,255,0.08);
-  background: rgba(33, 35, 39, 0.88);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.22);
+  background: rgba(33, 35, 39, 0.90);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
 }
 
 html[data-theme="dark"] .social-button__icon {
@@ -535,11 +539,11 @@ html[data-theme="dark"] .hero-meta__item strong a {
 }
 
 html[data-theme="dark"] .social-button--github {
-  background: linear-gradient(135deg, #0f1012, #202225);
+  background: #0f1012;
 }
 
 html[data-theme="dark"] .social-button--bilibili {
-  background: linear-gradient(135deg, #d93b82, #ff6aa8);
+  background: #e84d91;
 }
 
 html[data-theme="dark"] .post-card__tags span,
