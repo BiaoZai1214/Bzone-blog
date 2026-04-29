@@ -8,14 +8,15 @@
       </div>
       <div class="hero-profile__copy">
         <h1>{{ site.Params.author }}</h1>
-        <p class="hero-profile__summary">保持理性保持进步</p>
+        <span class="hero-profile__accent" aria-hidden="true"></span>
+        <p class="hero-profile__summary typing-line" data-typewriter data-typewriter-text="保持理性，保持进步。">保持理性，保持进步。</p>
       </div>
     </div>
 
     <div class="hero-meta">
       <div class="hero-meta__item">
-        <span class="hero-meta__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M3.75 7.5A2.25 2.25 0 0 1 6 5.25h12A2.25 2.25 0 0 1 20.25 7.5v9A2.25 2.25 0 0 1 18 18.75H6A2.25 2.25 0 0 1 3.75 16.5v-9Z" stroke="currentColor" stroke-width="1.8"/><path d="m4.5 6 7.01 5.26a.83.83 0 0 0 .98 0L19.5 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="hero-meta__icon hero-meta__icon--mail" aria-hidden="true">
+          <img src="{{ "images/邮箱.svg" | relURL }}" alt="" loading="eager" decoding="async">
         </span>
         <div>
           <span class="hero-meta__label">邮箱</span>
@@ -23,8 +24,8 @@
         </div>
       </div>
       <div class="hero-meta__item">
-        <span class="hero-meta__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M6.5 6.75h11A1.75 1.75 0 0 1 19.25 8.5v5A1.75 1.75 0 0 1 17.5 15.25H12.1l-3.2 2.2a.9.9 0 0 1-1.4-.74v-1.46H6.5A1.75 1.75 0 0 1 4.75 13.5v-5A1.75 1.75 0 0 1 6.5 6.75Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.2 10.3h.01M11.95 10.3h.01M15.7 10.3h.01" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+        <span class="hero-meta__icon hero-meta__icon--wechat" aria-hidden="true">
+          <img src="{{ "images/微信.svg" | relURL }}" alt="" loading="eager" decoding="async">
         </span>
         <div>
           <span class="hero-meta__label">微信</span>
@@ -35,12 +36,18 @@
 
     <div class="hero-actions">
       <a class="social-button social-button--github" href="{{ site.Params.github }}" target="_blank" rel="noreferrer">
+        <span class="social-button__icon" aria-hidden="true">
+          <img src="{{ "images/github.svg" | relURL }}" alt="" loading="eager" decoding="async">
+        </span>
         <span class="social-button__text">
           <strong>GitHub</strong>
           <small>BiaoZai1214</small>
         </span>
       </a>
       <a class="social-button social-button--bilibili" href="{{ site.Params.bilibili }}" target="_blank" rel="noreferrer">
+        <span class="social-button__icon" aria-hidden="true">
+          <img src="{{ "images/bilibili.svg" | relURL }}" alt="" loading="eager" decoding="async">
+        </span>
         <span class="social-button__text">
           <strong>Bilibili</strong>
           <small>视频主页</small>

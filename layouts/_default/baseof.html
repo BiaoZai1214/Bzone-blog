@@ -82,5 +82,35 @@
       sync();
     })();
   </script>
+
+  <script>
+    (() => {
+      const nodes = document.querySelectorAll('[data-typewriter]');
+      if (!nodes.length) return;
+
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      nodes.forEach((node) => {
+        const text = node.getAttribute('data-typewriter-text') || node.textContent || '';
+        if (!text) return;
+
+        if (reduceMotion) {
+          node.textContent = text;
+          return;
+        }
+
+        node.textContent = '';
+        let index = 0;
+        const tick = () => {
+          node.textContent = text.slice(0, index);
+          if (index < text.length) {
+            index += 1;
+            window.setTimeout(tick, 70);
+          }
+        };
+
+        window.setTimeout(tick, 220);
+      });
+    })();
+  </script>
 </body>
 </html>
