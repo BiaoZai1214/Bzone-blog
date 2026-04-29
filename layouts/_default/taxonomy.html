@@ -9,15 +9,20 @@
   <section class="card-grid">
     {{ range $index, $page := .Pages.ByDate.Reverse }}
       {{ $accent := index (slice "linear-gradient(135deg, rgba(255,255,255,0.92), rgba(255,255,255,0.72))" "linear-gradient(135deg, rgba(232,244,255,0.96), rgba(255,255,255,0.74))" "linear-gradient(135deg, rgba(242,240,255,0.96), rgba(255,255,255,0.74))" "linear-gradient(135deg, rgba(236,248,245,0.96), rgba(255,255,255,0.74))") (mod $index 4) }}
+      {{ $cover := $page.Params.cover | default $page.Params.image }}
       {{ $summary := $page.Description | default ($page.Summary | plainify | truncate 120) }}
       <article class="post-card" {{ printf "style=%q" (printf "--card-accent: %s;" $accent) | safeHTMLAttr }}>
         <a class="post-card__link" href="{{ $page.RelPermalink }}">
-          <div class="post-card__top">
-            <div class="post-card__orb"></div>
+          <div class="post-card__media{{ if not $cover }} post-card__media--fallback{{ end }}" {{ with $cover }}{{ printf "style=%q" (printf "background-image:url('%s');" (. | relURL)) | safeHTMLAttr }}{{ end }}>
             <div class="post-card__badge">文章</div>
           </div>
           <div class="post-card__body">
-            <p class="post-card__meta">{{ $page.Date.Format "2006-01-02" }}</p>
+            <div class="post-card__meta">
+              <span class="post-card__meta-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M7.5 3.75v2.25M16.5 3.75v2.25M4.5 9h15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><rect x="4.5" y="5.25" width="15" height="15" rx="2.5" stroke="currentColor" stroke-width="1.8"/><path d="M8.25 12h.01M12 12h.01M15.75 12h.01M8.25 15.75h.01M12 15.75h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </span>
+              <span>{{ $page.Date.Format "2006/01/02" }}</span>
+            </div>
             <h3>{{ $page.Title }}</h3>
             <p class="post-card__summary">{{ $summary }}</p>
           </div>
