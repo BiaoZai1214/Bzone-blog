@@ -1,0 +1,263 @@
+{{ define "main" }}
+  {{ $steps := slice
+    (dict
+      "key" "setup"
+      "title" "搭好环境"
+      "summary" "先把编辑器、Git、Hugo、本地预览和常用调试工具准备好。"
+      "output" "能在本地稳定预览博客，并把修改提交到仓库。"
+      "action" "确认本地预览、提交、推送这条链路全部通畅。"
+    )
+    (dict
+      "key" "writing"
+      "title" "写出第一篇可发布文章"
+      "summary" "掌握 front matter、标题层级、图片和链接的基本写法。"
+      "output" "完成一篇结构清晰、内容完整的短文。"
+      "action" "先写 500 到 800 字，把文章结构跑通。"
+    )
+    (dict
+      "key" "c-base"
+      "title" "补齐 C 语言和编译基础"
+      "summary" "把指针、结构体、宏、编译和链接这些基础打牢。"
+      "output" "能把一个功能拆成函数、模块和头文件。"
+      "action" "把你当前最常用的代码片段整理成笔记。"
+    )
+    (dict
+      "key" "stm32"
+      "title" "进入 STM32 外设"
+      "summary" "从 GPIO、UART、定时器开始，建立对外设初始化和时序的直觉。"
+      "output" "能独立做一个点灯、串口、定时器的小实验。"
+      "action" "每做完一个外设，马上记录配置流程和坑点。"
+    )
+    (dict
+      "key" "debug"
+      "title" "把调试能力练出来"
+      "summary" "学会看波形、看寄存器、看日志，理解问题怎么定位。"
+      "output" "遇到异常时能先判断是时钟、配置还是逻辑问题。"
+      "action" "给每次排查保留截图、串口日志和结论。"
+    )
+    (dict
+      "key" "project"
+      "title" "做一个完整项目"
+      "summary" "把外设、通信、状态机和调试串成一个可交付的小项目。"
+      "output" "做出一个能演示、能复现、能说明白的项目。"
+      "action" "把项目拆成最小可运行版本，再逐步加功能。"
+    )
+    (dict
+      "key" "article"
+      "title" "把经验整理成文章"
+      "summary" "把实验过程、问题定位和结论写成博客，形成自己的知识库。"
+      "output" "完成一篇有结论、有思考、有复盘的技术文章。"
+      "action" "每次实验结束后，立刻把笔记整理成文章草稿。"
+    )
+  }}
+
+  <section class="learning-path" data-learning-path>
+    <header class="learning-path__hero path-card">
+      <div class="learning-path__intro">
+        <p class="eyebrow">Learning Path</p>
+        <h1>学习路径</h1>
+        <p class="learning-path__lead">
+          勾选你已经完成的步骤，页面会自动告诉你下一步该做什么。
+          这不是静态清单，而是一张可以持续更新的路线图。
+        </p>
+        <div class="learning-path__chips">
+          <span>可勾选</span>
+          <span>自动记忆</span>
+          <span>下一步提示</span>
+        </div>
+      </div>
+
+      <div class="learning-path__progress">
+        <div class="learning-path__ring" data-progress-ring>
+          <div class="learning-path__ring-inner">
+            <strong data-progress-value>0%</strong>
+            <span>完成度</span>
+          </div>
+        </div>
+        <div class="learning-path__stats">
+          <div class="learning-path__stat">
+            <strong data-progress-done>0</strong>
+            <span>已完成</span>
+          </div>
+          <div class="learning-path__stat">
+            <strong data-progress-total>{{ len $steps }}</strong>
+            <span>总步骤</span>
+          </div>
+          <div class="learning-path__stat">
+            <strong data-progress-left>{{ len $steps }}</strong>
+            <span>待完成</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="learning-path__layout">
+      <aside class="learning-path__sidebar path-card">
+        <p class="eyebrow">下一步建议</p>
+        <h2 data-next-title>搭好环境</h2>
+        <p class="learning-path__next-summary" data-next-summary>
+          先把编辑器、Git、Hugo、本地预览和常用调试工具准备好。
+        </p>
+        <div class="learning-path__next-action">
+          <span>建议动作</span>
+          <strong data-next-action>确认本地预览、提交、推送这条链路全部通畅。</strong>
+        </div>
+        <div class="learning-path__side-note">
+          <p>你每勾选一项，页面会自动记住状态。</p>
+          <p>如果想重来一次，可以随时清空进度。</p>
+        </div>
+        <div class="learning-path__side-actions">
+          <button class="button button--primary" type="button" data-jump-next>跳到下一步</button>
+          <button class="button button--secondary" type="button" data-reset-path>清空进度</button>
+        </div>
+      </aside>
+
+      <div class="learning-path__steps" aria-label="学习步骤">
+        {{ range $index, $step := $steps }}
+          <article
+            class="learning-step path-card"
+            data-step-id="{{ $step.key }}"
+            data-step-title="{{ $step.title }}"
+            data-step-summary="{{ $step.summary }}"
+            data-step-action="{{ $step.action }}"
+          >
+            <label class="learning-step__check">
+              <input class="learning-step__input" type="checkbox" aria-label="{{ $step.title }}">
+              <span class="learning-step__box" aria-hidden="true"></span>
+              <div class="learning-step__headline">
+                <p class="learning-step__kicker">STEP {{ printf "%02d" (add $index 1) }}</p>
+                <h3>{{ $step.title }}</h3>
+              </div>
+            </label>
+
+            <p class="learning-step__summary">{{ $step.summary }}</p>
+
+            <div class="learning-step__grid">
+              <div class="learning-step__item">
+                <span>完成后输出</span>
+                <strong>{{ $step.output }}</strong>
+              </div>
+              <div class="learning-step__item">
+                <span>下一步动作</span>
+                <strong>{{ $step.action }}</strong>
+              </div>
+            </div>
+          </article>
+        {{ end }}
+      </div>
+    </div>
+
+    {{ with .Content }}
+      <section class="learning-path__note path-card">
+        <div class="learning-path__note-title">补充说明</div>
+        <div class="learning-path__note-body">{{ . }}</div>
+      </section>
+    {{ end }}
+  </section>
+
+  <script>
+    (() => {
+      const root = document.querySelector('[data-learning-path]');
+      if (!root) return;
+
+      const storageKey = 'bz-learning-path-progress';
+      const steps = Array.from(root.querySelectorAll('.learning-step'));
+      const ring = root.querySelector('[data-progress-ring]');
+      const progressValue = root.querySelector('[data-progress-value]');
+      const progressDone = root.querySelector('[data-progress-done]');
+      const progressLeft = root.querySelector('[data-progress-left]');
+      const nextTitle = root.querySelector('[data-next-title]');
+      const nextSummary = root.querySelector('[data-next-summary]');
+      const nextAction = root.querySelector('[data-next-action]');
+      const jumpButton = root.querySelector('[data-jump-next]');
+      const resetButton = root.querySelector('[data-reset-path]');
+
+      const loadState = () => {
+        try {
+          return JSON.parse(localStorage.getItem(storageKey)) || {};
+        } catch (error) {
+          return {};
+        }
+      };
+
+      const saveState = (state) => {
+        try {
+          localStorage.setItem(storageKey, JSON.stringify(state));
+        } catch (error) {}
+      };
+
+      const state = loadState();
+
+      const render = () => {
+        let done = 0;
+        let nextStep = null;
+
+        steps.forEach((step) => {
+          const input = step.querySelector('.learning-step__input');
+          const checked = Boolean(state[step.dataset.stepId]);
+
+          input.checked = checked;
+          step.classList.toggle('is-complete', checked);
+          step.classList.remove('is-next');
+
+          if (checked) {
+            done += 1;
+          } else if (!nextStep) {
+            nextStep = step;
+          }
+        });
+
+        if (nextStep) {
+          nextStep.classList.add('is-next');
+          nextTitle.textContent = nextStep.dataset.stepTitle;
+          nextSummary.textContent = nextStep.dataset.stepSummary;
+          nextAction.textContent = nextStep.dataset.stepAction;
+          jumpButton.textContent = `跳到「${nextStep.dataset.stepTitle}」`;
+        } else {
+          nextTitle.textContent = '整条路径已完成';
+          nextSummary.textContent = '你已经把这条学习路径跑完了。建议把每一步的结果整理成文章或项目复盘，沉淀成自己的知识库。';
+          nextAction.textContent = '把完整过程写成一篇总结文章';
+          jumpButton.textContent = '回到顶部';
+        }
+
+        const total = steps.length;
+        const percent = total ? Math.round((done / total) * 100) : 0;
+        const left = total - done;
+        const degree = Math.round((percent / 100) * 360);
+
+        ring.style.background = `conic-gradient(var(--accent) ${degree}deg, rgba(0, 113, 227, 0.12) 0deg)`;
+        progressValue.textContent = `${percent}%`;
+        progressDone.textContent = String(done);
+        progressLeft.textContent = String(left);
+      };
+
+      steps.forEach((step) => {
+        const input = step.querySelector('.learning-step__input');
+        input.addEventListener('change', () => {
+          state[step.dataset.stepId] = input.checked;
+          saveState(state);
+          render();
+        });
+      });
+
+      jumpButton.addEventListener('click', () => {
+        const nextStep = steps.find((step) => !step.querySelector('.learning-step__input').checked);
+        if (nextStep) {
+          nextStep.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          return;
+        }
+        root.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+
+      resetButton.addEventListener('click', () => {
+        steps.forEach((step) => {
+          delete state[step.dataset.stepId];
+        });
+        saveState(state);
+        render();
+      });
+
+      render();
+    })();
+  </script>
+{{ end }}
