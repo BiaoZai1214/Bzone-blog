@@ -1265,10 +1265,9 @@ html[data-theme="dark"] .article-toc #TableOfContents a:hover {
   body {
     background-color: #f8f8fa;
     background:
-      linear-gradient(180deg, rgba(248, 248, 250, 0.36), rgba(243, 244, 248, 0.52)),
-      var(--site-bg) center center / cover no-repeat,
-      radial-gradient(circle at top left, rgba(255, 255, 255, 0.72), transparent 22%),
-      radial-gradient(circle at 88% 12%, rgba(0, 113, 227, 0.04), transparent 18%),
+      linear-gradient(180deg, rgba(248, 248, 250, 0.94), rgba(243, 244, 248, 0.98)),
+      radial-gradient(circle at top left, rgba(255, 255, 255, 0.9), transparent 22%),
+      radial-gradient(circle at 88% 12%, rgba(0, 113, 227, 0.06), transparent 18%),
       linear-gradient(180deg, #f8f8fa 0%, #f3f4f8 100%);
   }
 
@@ -1290,7 +1289,7 @@ html[data-theme="dark"] .article-toc #TableOfContents a:hover {
   .article-shell,
   .article-toc,
   .post-card {
-    width: min(100%, 680px);
+    width: min(calc(100% - 24px), 680px);
     margin-left: auto;
     margin-right: auto;
   }
@@ -1298,7 +1297,7 @@ html[data-theme="dark"] .article-toc #TableOfContents a:hover {
   .hero-panel {
     grid-template-columns: 1fr;
     gap: 16px;
-    padding: 18px;
+    padding: 20px;
     border-radius: 28px;
     background: rgba(255, 255, 255, 0.74);
     border: 1px solid rgba(255, 255, 255, 0.56);
@@ -1360,8 +1359,8 @@ html[data-theme="dark"] .article-toc #TableOfContents a:hover {
   }
 
   .hero-meta__item {
-    min-height: 64px;
-    padding: 12px 12px;
+    min-height: 70px;
+    padding: 13px 13px;
     gap: 10px;
     align-items: flex-start;
     border-radius: 18px;
@@ -1406,7 +1405,7 @@ html[data-theme="dark"] .article-toc #TableOfContents a:hover {
     width: 100%;
     min-width: 0;
     justify-content: flex-start;
-    padding: 12px 13px;
+    padding: 13px 14px;
     gap: 10px;
     border-radius: 16px;
   }
@@ -1439,8 +1438,8 @@ html[data-theme="dark"] .article-toc #TableOfContents a:hover {
   }
 
   .intro-card {
-    margin-top: 16px;
-    padding: 16px 18px;
+    margin-top: 18px;
+    padding: 18px 20px;
     border-radius: 24px;
     background: rgba(255, 255, 255, 0.68);
     border: 1px solid rgba(255, 255, 255, 0.48);
@@ -1464,7 +1463,7 @@ html[data-theme="dark"] .article-toc #TableOfContents a:hover {
 
   .card-grid {
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 16px;
     justify-items: stretch;
   }
 
@@ -1479,12 +1478,12 @@ html[data-theme="dark"] .article-toc #TableOfContents a:hover {
   }
 
   .post-card__media {
-    min-height: 230px;
+    min-height: 258px;
   }
 
   .post-card__body {
-    padding: 16px 16px 18px;
-    gap: 10px;
+    padding: 18px 18px 20px;
+    gap: 11px;
     background: rgba(255, 255, 255, 0.72);
     backdrop-filter: blur(18px) saturate(120%);
     -webkit-backdrop-filter: blur(18px) saturate(120%);
@@ -1510,7 +1509,7 @@ html[data-theme="dark"] .article-toc #TableOfContents a:hover {
     position: sticky;
     top: 10px;
     max-height: none;
-    padding: 12px 12px 10px;
+    padding: 13px 13px 11px;
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.70);
     border: 1px solid rgba(255, 255, 255, 0.48);
@@ -1555,7 +1554,7 @@ html[data-theme="dark"] .article-toc #TableOfContents a:hover {
   }
 
   .article-shell {
-    padding: 18px;
+    padding: 20px;
     border-radius: 26px;
     background: rgba(255, 255, 255, 0.76);
     border: 1px solid rgba(255, 255, 255, 0.56);
@@ -1580,7 +1579,7 @@ html[data-theme="dark"] .article-toc #TableOfContents a:hover {
   }
 
   .article-meta-row {
-    margin-top: 14px;
+    margin-top: 16px;
     gap: 6px;
   }
 
@@ -1590,7 +1589,7 @@ html[data-theme="dark"] .article-toc #TableOfContents a:hover {
   }
 
   .article-content {
-    margin-top: 22px;
+    margin-top: 24px;
     font-size: 0.98rem;
     line-height: 1.84;
   }
@@ -1708,10 +1707,11 @@ html[data-theme="dark"] .article-toc #TableOfContents a:hover {
   .article-toc,
   .post-card {
     border-radius: 24px;
+    width: min(calc(100% - 18px), 680px);
   }
 
   .hero-panel {
-    padding: 16px;
+    padding: 17px;
   }
 
   .hero-profile__avatar {
@@ -1729,7 +1729,7 @@ html[data-theme="dark"] .article-toc #TableOfContents a:hover {
   }
 
   .social-button {
-    padding: 11px 12px;
+    padding: 12px 12px;
     border-radius: 14px;
   }
 
@@ -1742,16 +1742,16 @@ html[data-theme="dark"] .article-toc #TableOfContents a:hover {
   }
 
   .post-card__media {
-    min-height: 198px;
+    min-height: 226px;
   }
 
   .post-card__body {
-    padding: 14px 14px 16px;
+    padding: 16px 16px 18px;
   }
 
   .article-toc {
     top: 8px;
-    padding: 10px 10px 9px;
+    padding: 11px 11px 10px;
   }
 
   .article-toc__title {
@@ -1759,7 +1759,7 @@ html[data-theme="dark"] .article-toc #TableOfContents a:hover {
   }
 
   .article-shell {
-    padding: 16px;
+    padding: 18px;
   }
 
   .article-head h1 {
