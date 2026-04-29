@@ -293,10 +293,10 @@ html[data-theme="dark"] .theme-toggle__icon {
 
 .hero-panel {
   display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(240px, 0.76fr) minmax(160px, 0.42fr);
-  gap: 18px;
+  grid-template-columns: minmax(0, 1.12fr) minmax(220px, 0.68fr) minmax(180px, 0.48fr);
+  gap: 12px;
   align-items: center;
-  padding: 18px;
+  padding: 16px;
   border-radius: 30px;
   background: linear-gradient(135deg, rgba(255,255,255,0.42), rgba(255,255,255,0.18));
   border: 1px solid rgba(255,255,255,0.18);
@@ -314,9 +314,9 @@ html[data-theme="dark"] .theme-toggle__icon {
 
 .hero-profile {
   display: flex;
-  gap: 14px;
+  gap: 12px;
   align-items: center;
-  padding-right: 14px;
+  padding-right: 12px;
   border-right: 1px solid rgba(15, 23, 42, 0.08);
 }
 
@@ -344,7 +344,7 @@ html[data-theme="dark"] .theme-toggle__icon {
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
 .hero-profile__copy h1 {
@@ -395,7 +395,7 @@ html[data-theme="dark"] .hero-meta__icon {
 .hero-meta {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 7px;
   padding: 0 12px 0 0;
   border-right: 1px solid rgba(15, 23, 42, 0.08);
 }
@@ -403,7 +403,7 @@ html[data-theme="dark"] .hero-meta__icon {
 .hero-meta__item {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
 }
 
 .hero-meta__icon {
@@ -426,7 +426,7 @@ html[data-theme="dark"] .hero-meta__icon {
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 1px;
 }
 
 .hero-meta__label {
@@ -445,18 +445,19 @@ html[data-theme="dark"] .hero-meta__icon {
 .hero-actions {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
   align-items: flex-start;
-  padding-left: 4px;
+  padding-left: 2px;
 }
 
 .social-button {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   width: 100%;
-  padding: 12px 14px;
-  border-radius: 14px;
+  min-height: 50px;
+  padding: 11px 14px;
+  border-radius: 13px;
   color: #ffffff;
   border: 1px solid transparent;
   background: rgba(255,255,255,0.58);
@@ -471,19 +472,19 @@ html[data-theme="dark"] .hero-meta__icon {
 }
 
 .social-button__icon {
-  width: 26px;
-  height: 26px;
+  width: 22px;
+  height: 22px;
   display: grid;
   place-items: center;
-  border-radius: 10px;
+  border-radius: 999px;
   background: transparent;
   color: currentColor;
   flex: 0 0 auto;
 }
 
 .social-button__icon svg {
-  width: 14px;
-  height: 14px;
+  width: 15px;
+  height: 15px;
 }
 
 .social-button__text {
@@ -494,8 +495,8 @@ html[data-theme="dark"] .hero-meta__icon {
   flex: 1;
 }
 
-.social-button__text strong { font-size: 0.9rem; }
-.social-button__text small { color: rgba(255,255,255,0.78); font-size: 0.7rem; }
+.social-button__text strong { font-size: 0.95rem; }
+.social-button__text small { color: rgba(255,255,255,0.78); font-size: 0.72rem; }
 .social-button__arrow { display: none; }
 .social-button--github {
   background: linear-gradient(135deg, #111111, #1f1f1f);
@@ -526,6 +527,11 @@ html[data-theme="dark"] .social-button__icon {
 
 html[data-theme="dark"] .social-button__text small {
   color: rgba(229,231,235,0.68);
+}
+
+html[data-theme="dark"] .hero-meta__item strong,
+html[data-theme="dark"] .hero-meta__item strong a {
+  color: #f2f5f8;
 }
 
 html[data-theme="dark"] .social-button--github {
@@ -962,19 +968,19 @@ html[data-theme="dark"] .post-card__badge {
 }
 
 html[data-theme="dark"] .post-card__meta {
-  color: #c7ced8;
+  color: #dde3ea;
 }
 
 html[data-theme="dark"] .post-card__meta-icon {
-  color: #e1e6ee;
+  color: #eff3f7;
 }
 
 html[data-theme="dark"] .post-card h3 {
-  color: #f4f6f8;
+  color: #f9fafb;
 }
 
 html[data-theme="dark"] .post-card__summary {
-  color: #d0d6df;
+  color: #e3e8ee;
 }
 
 html[data-theme="dark"] .article-shell {
