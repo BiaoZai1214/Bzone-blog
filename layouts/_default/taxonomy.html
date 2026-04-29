@@ -10,7 +10,7 @@
     {{ range $index, $page := .Pages.ByDate.Reverse }}
       {{ $accent := index (slice "linear-gradient(135deg, rgba(255,255,255,0.92), rgba(255,255,255,0.72))" "linear-gradient(135deg, rgba(232,244,255,0.96), rgba(255,255,255,0.74))" "linear-gradient(135deg, rgba(242,240,255,0.96), rgba(255,255,255,0.74))" "linear-gradient(135deg, rgba(236,248,245,0.96), rgba(255,255,255,0.74))") (mod $index 4) }}
       {{ $summary := $page.Description | default ($page.Summary | plainify | truncate 120) }}
-      <article class="post-card" style="--card-accent: {{ $accent }};">
+      <article class="post-card" {{ printf "style=%q" (printf "--card-accent: %s;" $accent) | safeHTMLAttr }}>
         <a class="post-card__link" href="{{ $page.RelPermalink }}">
           <div class="post-card__top">
             <div class="post-card__orb"></div>
