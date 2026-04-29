@@ -2,82 +2,68 @@
   {{ $posts := first 6 (where site.RegularPages.ByDate.Reverse "Section" "posts") }}
 
   <section class="hero-panel">
-    <div class="hero-panel__main">
-      <p class="eyebrow">Bzone Blog</p>
-      <div class="hero-identity">
-        <div class="hero-identity__avatar-wrap">
-          <img class="hero-identity__avatar" src="{{ printf "%simages/bz.jpg" site.Home.RelPermalink }}" alt="{{ site.Params.author }} 头像" loading="eager" decoding="async">
-        </div>
-        <div class="hero-identity__copy">
-          <h1>{{ site.Params.author }}</h1>
-          <p class="hero-identity__role">{{ site.Params.role }}</p>
-          <p class="hero-panel__summary">{{ site.Params.subtitle }}</p>
-        </div>
+    <div class="hero-profile">
+      <div class="hero-profile__avatar-wrap">
+        <img class="hero-profile__avatar" src="{{ printf "%simages/bz.jpg" site.Home.RelPermalink }}" alt="{{ site.Params.author }} 头像" loading="eager" decoding="async">
       </div>
-      <div class="hero-panel__chips">
-        <span>STM32</span>
-        <span>驱动调试</span>
-        <span>嵌入式开发</span>
-      </div>
-      <div class="hero-panel__actions">
-        <a class="button button--primary" href="{{ with site.GetPage "/posts" }}{{ .RelPermalink }}{{ end }}">查看文章</a>
-        <a class="button button--secondary" href="{{ with site.GetPage "/about" }}{{ .RelPermalink }}{{ end }}">关于我</a>
-      </div>
-      <div class="hero-note">
-        <p class="hero-note__label">简介</p>
-        <p>{{ site.Params.description }}</p>
+      <div class="hero-profile__copy">
+        <h1>{{ site.Params.author }}</h1>
+        <p class="hero-profile__role">{{ site.Params.role }}</p>
+        <p class="hero-profile__summary">{{ site.Params.subtitle }}</p>
       </div>
     </div>
 
-    <aside class="hero-sidecard">
-      <section class="hero-sidecard__section hero-sidecard__section--highlight">
-        <p class="hero-sidecard__label">当前方向</p>
-        <h2>{{ site.Params.role }}</h2>
-        <p>专注嵌入式、底层驱动和调试排查。</p>
-      </section>
-
-      <section class="hero-sidecard__section">
-        <p class="hero-sidecard__label">联系方式</p>
-        <div class="hero-contact-list">
-          <div class="hero-contact-item">
-            <span>邮箱</span>
-            <strong>lemon965566@163.com</strong>
-          </div>
-          <div class="hero-contact-item">
-            <span>微信号</span>
-            <strong>htlb1214</strong>
-          </div>
-          <div class="hero-contact-item">
-            <span>地区</span>
-            <strong>{{ site.Params.location }}</strong>
-          </div>
+    <div class="hero-meta">
+      <div class="hero-meta__item">
+        <span class="hero-meta__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M3.75 7.5A2.25 2.25 0 0 1 6 5.25h12A2.25 2.25 0 0 1 20.25 7.5v9A2.25 2.25 0 0 1 18 18.75H6A2.25 2.25 0 0 1 3.75 16.5v-9Z" stroke="currentColor" stroke-width="1.8"/><path d="m4.5 6 7.01 5.26a.83.83 0 0 0 .98 0L19.5 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <div>
+          <span class="hero-meta__label">邮箱</span>
+          <strong>lemon965566@163.com</strong>
         </div>
-      </section>
-
-      <section class="hero-sidecard__section">
-        <p class="hero-sidecard__label">站外主页</p>
-        <div class="hero-socials">
-          <a class="social-button social-button--github" href="{{ site.Params.github }}" target="_blank" rel="noreferrer">
-            <span class="social-button__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" role="img" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.52 2.87 8.35 6.84 9.7.5.1.68-.22.68-.5v-1.7c-2.78.62-3.37-1.22-3.37-1.22-.45-1.17-1.1-1.48-1.1-1.48-.9-.64.07-.62.07-.62 1 .07 1.53 1.04 1.53 1.04.88 1.54 2.3 1.09 2.86.83.09-.65.35-1.1.63-1.35-2.22-.26-4.56-1.13-4.56-5.04 0-1.11.38-2.02 1.02-2.73-.1-.26-.44-1.31.1-2.73 0 0 .84-.27 2.75 1.04A9.3 9.3 0 0 1 12 6.84c.85 0 1.7.12 2.5.35 1.9-1.31 2.74-1.04 2.74-1.04.54 1.42.2 2.47.1 2.73.64.71 1.02 1.62 1.02 2.73 0 3.92-2.35 4.77-4.59 5.02.36.32.68.95.68 1.92v2.85c0 .28.18.61.69.5A10.25 10.25 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z" fill="currentColor"/></svg>
-            </span>
-            <span class="social-button__text">
-              <strong>GitHub</strong>
-              <small>BiaoZai1214</small>
-            </span>
-          </a>
-          <a class="social-button social-button--bilibili" href="{{ site.Params.bilibili }}" target="_blank" rel="noreferrer">
-            <span class="social-button__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" role="img" aria-hidden="true"><path d="M4.5 6.5h15A2.5 2.5 0 0 1 22 9v7a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 16V9a2.5 2.5 0 0 1 2.5-2.5Zm4 1.5-2.2-2.2a1 1 0 1 1 1.4-1.4L10 6.6l2.3-2.3a1 1 0 1 1 1.4 1.4L11.4 8H14a1 1 0 0 1 0 2H8.5a1 1 0 0 1 0-2Zm10.5 2a1 1 0 0 0-1 1v3.5a1 1 0 1 0 2 0V11a1 1 0 0 0-1-1Zm-3 0a1 1 0 0 0-1 1v3.5a1 1 0 1 0 2 0V11a1 1 0 0 0-1-1Z" fill="currentColor"/></svg>
-            </span>
-            <span class="social-button__text">
-              <strong>Bilibili</strong>
-              <small>视频主页</small>
-            </span>
-          </a>
+      </div>
+      <div class="hero-meta__item">
+        <span class="hero-meta__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 20.25s6-5.32 6-10.13A6 6 0 1 0 6 10.12c0 4.81 6 10.13 6 10.13Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="10.13" r="2.25" stroke="currentColor" stroke-width="1.8"/></svg>
+        </span>
+        <div>
+          <span class="hero-meta__label">地区</span>
+          <strong>{{ site.Params.location }}</strong>
         </div>
-      </section>
-    </aside>
+      </div>
+      <div class="hero-meta__item">
+        <span class="hero-meta__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M10.5 13.5 13.5 10.5M8.25 15.75l-1.12 1.12a3.18 3.18 0 1 1-4.5-4.5l3-3a3.18 3.18 0 0 1 4.5 0M15.75 8.25l1.12-1.12a3.18 3.18 0 0 1 4.5 4.5l-3 3a3.18 3.18 0 0 1-4.5 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <div>
+          <span class="hero-meta__label">更多</span>
+          <strong>{{ with site.GetPage "/about" }}<a href="{{ .RelPermalink }}">关于我</a>{{ end }}</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-actions">
+      <a class="social-button social-button--github" href="{{ site.Params.github }}" target="_blank" rel="noreferrer">
+        <span class="social-button__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" role="img" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.52 2.87 8.35 6.84 9.7.5.1.68-.22.68-.5v-1.7c-2.78.62-3.37-1.22-3.37-1.22-.45-1.17-1.1-1.48-1.1-1.48-.9-.64.07-.62.07-.62 1 .07 1.53 1.04 1.53 1.04.88 1.54 2.3 1.09 2.86.83.09-.65.35-1.1.63-1.35-2.22-.26-4.56-1.13-4.56-5.04 0-1.11.38-2.02 1.02-2.73-.1-.26-.44-1.31.1-2.73 0 0 .84-.27 2.75 1.04A9.3 9.3 0 0 1 12 6.84c.85 0 1.7.12 2.5.35 1.9-1.31 2.74-1.04 2.74-1.04.54 1.42.2 2.47.1 2.73.64.71 1.02 1.62 1.02 2.73 0 3.92-2.35 4.77-4.59 5.02.36.32.68.95.68 1.92v2.85c0 .28.18.61.69.5A10.25 10.25 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z" fill="currentColor"/></svg>
+        </span>
+        <span class="social-button__text">
+          <strong>GitHub</strong>
+          <small>BiaoZai1214</small>
+        </span>
+      </a>
+      <a class="social-button social-button--bilibili" href="{{ site.Params.bilibili }}" target="_blank" rel="noreferrer">
+        <span class="social-button__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" role="img" aria-hidden="true"><path d="M4.5 6.5h15A2.5 2.5 0 0 1 22 9v7a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 16V9a2.5 2.5 0 0 1 2.5-2.5Zm4 1.5-2.2-2.2a1 1 0 1 1 1.4-1.4L10 6.6l2.3-2.3a1 1 0 1 1 1.4 1.4L11.4 8H14a1 1 0 0 1 0 2H8.5a1 1 0 0 1 0-2Zm10.5 2a1 1 0 0 0-1 1v3.5a1 1 0 1 0 2 0V11a1 1 0 0 0-1-1Zm-3 0a1 1 0 0 0-1 1v3.5a1 1 0 1 0 2 0V11a1 1 0 0 0-1-1Z" fill="currentColor"/></svg>
+        </span>
+        <span class="social-button__text">
+          <strong>Bilibili</strong>
+          <small>视频主页</small>
+        </span>
+      </a>
+      <a class="hero-actions__link" href="{{ with site.GetPage "/posts" }}{{ .RelPermalink }}{{ end }}">查看文章</a>
+    </div>
   </section>
 
   {{ with .Content }}
