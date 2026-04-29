@@ -395,20 +395,20 @@ html[data-theme="dark"] .hero-meta__icon {
 .hero-meta {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 2px 16px 2px 0;
+  gap: 8px;
+  padding: 0 12px 0 0;
   border-right: 1px solid rgba(15, 23, 42, 0.08);
 }
 
 .hero-meta__item {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .hero-meta__icon {
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   display: grid;
   place-items: center;
   border-radius: 8px;
@@ -418,8 +418,8 @@ html[data-theme="dark"] .hero-meta__icon {
 }
 
 .hero-meta__icon svg {
-  width: 14px;
-  height: 14px;
+  width: 13px;
+  height: 13px;
 }
 
 .hero-meta__item div {
@@ -436,7 +436,7 @@ html[data-theme="dark"] .hero-meta__icon {
 
 .hero-meta__item strong,
 .hero-meta__item strong a {
-  font-size: 0.9rem;
+  font-size: 0.86rem;
   font-weight: 600;
   color: #355493;
   word-break: break-all;
@@ -445,7 +445,7 @@ html[data-theme="dark"] .hero-meta__icon {
 .hero-actions {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
   align-items: flex-start;
   padding-left: 4px;
 }
@@ -457,8 +457,8 @@ html[data-theme="dark"] .hero-meta__icon {
   width: 100%;
   padding: 12px 14px;
   border-radius: 14px;
-  color: #111111;
-  border: 1px solid rgba(17,24,39,0.10);
+  color: #ffffff;
+  border: 1px solid transparent;
   background: rgba(255,255,255,0.58);
   box-shadow: 0 10px 20px rgba(15, 23, 42, 0.06);
   transition: transform .2s ease, opacity .2s ease, box-shadow .2s ease;
@@ -476,7 +476,7 @@ html[data-theme="dark"] .hero-meta__icon {
   display: grid;
   place-items: center;
   border-radius: 10px;
-  background: rgba(0,0,0,0.05);
+  background: transparent;
   color: currentColor;
   flex: 0 0 auto;
 }
@@ -495,23 +495,21 @@ html[data-theme="dark"] .hero-meta__icon {
 }
 
 .social-button__text strong { font-size: 0.9rem; }
-.social-button__text small { color: rgba(17,24,39,0.64); font-size: 0.7rem; }
+.social-button__text small { color: rgba(255,255,255,0.78); font-size: 0.7rem; }
 .social-button__arrow { display: none; }
 .social-button--github {
-  background: rgba(255,255,255,0.60);
+  background: linear-gradient(135deg, #111111, #1f1f1f);
 }
 
 .social-button--github .social-button__icon {
-  background: #111111;
   color: #ffffff;
 }
 
 .social-button--bilibili {
-  background: rgba(255,255,255,0.48);
+  background: linear-gradient(135deg, #ff4f9a, #ff79b4);
 }
 
 .social-button--bilibili .social-button__icon {
-  background: #f472b6;
   color: #ffffff;
 }
 
@@ -523,12 +521,19 @@ html[data-theme="dark"] .social-button {
 }
 
 html[data-theme="dark"] .social-button__icon {
-  background: rgba(255,255,255,0.08);
   color: #e5e7eb;
 }
 
 html[data-theme="dark"] .social-button__text small {
   color: rgba(229,231,235,0.68);
+}
+
+html[data-theme="dark"] .social-button--github {
+  background: linear-gradient(135deg, #0f1012, #202225);
+}
+
+html[data-theme="dark"] .social-button--bilibili {
+  background: linear-gradient(135deg, #d93b82, #ff6aa8);
 }
 
 html[data-theme="dark"] .post-card__tags span,
