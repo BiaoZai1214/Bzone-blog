@@ -1289,12 +1289,26 @@ html[data-theme="dark"] .article-toc #TableOfContents a:hover {
     padding-left: 0;
     width: 100%;
     gap: 10px;
+    align-items: stretch;
   }
 
   .social-button {
-    width: 100%;
+    width: calc(50% - 5px);
     justify-content: flex-start;
-    padding: 13px 16px;
+    padding: 12px 14px;
+  }
+
+  .hero-actions {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .social-button__text small {
+    font-size: 0.68rem;
+  }
+
+  .social-button__text strong {
+    font-size: 0.95rem;
   }
 
   .section-head,
@@ -1316,11 +1330,12 @@ html[data-theme="dark"] .article-toc #TableOfContents a:hover {
   }
 
   .post-card__media {
-    min-height: 200px;
+    min-height: 168px;
   }
 
   .post-card__body {
-    padding: 18px;
+    padding: 14px 14px 16px;
+    gap: 8px;
   }
 
   .hero-profile__copy h1 {
@@ -1332,12 +1347,12 @@ html[data-theme="dark"] .article-toc #TableOfContents a:hover {
   .site-header__inner,
   .site-main,
   .site-footer {
-    width: min(100vw - 24px, 1040px);
+    width: min(100vw - 18px, 1040px);
   }
 
   .hero-panel,
   .article-shell {
-    padding: 16px;
+    padding: 14px;
   }
 
   .hero-profile__avatar {
@@ -1350,15 +1365,64 @@ html[data-theme="dark"] .article-toc #TableOfContents a:hover {
   }
 
   .social-button {
-    padding: 12px 14px;
+    width: 100%;
+    padding: 11px 12px;
   }
 
   .social-button__text strong {
-    font-size: 0.98rem;
+    font-size: 0.92rem;
   }
 
   .social-button__text small {
-    font-size: 0.7rem;
+    font-size: 0.64rem;
+  }
+
+  .post-card__media {
+    min-height: 150px;
+  }
+
+  .post-card__body {
+    padding: 12px 12px 14px;
+  }
+
+  .article-content {
+    margin-top: 20px;
+    font-size: 0.98rem;
+    line-height: 1.82;
+  }
+
+  .article-head__summary,
+  .page-head__summary {
+    font-size: 0.92rem;
+  }
+}
+
+@media (max-width: 720px) {
+  html[data-theme="dark"] .hero-panel {
+    background: #1f2024;
+    border-color: rgba(255,255,255,0.06);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.22);
+  }
+
+  html[data-theme="dark"] .hero-meta__item {
+    background: rgba(255,255,255,0.04);
+    border-color: rgba(255,255,255,0.06);
+  }
+
+  html[data-theme="dark"] .post-card {
+    background: #202226;
+    border-color: rgba(255,255,255,0.06);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.20);
+  }
+
+  html[data-theme="dark"] .post-card__body {
+    background: #24272c;
+  }
+
+  html[data-theme="dark"] .article-shell--plain {
+    background: #1f2024;
+    border-color: rgba(255,255,255,0.06);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.22);
   }
 }
 
