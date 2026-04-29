@@ -482,13 +482,22 @@ html[data-theme="dark"] .hero-meta__icon {
   background: #ff5b9f;
 }
 
-.social-button__art {
-  width: 24px;
-  height: 24px;
+.social-button__icon {
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
   flex: 0 0 auto;
-  display: block;
   border-radius: 999px;
-  background: rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.12);
+  overflow: hidden;
+}
+
+.social-button__icon img {
+  width: 19px;
+  height: 19px;
+  display: block;
+  object-fit: contain;
 }
 
 .social-button__text {
@@ -520,7 +529,7 @@ html[data-theme="dark"] .social-button--bilibili {
   background: #e84d91;
 }
 
-html[data-theme="dark"] .social-button__art {
+html[data-theme="dark"] .social-button__icon {
   background: rgba(255,255,255,0.12);
 }
 
