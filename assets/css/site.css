@@ -30,10 +30,10 @@ body {
   margin: 0;
   color: var(--text);
   background:
-    linear-gradient(180deg, rgba(248, 248, 250, 0.72), rgba(243, 244, 248, 0.88)),
+    linear-gradient(180deg, rgba(248, 248, 250, 0.36), rgba(243, 244, 248, 0.52)),
     var(--site-bg) center center / cover fixed no-repeat,
-    radial-gradient(circle at top left, rgba(255, 255, 255, 0.96), transparent 22%),
-    radial-gradient(circle at 88% 12%, rgba(0, 113, 227, 0.08), transparent 18%),
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.72), transparent 22%),
+    radial-gradient(circle at 88% 12%, rgba(0, 113, 227, 0.04), transparent 18%),
     linear-gradient(180deg, #f8f8fa 0%, #f3f4f8 100%);
   font-family: "SF Pro Display", "SF Pro Text", "PingFang SC", "Helvetica Neue", "Microsoft YaHei", sans-serif;
   text-rendering: optimizeLegibility;
@@ -43,10 +43,10 @@ body {
 
 html[data-theme="dark"] body {
   background:
-    linear-gradient(180deg, rgba(21, 22, 23, 0.74), rgba(25, 26, 28, 0.9)),
+    linear-gradient(180deg, rgba(21, 22, 23, 0.48), rgba(25, 26, 28, 0.68)),
     var(--site-bg) center center / cover fixed no-repeat,
-    radial-gradient(circle at top left, rgba(255, 255, 255, 0.12), transparent 20%),
-    radial-gradient(circle at 88% 12%, rgba(0, 0, 0, 0.22), transparent 18%),
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.08), transparent 20%),
+    radial-gradient(circle at 88% 12%, rgba(0, 0, 0, 0.14), transparent 18%),
     linear-gradient(180deg, #151617 0%, #1c1d20 100%);
 }
 
@@ -68,7 +68,7 @@ body::before {
   height: 340px;
   left: -120px;
   top: 120px;
-  background: radial-gradient(circle, rgba(0, 113, 227, 0.20), transparent 70%);
+  background: radial-gradient(circle, rgba(0, 113, 227, 0.12), transparent 70%);
 }
 
 body::after {
@@ -76,7 +76,7 @@ body::after {
   height: 280px;
   right: -90px;
   bottom: 120px;
-  background: radial-gradient(circle, rgba(129, 140, 248, 0.18), transparent 72%);
+  background: radial-gradient(circle, rgba(129, 140, 248, 0.10), transparent 72%);
   animation-duration: 20s;
 }
 
@@ -103,7 +103,7 @@ html[data-theme="dark"] body::after {
   height: 180px;
   left: 12%;
   top: 18%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.8), rgba(0, 113, 227, 0.16));
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.56), rgba(0, 113, 227, 0.10));
 }
 
 .site-ambient--two {
@@ -111,7 +111,7 @@ html[data-theme="dark"] body::after {
   height: 140px;
   right: 12%;
   top: 34%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.78), rgba(191, 219, 254, 0.16));
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.54), rgba(191, 219, 254, 0.10));
   animation-duration: 24s;
 }
 
@@ -147,7 +147,7 @@ html[data-theme="dark"] .site-header {
 .site-header__inner,
 .site-main,
 .site-footer {
-  width: min(820px, calc(100% - 40px));
+  width: min(1040px, calc(100% - 40px));
   margin: 0 auto;
 }
 
@@ -298,9 +298,9 @@ html[data-theme="dark"] .theme-toggle__icon {
   align-items: center;
   padding: 18px;
   border-radius: 30px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.56), rgba(255,255,255,0.28));
-  border: 1px solid rgba(255,255,255,0.28);
-  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.07);
+  background: linear-gradient(135deg, rgba(255,255,255,0.42), rgba(255,255,255,0.18));
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.05);
   backdrop-filter: blur(22px) saturate(140%);
   -webkit-backdrop-filter: blur(22px) saturate(140%);
   overflow: hidden;
@@ -324,8 +324,8 @@ html[data-theme="dark"] .theme-toggle__icon {
   display: inline-flex;
   padding: 4px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.42);
-  border: 1px solid rgba(255,255,255,0.64);
+  background: rgba(255,255,255,0.30);
+  border: 1px solid rgba(255,255,255,0.48);
   box-shadow: 0 14px 28px rgba(15, 23, 42, 0.08);
 }
 
@@ -356,14 +356,6 @@ html[data-theme="dark"] .theme-toggle__icon {
   color: #1f3f78;
 }
 
-.hero-profile__role {
-  margin: 0;
-  max-width: 30ch;
-  font-size: 0.96rem;
-  color: var(--muted);
-  line-height: 1.65;
-}
-
 .hero-profile__summary {
   margin: 0;
   max-width: 26ch;
@@ -382,6 +374,22 @@ html[data-theme="dark"] .post-card {
 
 html[data-theme="dark"] .hero-profile {
   border-right-color: rgba(255,255,255,0.08);
+}
+
+html[data-theme="dark"] .hero-profile__copy h1 {
+  color: #f4f6f8;
+}
+
+html[data-theme="dark"] .hero-profile__summary,
+html[data-theme="dark"] .hero-meta__label,
+html[data-theme="dark"] .hero-meta__item strong,
+html[data-theme="dark"] .hero-meta__item strong a {
+  color: #e4e8ee;
+}
+
+html[data-theme="dark"] .hero-meta__icon {
+  background: rgba(255,255,255,0.08);
+  color: #e7ebf0;
 }
 
 .hero-meta {
@@ -493,8 +501,18 @@ html[data-theme="dark"] .hero-profile {
   background: rgba(255,255,255,0.60);
 }
 
+.social-button--github .social-button__icon {
+  background: #111111;
+  color: #ffffff;
+}
+
 .social-button--bilibili {
   background: rgba(255,255,255,0.48);
+}
+
+.social-button--bilibili .social-button__icon {
+  background: #f472b6;
+  color: #ffffff;
 }
 
 html[data-theme="dark"] .social-button {
@@ -604,9 +622,9 @@ html[data-theme="dark"] .article-content blockquote {
   margin-top: 22px;
   padding: 20px 24px;
   border-radius: 26px;
-  background: rgba(255, 255, 255, 0.24);
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.04);
 }
 
 .intro-card__label {
@@ -647,20 +665,20 @@ html[data-theme="dark"] .article-content blockquote {
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 230px));
+  grid-template-columns: repeat(auto-fit, minmax(190px, 240px));
   justify-content: start;
   justify-items: start;
-  gap: 14px;
+  gap: 16px;
 }
 
 .post-card {
   position: relative;
   width: 100%;
-  max-width: 230px;
+  max-width: 240px;
   justify-self: start;
   overflow: hidden;
   border-radius: 32px;
-  background: rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.10);
   border: 0;
   box-shadow: 0 20px 48px rgba(15, 23, 42, 0.08);
   backdrop-filter: blur(28px) saturate(150%);
@@ -681,7 +699,7 @@ html[data-theme="dark"] .article-content blockquote {
 
 .post-card__media {
   position: relative;
-  min-height: 180px;
+  min-height: 190px;
   overflow: hidden;
   background:
     radial-gradient(circle at 16% 12%, rgba(255,255,255,0.96), transparent 18%),
@@ -732,8 +750,8 @@ html[data-theme="dark"] .article-content blockquote {
   flex-direction: column;
   gap: 10px;
   padding: 16px 16px 18px;
-  background: rgba(255,255,255,0.18);
-  border-top: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.12);
+  border-top: 1px solid rgba(255,255,255,0.10);
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
 }
@@ -839,9 +857,9 @@ html[data-theme="dark"] .article-content blockquote {
 .article-shell {
   padding: 30px;
   border-radius: 30px;
-  background: rgba(255,255,255,0.24);
-  border: 1px solid rgba(255,255,255,0.28);
-  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.06);
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.04);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
 }
@@ -921,6 +939,37 @@ html[data-theme="dark"] .tag-cloud a {
   color: #d7dce3;
   border-color: rgba(255,255,255,0.08);
   box-shadow: none;
+}
+
+html[data-theme="dark"] .post-card {
+  background: rgba(28, 30, 33, 0.9);
+}
+
+html[data-theme="dark"] .post-card__body {
+  background: rgba(24, 25, 28, 0.88);
+  border-top-color: rgba(255,255,255,0.08);
+}
+
+html[data-theme="dark"] .post-card__badge {
+  background: rgba(255,255,255,0.08);
+  color: #edf0f3;
+  border-color: rgba(255,255,255,0.08);
+}
+
+html[data-theme="dark"] .post-card__meta {
+  color: #c7ced8;
+}
+
+html[data-theme="dark"] .post-card__meta-icon {
+  color: #e1e6ee;
+}
+
+html[data-theme="dark"] .post-card h3 {
+  color: #f4f6f8;
+}
+
+html[data-theme="dark"] .post-card__summary {
+  color: #d0d6df;
 }
 
 html[data-theme="dark"] .article-shell {
