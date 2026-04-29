@@ -1,19 +1,48 @@
 {{ define "main" }}
-  <article class="article-shell">
-    <header class="article-head">
-      <p class="eyebrow">{{ .Section | default "Article" }}</p>
-      <h1>{{ .Title }}</h1>
-      {{ with .Description }}<p class="article-head__summary">{{ . }}</p>{{ end }}
-      <div class="article-meta-row">
-        <span>{{ .Date.Format "2006-01-02" }}</span>
-        {{ with .Params.tags }}
-          <span>{{ delimit . " · " }}</span>
-        {{ end }}
-      </div>
-    </header>
+  {{ $toc := .TableOfContents }}
+  {{ if gt (len (findRE "<li" $toc)) 0 }}
+    <div class="article-layout">
+      <aside class="article-toc" aria-label="文章目录">
+        <div class="article-toc__title">导航栏</div>
+        <nav class="article-toc__nav">
+          {{ $toc }}
+        </nav>
+      </aside>
+      <article class="article-shell article-shell--plain">
+        <header class="article-head">
+          <p class="eyebrow">{{ .Section | default "Article" }}</p>
+          <h1>{{ .Title }}</h1>
+          {{ with .Description }}<p class="article-head__summary">{{ . }}</p>{{ end }}
+          <div class="article-meta-row">
+            <span>{{ .Date.Format "2006-01-02" }}</span>
+            {{ with .Params.tags }}
+              <span>{{ delimit . " · " }}</span>
+            {{ end }}
+          </div>
+        </header>
 
-    <div class="article-content">
-      {{ .Content }}
+        <div class="article-content">
+          {{ .Content }}
+        </div>
+      </article>
     </div>
-  </article>
+  {{ else }}
+    <article class="article-shell article-shell--plain">
+      <header class="article-head">
+        <p class="eyebrow">{{ .Section | default "Article" }}</p>
+        <h1>{{ .Title }}</h1>
+        {{ with .Description }}<p class="article-head__summary">{{ . }}</p>{{ end }}
+        <div class="article-meta-row">
+          <span>{{ .Date.Format "2006-01-02" }}</span>
+          {{ with .Params.tags }}
+            <span>{{ delimit . " · " }}</span>
+          {{ end }}
+        </div>
+      </header>
+
+      <div class="article-content">
+        {{ .Content }}
+      </div>
+    </article>
+  {{ end }}
 {{ end }}
