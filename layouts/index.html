@@ -35,29 +35,12 @@
 
     <div class="hero-actions">
       <a class="social-button social-button--github" href="{{ site.Params.github }}" target="_blank" rel="noreferrer">
-        <span class="social-button__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" role="img" aria-hidden="true">
-            <path d="M12 4.5c-3.98 0-7.2 3.1-7.2 6.92 0 3.05 1.98 5.64 4.72 6.55.34.08.46-.15.46-.33v-1.16c-1.93.41-2.34-.83-2.34-.83-.3-.81-.76-1.01-.76-1.01-.62-.43.05-.42.05-.42.71.05 1.08.73 1.08.73.62 1.11 1.63.79 2.02.61.06-.48.25-.8.45-.98-1.54-.17-3.16-.78-3.16-3.43 0-.76.27-1.37.72-1.85-.07-.17-.3-.89.07-1.85 0 0 .57-.19 1.86.7.53-.14 1.08-.22 1.66-.22s1.13.08 1.66.22c1.29-.89 1.86-.7 1.86-.7.37.96.14 1.68.07 1.85.45.48.72 1.09.72 1.85 0 2.66-1.62 3.26-3.17 3.43.25.22.47.65.47 1.31v1.93c0 .18.12.41.46.33 2.74-.91 4.72-3.5 4.72-6.55 0-3.82-3.22-6.92-7.2-6.92Z" fill="currentColor"/>
-          </svg>
-        </span>
-        <span class="social-button__text">
-          <strong>GitHub</strong>
-          <small>BiaoZai1214</small>
-        </span>
+        <img class="social-button__art" src="{{ printf "%simages/github.png" site.Home.RelPermalink }}" alt="" aria-hidden="true">
+        <span class="sr-only">GitHub BiaoZai1214</span>
       </a>
       <a class="social-button social-button--bilibili" href="{{ site.Params.bilibili }}" target="_blank" rel="noreferrer">
-        <span class="social-button__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" role="img" aria-hidden="true">
-            <path d="M6.3 8h11.4A1.8 1.8 0 0 1 19.5 9.8v4.4a1.8 1.8 0 0 1-1.8 1.8H6.3a1.8 1.8 0 0 1-1.8-1.8V9.8A1.8 1.8 0 0 1 6.3 8Z" fill="currentColor"/>
-            <path d="M8.2 6.3 6.7 7.5M15.8 6.3l1.5 1.2M9.2 11.1h1.5l1.5-1.2v2.4m2.2-1.2h1.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="9" cy="12.5" r=".75" fill="#fff"/>
-            <circle cx="15" cy="12.5" r=".75" fill="#fff"/>
-          </svg>
-        </span>
-        <span class="social-button__text">
-          <strong>Bilibili</strong>
-          <small>视频主页</small>
-        </span>
+        <img class="social-button__art" src="{{ printf "%simages/bilbil.png" site.Home.RelPermalink }}" alt="" aria-hidden="true">
+        <span class="sr-only">Bilibili 视频主页</span>
       </a>
     </div>
   </section>

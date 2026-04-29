@@ -458,106 +458,54 @@ html[data-theme="dark"] .hero-meta__icon {
 .social-button {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  justify-content: flex-start;
   width: 150px;
-  min-height: 44px;
-  padding: 10px 12px;
-  border-radius: 12px;
-  color: #ffffff;
-  border: 1px solid transparent;
-  background: rgba(255,255,255,0.58);
-  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
-  transition: transform .2s ease, opacity .2s ease, box-shadow .2s ease;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  transition: transform .2s ease, opacity .2s ease;
 }
 
 .social-button:hover {
   transform: translateY(-1px);
   opacity: 0.94;
-  box-shadow: 0 12px 20px rgba(15, 23, 42, 0.10);
 }
 
-.social-button__icon {
-  width: 20px;
-  height: 20px;
-  display: grid;
-  place-items: center;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.9);
-  color: #111111;
-  flex: 0 0 auto;
+.social-button__art {
+  display: block;
+  width: 150px;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.08);
 }
 
-.social-button__icon svg {
-  width: 14px;
-  height: 14px;
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
-
-.social-button__text {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  min-width: 0;
-  flex: 1;
-}
-
-.social-button__text strong { font-size: 0.92rem; }
-.social-button__text small { color: rgba(255,255,255,0.78); font-size: 0.68rem; }
-.social-button__arrow { display: none; }
 .social-button--github {
-  background: #111111;
-}
-
-.social-button--github .social-button__icon {
-  background: rgba(255,255,255,0.92);
-  color: #111111;
+  background: transparent;
 }
 
 .social-button--bilibili {
-  background: #ff5b9f;
-}
-
-.social-button--bilibili .social-button__icon {
-  background: rgba(255,255,255,0.92);
-  color: #ff5b9f;
+  background: transparent;
 }
 
 html[data-theme="dark"] .social-button {
-  color: #e5e7eb;
-  border-color: rgba(255,255,255,0.08);
-  background: rgba(33, 35, 39, 0.90);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
+  background: transparent;
+  box-shadow: none;
 }
 
-html[data-theme="dark"] .social-button__icon {
-  background: rgba(255,255,255,0.88);
-  color: #111111;
-}
-
-html[data-theme="dark"] .social-button__text small {
-  color: rgba(229,231,235,0.68);
-}
-
-html[data-theme="dark"] .hero-meta__item strong,
-html[data-theme="dark"] .hero-meta__item strong a {
-  color: #f2f5f8;
-}
-
-html[data-theme="dark"] .social-button--github {
-  background: #0f1012;
-}
-
-html[data-theme="dark"] .social-button--bilibili {
-  background: #e84d91;
-}
-
-html[data-theme="dark"] .social-button--github .social-button__icon {
-  background: rgba(255,255,255,0.92);
-  color: #111111;
-}
-
-html[data-theme="dark"] .social-button--bilibili .social-button__icon {
-  background: rgba(255,255,255,0.92);
-  color: #e84d91;
+html[data-theme="dark"] .social-button__art {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
 }
 
 html[data-theme="dark"] .post-card__tags span,
