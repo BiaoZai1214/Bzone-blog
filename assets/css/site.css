@@ -245,12 +245,12 @@ html[data-theme="dark"] .theme-toggle__icon--moon {
 }
 
 html[data-theme="dark"] .theme-toggle {
-  background: rgba(255, 255, 255, 0.92);
-  border-color: rgba(17, 24, 39, 0.08);
+  background: rgba(255, 255, 255, 0.82);
+  border-color: rgba(255,255,255,0.66);
 }
 
 html[data-theme="dark"] .theme-toggle__icon {
-  color: #111827;
+  color: #1f2937;
 }
 
 .site-main {
@@ -371,8 +371,7 @@ html[data-theme="dark"] .theme-toggle__icon {
 html[data-theme="dark"] .hero-panel,
 html[data-theme="dark"] .intro-card,
 html[data-theme="dark"] .article-shell,
-html[data-theme="dark"] .post-card,
-html[data-theme="dark"] .social-button {
+html[data-theme="dark"] .post-card {
   background: rgba(255,255,255,0.24);
   border-color: rgba(255,255,255,0.36);
 }
@@ -595,15 +594,17 @@ html[data-theme="dark"] .tag-cloud a {
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 300px));
   justify-content: start;
   justify-items: stretch;
-  gap: 24px;
+  justify-content: center;
+  gap: 22px;
 }
 
 .post-card {
   position: relative;
   width: 100%;
+  max-width: 300px;
   justify-self: stretch;
   overflow: hidden;
   border-radius: 32px;
@@ -628,7 +629,7 @@ html[data-theme="dark"] .tag-cloud a {
 
 .post-card__media {
   position: relative;
-  min-height: 320px;
+  min-height: 280px;
   overflow: hidden;
   background:
     radial-gradient(circle at 16% 12%, rgba(255,255,255,0.96), transparent 18%),
@@ -678,7 +679,7 @@ html[data-theme="dark"] .tag-cloud a {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 22px 22px 24px;
+  padding: 20px 20px 22px;
   background: rgba(255,255,255,0.24);
   border-top: 1px solid rgba(255,255,255,0.18);
   backdrop-filter: blur(20px) saturate(160%);
@@ -709,7 +710,7 @@ html[data-theme="dark"] .tag-cloud a {
 
 .post-card h3 {
   margin: 0;
-  font-size: 1.18rem;
+  font-size: 1.08rem;
   line-height: 1.42;
   letter-spacing: -0.03em;
   color: #16355f;
@@ -719,9 +720,9 @@ html[data-theme="dark"] .tag-cloud a {
   margin: 0;
   color: #65738a;
   line-height: 1.7;
-  font-size: 0.96rem;
+  font-size: 0.92rem;
   display: -webkit-box;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -885,11 +886,11 @@ html[data-theme="dark"] .tag-cloud a {
   }
 
   .post-card__media {
-    min-height: 240px;
+    min-height: 220px;
   }
 
   .post-card__body {
-    padding: 18px 18px 20px;
+    padding: 18px;
   }
 
   .social-button,
