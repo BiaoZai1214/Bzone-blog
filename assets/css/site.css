@@ -914,7 +914,7 @@ html[data-theme="dark"] .article-content blockquote {
   border-radius: 14px;
   color: #fff;
   border: 0;
-  background: #000;
+  background: transparent;
   box-shadow: none;
   transition: transform .2s ease, opacity .2s ease;
 }
@@ -1319,6 +1319,14 @@ html[data-theme="dark"] .article-toc #TableOfContents a:hover {
     padding: 12px 14px;
   }
 
+  .social-button--github {
+    background-color: #000;
+  }
+
+  .social-button--bilibili {
+    background-color: #ff69b4;
+  }
+
   .hero-actions {
     flex-direction: row;
     flex-wrap: nowrap;
@@ -1346,12 +1354,12 @@ html[data-theme="dark"] .article-toc #TableOfContents a:hover {
   }
 
   .post-card {
-    width: min(100%, 440px);
+    width: min(100%, 520px);
     justify-self: center;
   }
 
   .post-card__media {
-    min-height: 220px;
+    min-height: 240px;
   }
 
   .post-card__body {
@@ -1407,6 +1415,14 @@ html[data-theme="dark"] .article-toc #TableOfContents a:hover {
     padding: 11px 12px;
   }
 
+  .social-button--github {
+    background-color: #000;
+  }
+
+  .social-button--bilibili {
+    background-color: #ff69b4;
+  }
+
   .hero-actions {
     flex-direction: row;
     flex-wrap: nowrap;
@@ -1432,7 +1448,7 @@ html[data-theme="dark"] .article-toc #TableOfContents a:hover {
   }
 
   .post-card {
-    width: min(100%, 400px);
+    width: min(100%, 460px);
   }
 
   .article-content {
