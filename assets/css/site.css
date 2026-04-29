@@ -459,7 +459,7 @@ html[data-theme="dark"] .hero-meta__icon {
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
-  width: 158px;
+  width: 162px;
   gap: 12px;
   padding: 11px 14px;
   border: 0;
@@ -482,23 +482,31 @@ html[data-theme="dark"] .hero-meta__icon {
   background: #ff5b9f;
 }
 
-.social-button__icon {
-  width: 24px;
-  height: 24px;
+.social-button__mark {
+  width: 34px;
+  height: 34px;
   display: grid;
   place-items: center;
   flex: 0 0 auto;
-  border-radius: 0;
-  background: transparent;
-  overflow: visible;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-.social-button__icon img {
-  width: 22px;
-  height: 22px;
-  display: block;
-  object-fit: contain;
-  filter: brightness(0) invert(1);
+.social-button__mark--github {
+  background:
+    radial-gradient(circle at 50% 62%, #111 0 6px, transparent 6.5px),
+    radial-gradient(circle at 38% 34%, #111 0 1.8px, transparent 2px),
+    radial-gradient(circle at 62% 34%, #111 0 1.8px, transparent 2px),
+    radial-gradient(circle at 50% 46%, #111 0 1px, transparent 1.2px),
+    #fff;
+}
+
+.social-button__mark--bilibili {
+  background:
+    linear-gradient(#ff5b9f, #ff5b9f) 50% 56% / 16px 12px no-repeat,
+    linear-gradient(#ff5b9f, #ff5b9f) 31% 22% / 3px 7px no-repeat,
+    linear-gradient(#ff5b9f, #ff5b9f) 69% 22% / 3px 7px no-repeat,
+    #fff;
 }
 
 .social-button__text {
@@ -530,12 +538,25 @@ html[data-theme="dark"] .social-button--bilibili {
   background: #e84d91;
 }
 
-html[data-theme="dark"] .social-button__icon {
-  background: transparent;
+html[data-theme="dark"] .social-button__mark {
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
 }
 
-html[data-theme="dark"] .social-button__icon img {
-  filter: brightness(0) invert(1);
+html[data-theme="dark"] .social-button__mark--github {
+  background:
+    radial-gradient(circle at 50% 62%, #111 0 6px, transparent 6.5px),
+    radial-gradient(circle at 38% 34%, #111 0 1.8px, transparent 2px),
+    radial-gradient(circle at 62% 34%, #111 0 1.8px, transparent 2px),
+    radial-gradient(circle at 50% 46%, #111 0 1px, transparent 1.2px),
+    #fff;
+}
+
+html[data-theme="dark"] .social-button__mark--bilibili {
+  background:
+    linear-gradient(#ff5b9f, #ff5b9f) 50% 56% / 16px 12px no-repeat,
+    linear-gradient(#ff5b9f, #ff5b9f) 31% 22% / 3px 7px no-repeat,
+    linear-gradient(#ff5b9f, #ff5b9f) 69% 22% / 3px 7px no-repeat,
+    #fff;
 }
 
 html[data-theme="dark"] .post-card__tags span,
