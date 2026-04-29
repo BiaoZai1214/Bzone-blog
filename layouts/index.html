@@ -35,14 +35,18 @@
 
     <div class="hero-actions">
       <a class="social-button social-button--github" href="{{ site.Params.github }}" target="_blank" rel="noreferrer">
-        <img class="social-button__art" src="{{ printf "%simages/github.svg" site.Home.RelPermalink }}" alt="" aria-hidden="true">
+        <span class="social-button__icon" aria-hidden="true">
+          <img src="{{ printf "%simages/github.svg" site.Home.RelPermalink }}" alt="" aria-hidden="true">
+        </span>
         <span class="social-button__text">
           <strong>GitHub</strong>
           <small>BiaoZai1214</small>
         </span>
       </a>
       <a class="social-button social-button--bilibili" href="{{ site.Params.bilibili }}" target="_blank" rel="noreferrer">
-        <img class="social-button__art" src="{{ printf "%simages/bilbil.svg" site.Home.RelPermalink }}" alt="" aria-hidden="true">
+        <span class="social-button__icon" aria-hidden="true">
+          <img src="{{ printf "%simages/bilbil.svg" site.Home.RelPermalink }}" alt="" aria-hidden="true">
+        </span>
         <span class="social-button__text">
           <strong>Bilibili</strong>
           <small>视频主页</small>
