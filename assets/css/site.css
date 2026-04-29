@@ -482,8 +482,8 @@ html[data-theme="dark"] .hero-meta__icon {
   display: grid;
   place-items: center;
   border-radius: 999px;
-  background: transparent;
-  color: currentColor;
+  background: rgba(255,255,255,0.9);
+  color: #111111;
   flex: 0 0 auto;
 }
 
@@ -508,7 +508,8 @@ html[data-theme="dark"] .hero-meta__icon {
 }
 
 .social-button--github .social-button__icon {
-  color: #ffffff;
+  background: rgba(255,255,255,0.92);
+  color: #111111;
 }
 
 .social-button--bilibili {
@@ -516,7 +517,8 @@ html[data-theme="dark"] .hero-meta__icon {
 }
 
 .social-button--bilibili .social-button__icon {
-  color: #ffffff;
+  background: rgba(255,255,255,0.92);
+  color: #ff5b9f;
 }
 
 html[data-theme="dark"] .social-button {
@@ -527,7 +529,8 @@ html[data-theme="dark"] .social-button {
 }
 
 html[data-theme="dark"] .social-button__icon {
-  color: #e5e7eb;
+  background: rgba(255,255,255,0.88);
+  color: #111111;
 }
 
 html[data-theme="dark"] .social-button__text small {
@@ -545,6 +548,16 @@ html[data-theme="dark"] .social-button--github {
 
 html[data-theme="dark"] .social-button--bilibili {
   background: #e84d91;
+}
+
+html[data-theme="dark"] .social-button--github .social-button__icon {
+  background: rgba(255,255,255,0.92);
+  color: #111111;
+}
+
+html[data-theme="dark"] .social-button--bilibili .social-button__icon {
+  background: rgba(255,255,255,0.92);
+  color: #e84d91;
 }
 
 html[data-theme="dark"] .post-card__tags span,
