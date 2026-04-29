@@ -289,18 +289,16 @@ html[data-theme="dark"] .theme-toggle__icon {
 
 .hero-panel {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.8fr) minmax(180px, 0.46fr);
-  gap: 28px;
+  grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.82fr) minmax(170px, 0.48fr);
+  gap: 22px;
   align-items: center;
-  padding: 26px 24px;
+  padding: 24px;
   border-radius: 30px;
-  background:
-    linear-gradient(135deg, rgba(255,255,255,0.72), rgba(255,255,255,0.42)),
-    linear-gradient(180deg, rgba(255,255,255,0.3), rgba(255,255,255,0.18));
-  border: 1px solid rgba(255,255,255,0.55);
+  background: linear-gradient(135deg, rgba(255,255,255,0.76), rgba(255,255,255,0.42));
+  border: 1px solid rgba(255,255,255,0.56);
   box-shadow: 0 18px 44px rgba(15, 23, 42, 0.09);
-  backdrop-filter: blur(18px) saturate(150%);
-  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  backdrop-filter: blur(18px) saturate(145%);
+  -webkit-backdrop-filter: blur(18px) saturate(145%);
   overflow: hidden;
 }
 
@@ -311,9 +309,8 @@ html[data-theme="dark"] .theme-toggle__icon {
 }
 
 .hero-profile {
-  position: relative;
   display: flex;
-  gap: 22px;
+  gap: 18px;
   align-items: center;
   padding-right: 20px;
   border-right: 1px solid rgba(15, 23, 42, 0.08);
@@ -321,16 +318,16 @@ html[data-theme="dark"] .theme-toggle__icon {
 
 .hero-profile__avatar-wrap {
   display: inline-flex;
-  padding: 6px;
+  padding: 5px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.4);
-  border: 1px solid rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(255,255,255,0.75);
   box-shadow: 0 18px 34px rgba(15, 23, 42, 0.10);
 }
 
 .hero-profile__avatar {
-  width: 116px;
-  height: 116px;
+  width: 100px;
+  height: 100px;
   display: block;
   border-radius: 999px;
   object-fit: cover;
@@ -343,13 +340,13 @@ html[data-theme="dark"] .theme-toggle__icon {
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .hero-profile__copy h1 {
   margin: 0;
-  font-size: clamp(2.1rem, 3.4vw, 3rem);
-  line-height: 0.94;
+  font-size: clamp(2rem, 3vw, 2.7rem);
+  line-height: 0.96;
   letter-spacing: -0.05em;
   overflow-wrap: anywhere;
   color: #1f3f78;
@@ -358,70 +355,70 @@ html[data-theme="dark"] .theme-toggle__icon {
 .hero-profile__role {
   margin: 0;
   max-width: 30ch;
-  font-size: 1rem;
+  font-size: 0.96rem;
   color: var(--muted);
   line-height: 1.65;
 }
 
 .hero-profile__summary {
+  margin: 0;
   max-width: 28ch;
   line-height: 1.8;
+  font-size: 0.92rem;
+  color: var(--muted);
 }
 
 html[data-theme="dark"] .hero-panel,
 html[data-theme="dark"] .intro-card,
 html[data-theme="dark"] .article-shell,
 html[data-theme="dark"] .post-card,
-html[data-theme="dark"] .social-button,
-html[data-theme="dark"] .hero-sidecard,
-html[data-theme="dark"] .hero-note {
-  background:
-    linear-gradient(135deg, rgba(255,255,255,0.46), rgba(255,255,255,0.22)),
-    linear-gradient(180deg, rgba(255,255,255,0.24), rgba(255,255,255,0.12));
+html[data-theme="dark"] .social-button {
+  background: rgba(255,255,255,0.24);
   border-color: rgba(255,255,255,0.36);
 }
 
-html[data-theme="dark"] .post-card__tags span,
 html[data-theme="dark"] .post-card__tags span,
 html[data-theme="dark"] .tag-cloud a {
   background: rgba(17,24,39,0.04);
   color: #374151;
   border-color: rgba(17,24,39,0.08);
+}
+
 .hero-meta {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  padding: 8px 20px 8px 0;
+  gap: 12px;
+  padding: 4px 20px 4px 0;
   border-right: 1px solid rgba(15, 23, 42, 0.08);
 }
 
 .hero-meta__item {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
 }
 
 .hero-meta__icon {
-  width: 34px;
-  height: 34px;
+  width: 30px;
+  height: 30px;
   display: grid;
   place-items: center;
-  border-radius: 10px;
+  border-radius: 8px;
   background: rgba(59, 130, 246, 0.08);
   color: #4b6fb2;
   flex: 0 0 auto;
 }
 
 .hero-meta__icon svg {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
 }
 
 .hero-meta__item div {
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 2px;
 }
 
 .hero-meta__label {
@@ -431,7 +428,7 @@ html[data-theme="dark"] .tag-cloud a {
 
 .hero-meta__item strong,
 .hero-meta__item strong a {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: #355493;
   word-break: break-all;
@@ -440,16 +437,17 @@ html[data-theme="dark"] .tag-cloud a {
 .hero-actions {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 10px;
+  align-items: flex-start;
   padding-left: 4px;
 }
 
 .social-button {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   width: 100%;
-  padding: 14px 16px;
+  padding: 12px 14px;
   border-radius: 14px;
   color: #ffffff;
   border: 1px solid rgba(255,255,255,0.14);
@@ -464,19 +462,19 @@ html[data-theme="dark"] .tag-cloud a {
 }
 
 .social-button__icon {
-  width: 30px;
-  height: 30px;
+  width: 26px;
+  height: 26px;
   display: grid;
   place-items: center;
-  border-radius: 12px;
+  border-radius: 10px;
   background: rgba(255,255,255,0.14);
   color: currentColor;
   flex: 0 0 auto;
 }
 
 .social-button__icon svg {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
 }
 
 .social-button__text {
@@ -487,8 +485,8 @@ html[data-theme="dark"] .tag-cloud a {
   flex: 1;
 }
 
-.social-button__text strong { font-size: 0.92rem; }
-.social-button__text small { color: rgba(255,255,255,0.82); font-size: 0.72rem; }
+.social-button__text strong { font-size: 0.9rem; }
+.social-button__text small { color: rgba(255,255,255,0.82); font-size: 0.7rem; }
 .social-button__arrow { display: none; }
 .social-button--github {
   background: linear-gradient(135deg, #131722, #22283a);
@@ -502,6 +500,7 @@ html[data-theme="dark"] .tag-cloud a {
   align-self: flex-start;
   color: #355493;
   font-weight: 600;
+  font-size: 0.92rem;
 }
 
 .post-card__tags span,
