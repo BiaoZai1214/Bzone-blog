@@ -1202,22 +1202,18 @@ html[data-theme="dark"] .article-toc #TableOfContents a:hover {
 
   body {
     background:
-      linear-gradient(180deg, rgba(248, 248, 250, 0.50), rgba(243, 244, 248, 0.72)),
-      var(--site-bg) center center / cover no-repeat,
-      linear-gradient(180deg, #f8f8fa 0%, #f3f4f8 100%);
+      linear-gradient(180deg, #fafbfd 0%, #eef2f7 100%);
   }
 
   html[data-theme="dark"] body {
     background:
-      linear-gradient(180deg, rgba(21, 22, 23, 0.18), rgba(25, 26, 28, 0.40)),
-      var(--site-bg) center center / cover no-repeat,
-      linear-gradient(180deg, #18191c 0%, #1d1f22 100%);
+      linear-gradient(180deg, #181a1f 0%, #20242a 100%);
   }
 
   body::before,
   body::after,
   .site-ambient {
-    opacity: 0.12;
+    opacity: 0.06;
   }
 
   .hero-panel,
@@ -1250,6 +1246,8 @@ html[data-theme="dark"] .article-toc #TableOfContents a:hover {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    width: min(100%, 420px);
+    margin: 0 auto;
   }
 
   .hero-profile__avatar {
@@ -1279,6 +1277,8 @@ html[data-theme="dark"] .article-toc #TableOfContents a:hover {
     gap: 10px;
     padding: 0;
     border-right: 0;
+    width: min(100%, 420px);
+    margin: 0 auto;
   }
 
   .hero-meta__item {
@@ -1307,7 +1307,8 @@ html[data-theme="dark"] .article-toc #TableOfContents a:hover {
 
   .hero-actions {
     padding-left: 0;
-    width: 100%;
+    width: min(100%, 420px);
+    margin: 0 auto;
     gap: 10px;
     align-items: stretch;
   }
@@ -1341,16 +1342,16 @@ html[data-theme="dark"] .article-toc #TableOfContents a:hover {
     grid-template-columns: 1fr;
     justify-content: stretch;
     justify-items: stretch;
-    gap: 16px;
+    gap: 18px;
   }
 
   .post-card {
-    width: min(100%, 520px);
+    width: min(100%, 440px);
     justify-self: center;
   }
 
   .post-card__media {
-    min-height: 200px;
+    min-height: 220px;
   }
 
   .post-card__body {
@@ -1359,7 +1360,7 @@ html[data-theme="dark"] .article-toc #TableOfContents a:hover {
   }
 
   .hero-profile__copy h1 {
-    font-size: clamp(1.7rem, 7vw, 2.15rem);
+    font-size: clamp(1.6rem, 7vw, 2.05rem);
   }
 }
 
@@ -1367,27 +1368,23 @@ html[data-theme="dark"] .article-toc #TableOfContents a:hover {
   .site-header__inner,
   .site-main,
   .site-footer {
-    width: min(100vw - 18px, 1040px);
+    width: min(100vw - 16px, 1040px);
   }
 
   body {
     background:
-      linear-gradient(180deg, rgba(248, 248, 250, 0.56), rgba(243, 244, 248, 0.76)),
-      var(--site-bg) center center / cover no-repeat,
-      linear-gradient(180deg, #f8f8fa 0%, #f3f4f8 100%);
+      linear-gradient(180deg, #fbfcfe 0%, #eef2f7 100%);
   }
 
   html[data-theme="dark"] body {
     background:
-      linear-gradient(180deg, rgba(21, 22, 23, 0.14), rgba(25, 26, 28, 0.34)),
-      var(--site-bg) center center / cover no-repeat,
-      linear-gradient(180deg, #18191c 0%, #1d1f22 100%);
+      linear-gradient(180deg, #181a1f 0%, #20242a 100%);
   }
 
   body::before,
   body::after,
   .site-ambient {
-    opacity: 0.08;
+    opacity: 0.04;
   }
 
   .hero-panel,
@@ -1402,6 +1399,7 @@ html[data-theme="dark"] .article-toc #TableOfContents a:hover {
 
   .hero-meta {
     grid-template-columns: 1fr;
+    width: min(100%, 360px);
   }
 
   .social-button {
@@ -1413,6 +1411,8 @@ html[data-theme="dark"] .article-toc #TableOfContents a:hover {
     flex-direction: row;
     flex-wrap: nowrap;
     gap: 8px;
+    width: min(100%, 360px);
+    margin: 0 auto;
   }
 
   .social-button__text strong {
@@ -1424,11 +1424,15 @@ html[data-theme="dark"] .article-toc #TableOfContents a:hover {
   }
 
   .post-card__media {
-    min-height: 188px;
+    min-height: 210px;
   }
 
   .post-card__body {
     padding: 14px 14px 16px;
+  }
+
+  .post-card {
+    width: min(100%, 400px);
   }
 
   .article-content {
