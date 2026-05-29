@@ -24,4 +24,9 @@ timeZone = "Asia/Shanghai"
   github = "https://github.com/BiaoZai1214"
   bilibili = "https://space.bilibili.com/1850228834"
 
+[markup]
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
+
 [menus]
