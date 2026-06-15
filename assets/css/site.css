@@ -1375,6 +1375,13 @@ html[data-theme="dark"] .article-toc #TableOfContents a:hover {
 }
 
 @media (min-width: 769px) and (max-width: 1499px) {
+  .article-layout {
+    display: grid;
+    grid-template-columns: 200px minmax(0, 1fr);
+    gap: 24px;
+    align-items: start;
+  }
+
   .article-toc {
     display: block;
     position: sticky;
