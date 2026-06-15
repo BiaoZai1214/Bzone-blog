@@ -117,9 +117,26 @@
 (function() {
   var nav = document.querySelector('.article-toc__nav');
   if (!nav) return;
+  var toc = nav.querySelector('#TableOfContents');
+  if (toc) {
+    toc.querySelectorAll(':scope > ul > li').forEach(function(li) {
+      var sub = li.querySelector(':scope > ul');
+      if (!sub) return;
+      li.querySelector(':scope > a').addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        li.classList.toggle('open');
+      });
+    });
+  }
   nav.addEventListener('click', function(e) {
     var link = e.target.closest('a');
     if (!link) return;
+    var li = link.closest('li');
+    if (li && li.querySelector(':scope > ul') && li.classList.contains('open')) return;
+    if (li && li.querySelector(':scope > ul') && !li.classList.contains('open')) {
+      li.classList.add('open');
+    }
     var hash = link.getAttribute('href');
     if (!hash || hash.charAt(0) !== '#') return;
     e.preventDefault();

@@ -25,8 +25,10 @@ timeZone = "Asia/Shanghai"
   bilibili = "https://space.bilibili.com/1850228834"
 
 [markup]
+  [markup.goldmark.renderer]
+    unsafe = true
   [markup.tableOfContents]
     startLevel = 2
-    endLevel = 4
+    endLevel = 3
 
 [menus]

@@ -1,6 +1,7 @@
 {{ define "main" }}
   {{ $toc := .TableOfContents }}
-  {{ if gt (len (findRE "<li" $toc)) 0 }}
+  {{ $isResume := eq .RelPermalink "/Bzone-blog/about/" }}
+  {{ if and (not $isResume) (gt (len (findRE "<li" $toc)) 0) }}
     <div class="article-layout">
       <aside class="article-toc" aria-label="文章目录">
         <div class="article-toc__title">导航栏</div>
@@ -8,7 +9,7 @@
           {{ $toc }}
         </nav>
       </aside>
-      <article class="article-shell article-shell--plain">
+      <article class="article-shell article-shell--plain{{ if eq .RelPermalink "/Bzone-blog/about/" }} article-shell--resume{{ end }}">
         <header class="article-head">
           <p class="eyebrow">{{ .Section | default "Article" }}</p>
           <h1>{{ .Title }}</h1>
@@ -27,7 +28,7 @@
       </article>
     </div>
   {{ else }}
-    <article class="article-shell article-shell--plain">
+    <article class="article-shell article-shell--plain{{ if eq .RelPermalink "/Bzone-blog/about/" }} article-shell--resume{{ end }}">
       <header class="article-head">
         <p class="eyebrow">{{ .Section | default "Article" }}</p>
         <h1>{{ .Title }}</h1>

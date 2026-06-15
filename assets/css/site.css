@@ -651,30 +651,6 @@ html[data-theme="dark"] .article-content h2 {
   margin-top: 8px;
 }
 
-/* --- 目录自动编号 --- */
-.article-toc #TableOfContents {
-  counter-reset: toc-h2;
-}
-.article-toc #TableOfContents > ul > li {
-  counter-increment: toc-h2;
-  counter-reset: toc-h3 toc-h4;
-}
-.article-toc #TableOfContents > ul > li > a::before {
-  content: counter(toc-h2, cjk-ideographic) "、";
-}
-.article-toc #TableOfContents > ul > li > ul > li {
-  counter-increment: toc-h3;
-  counter-reset: toc-h4;
-}
-.article-toc #TableOfContents > ul > li > ul > li > a::before {
-  content: counter(toc-h3) ". ";
-}
-.article-toc #TableOfContents > ul > li > ul > li > ul > li {
-  counter-increment: toc-h4;
-}
-.article-toc #TableOfContents > ul > li > ul > li > ul > li > a::before {
-  content: counter(toc-h3) "." counter(toc-h4) " ";
-}
 
 .article-toc #TableOfContents a {
   display: block;
@@ -693,6 +669,40 @@ html[data-theme="dark"] .article-content h2 {
   transform: translateX(2px);
 }
 
+/* --- 折叠筐 --- */
+.article-toc #TableOfContents > ul > li > ul {
+  display: none;
+}
+.article-toc #TableOfContents > ul > li.open > ul {
+  display: grid;
+}
+.article-toc #TableOfContents > ul > li > a {
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+}
+.article-toc #TableOfContents > ul > li > a::after {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(-45deg);
+  margin-left: auto;
+  float: right;
+  margin-top: 6px;
+  opacity: 0.4;
+  transition: transform .2s ease, opacity .2s ease;
+}
+.article-toc #TableOfContents > ul > li.open > a::after {
+  transform: rotate(45deg);
+  opacity: 0.7;
+}
+.article-toc #TableOfContents > ul > li:not(:has(> ul)) > a::after {
+  display: none;
+}
+
 .article-shell--plain {
   background: #fff;
   border: 1px solid rgba(17, 24, 39, 0.08);
@@ -705,9 +715,9 @@ html[data-theme="dark"] .article-content h2 {
 .tag-cloud a {
   display: inline-flex;
   align-items: center;
-  padding: 6px 11px;
+  padding: 3px 7px;
   border-radius: 999px;
-  font-size: 0.76rem;
+  font-size: 0.75rem;
   background: rgba(255, 255, 255, 0.86);
   border: 1px solid rgba(0, 0, 0, 0.08);
   color: #1f2937;
@@ -796,7 +806,7 @@ html[data-theme="dark"] .article-content h2 {
   grid-template-columns: repeat(auto-fit, minmax(190px, 240px));
   justify-content: start;
   justify-items: start;
-  gap: 16px;
+  gap: 22px;
 }
 
 .post-card {
@@ -1005,7 +1015,7 @@ html[data-theme="dark"] .article-content h2 {
 }
 
 .article-shell {
-  padding: 40px 44px;
+  padding: 40px 56px;
   border-radius: 30px;
   background: #fff;
   border: 1px solid rgba(17, 24, 39, 0.08);
@@ -1049,14 +1059,14 @@ html[data-theme="dark"] .article-content h2 {
 }
 
 .article-content {
-  margin-top: 32px;
-  line-height: 1.82;
+  margin-top: 24px;
+  line-height: 1.75;
   font-size: 1.02rem;
   color: #2c2c2e;
 }
 
 .article-content p {
-  margin: 0 0 1.2em;
+  margin: 0 0 0.9em;
 }
 
 .article-content a {
@@ -1072,16 +1082,16 @@ html[data-theme="dark"] .article-content h2 {
 }
 
 .article-content img {
-  max-width: 100%;
+  max-width: 88%;
   height: auto;
   border-radius: 10px;
   display: block;
-  margin: 28px auto;
+  margin: 20px auto;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
 .article-content h2 {
-  margin: 2em 0 0.6em;
+  margin: 1.5em 0 0.5em;
   font-size: 1.55rem;
   letter-spacing: -0.02em;
   line-height: 1.3;
@@ -1090,14 +1100,14 @@ html[data-theme="dark"] .article-content h2 {
 }
 
 .article-content h3 {
-  margin: 1.8em 0 0.5em;
+  margin: 1.3em 0 0.4em;
   font-size: 1.25rem;
   letter-spacing: -0.01em;
   line-height: 1.35;
 }
 
 .article-content h4 {
-  margin: 1.5em 0 0.4em;
+  margin: 1.1em 0 0.3em;
   font-size: 1.08rem;
   line-height: 1.4;
   color: var(--muted);
@@ -1105,17 +1115,17 @@ html[data-theme="dark"] .article-content h2 {
 
 .article-content ul,
 .article-content ol {
-  margin: 0 0 1.2em;
+  margin: 0 0 0.9em;
   padding-left: 1.6em;
 }
 
 .article-content li {
-  margin-bottom: 0.3em;
+  margin-bottom: 0.2em;
 }
 
 .article-content li > ul,
 .article-content li > ol {
-  margin-top: 0.3em;
+  margin-top: 0.2em;
   margin-bottom: 0;
 }
 
@@ -1128,12 +1138,12 @@ html[data-theme="dark"] .article-content h2 {
 }
 
 .article-content pre {
-  margin: 1.4em 0;
-  padding: 20px 24px;
+  margin: 1em 0;
+  padding: 16px 24px;
   border-radius: 12px;
   background: #1d1d1f;
   overflow-x: auto;
-  line-height: 1.6;
+  line-height: 1.55;
   font-size: 0.9rem;
 }
 
@@ -1145,13 +1155,13 @@ html[data-theme="dark"] .article-content h2 {
 }
 
 .article-content blockquote {
-  margin: 1.5em 0;
-  padding: 16px 22px;
+  margin: 1em 0;
+  padding: 14px 22px;
   border-left: 4px solid rgba(0, 113, 227, 0.4);
   background: rgba(0, 113, 227, 0.05);
   color: #555;
   border-radius: 0 16px 16px 0;
-  line-height: 1.7;
+  line-height: 1.65;
 }
 
 .article-content blockquote p:last-child {
@@ -1306,32 +1316,15 @@ html[data-theme="dark"] .article-toc #TableOfContents a:hover {
   background: rgba(255,255,255,0.08);
 }
 
-/* --- 文章标题自动编号 --- */
-.article-content {
-  counter-reset: h2;
-}
+/* --- 文章标题滚动偏移 --- */
 .article-content h2 {
-  counter-increment: h2;
-  counter-reset: h3 h4;
   scroll-margin-top: 96px;
-}
-.article-content h2::before {
-  content: counter(h2, cjk-ideographic) "、";
 }
 .article-content h3 {
-  counter-increment: h3;
-  counter-reset: h4;
   scroll-margin-top: 96px;
-}
-.article-content h3::before {
-  content: counter(h3) ". ";
 }
 .article-content h4 {
-  counter-increment: h4;
   scroll-margin-top: 96px;
-}
-.article-content h4::before {
-  content: counter(h3) "." counter(h4) " ";
 }
 
 .site-footer {
@@ -1986,3 +1979,41 @@ html[data-theme="dark"] .article-toc #TableOfContents a:hover {
 
 
 
+
+/* ===== 简历页 ===== */
+.article-shell--resume .article-head,
+.article-shell--resume .article-meta-row {
+  display: none;
+}
+.article-shell--resume .article-content {
+  margin-top: 0;
+}
+.resume-header {
+  text-align: center;
+  padding-bottom: 26px;
+  margin-bottom: 28px;
+  border-bottom: 2px solid rgba(0,0,0,0.06);
+}
+.resume-header h1 {
+  margin: 0 0 8px;
+  font-size: 2rem;
+  letter-spacing: 0.06em;
+}
+.resume-header p {
+  margin: 4px 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+.resume-header a {
+  color: var(--accent);
+}
+html[data-theme="dark"] .resume-header {
+  border-bottom-color: rgba(255,255,255,0.08);
+}
+.article-shell--resume + .article-toc {
+  display: none !important;
+}
+.article-shell--resume {
+  max-width: 960px;
+  padding: 40px 52px;
+}
