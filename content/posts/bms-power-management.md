@@ -1,6 +1,6 @@
 ---
 title: "48Pro电源管理方案"
-date: 2025-09-08
+date: 2025-12-03
 draft: false
 description: "一套基于F103 + BQ76940 + 9串18650的工业级电源管理方案"
 tags: ["STM32", "BMS", "BQ76940", "FreeRTOS"]

@@ -853,9 +853,7 @@ html[data-theme="dark"] .article-content h2 {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.02) 46%, rgba(17,24,39,0.08) 100%),
-    radial-gradient(circle at 18% 26%, rgba(255,255,255,0.90), transparent 20%),
-    radial-gradient(circle at 78% 30%, rgba(255,255,255,0.64), transparent 18%);
+    linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.02) 46%, rgba(17,24,39,0.08) 100%);
   pointer-events: none;
 }
 
